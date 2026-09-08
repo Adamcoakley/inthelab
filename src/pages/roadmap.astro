@@ -3,92 +3,413 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const phases = [
-  { n: 1, title: 'AWS Foundations', sub: 'Account, IAM, budget, and the addressing concepts everything leans on' },
-  { n: 2, title: 'Build a Network', sub: 'Your own VPC, subnets, routes, and both firewall systems' },
-  { n: 3, title: 'Run a Server', sub: 'A real web server, IAM roles, private access, and troubleshooting' },
-  { n: 4, title: 'Build Private Infrastructure', sub: 'Private subnets, the connect-then-download problem, and NAT' },
-  { n: 5, title: 'Build a Resilient Application', sub: 'Launch templates, target groups, ALB, health checks, auto-scaling' },
-  { n: 6, title: 'Protect & Operate It', sub: 'HTTPS, WAF, CloudWatch, Flow Logs, and the big troubleshooting challenge' },
-  { n: 7, title: 'Automate It', sub: 'CloudFormation, ending at the full client architecture' },
+  {
+    number: 0,
+    title: 'Cloud & Networking Foundations',
+    sub: 'Understand the building blocks before touching AWS.',
+  },
+  {
+    number: 1,
+    title: 'AWS Foundations',
+    sub: 'Set up AWS safely and learn the core tools.',
+  },
+  {
+    number: 2,
+    title: 'Build Your First AWS Network',
+    sub: 'Create a VPC, subnets, routes, EC2 and internet access.',
+  },
+  {
+    number: 3,
+    title: 'Run a Real Server',
+    sub: 'Understand EC2 properly and automate what runs on it.',
+  },
+  {
+    number: 4,
+    title: 'Build Private Infrastructure',
+    sub: 'Move workloads away from direct internet access.',
+  },
+  {
+    number: 5,
+    title: 'NAT and Network Architecture',
+    sub: 'Give private infrastructure controlled outbound connectivity.',
+  },
+  {
+    number: 6,
+    title: 'Build a Highly Available Application',
+    sub: 'Spread across Availability Zones and add load balancing.',
+  },
+  {
+    number: 7,
+    title: 'Automate Scaling',
+    sub: 'Replace individual servers with scalable, self-healing infrastructure.',
+  },
+  {
+    number: 8,
+    title: 'Secure the Application',
+    sub: 'Add DNS, HTTPS, certificates and web application protection.',
+  },
+  {
+    number: 9,
+    title: 'Observe and Troubleshoot It',
+    sub: 'Use metrics, logs and network visibility to understand failures.',
+  },
+  {
+    number: 10,
+    title: 'Infrastructure as Code',
+    sub: 'Rebuild the architecture using repeatable CloudFormation templates.',
+  },
+  {
+    number: 11,
+    title: 'The Final Challenge',
+    sub: 'Build the complete architecture from scratch.',
+  },
 ];
 
 const all = (await getCollection('labs', ({ data }) => !data.draft))
-  .sort((a, b) => a.data.number - b.data.number);
+  .sort((a, b) => {
+    if (a.data.phase !== b.data.phase) {
+      return a.data.phase - b.data.phase;
+    }
 
-const byPhase = (p) => all.filter((l) => l.data.phase === p);
-const typeTag = { lab: 'lab', concept: 'concept', challenge: 'challenge' };
+    return (
+      (a.data.order ?? a.data.number ?? 0) -
+      (b.data.order ?? b.data.number ?? 0)
+    );
+  });
+
+const byPhase = (phaseNumber) =>
+  all.filter((lab) => lab.data.phase === phaseNumber);
+
+const typeTag = {
+  lab: 'lab',
+  concept: 'concept',
+  challenge: 'challenge',
+};
+
+const labLabel = (lab) => {
+  if (lab.data.order !== undefined) {
+    return `${lab.data.phase}.${lab.data.order}`;
+  }
+
+  return String(lab.data.number ?? '');
+};
 ---
+
 <Base title="Roadmap, inthelab" path="/roadmap">
   <div class="rm-head wrap">
     <div class="kicker">// the roadmap</div>
+
     <h2>A roadmap for learning AWS by doing</h2>
-    <p>The roadmap connects the AWS concepts that matter, in an order that makes sense. Start at the top and work your way to the bottom.</p>
+
+    <p>
+      The roadmap connects the AWS concepts that matter, in an order that
+      makes sense. Start at the top and work your way to the bottom.
+    </p>
   </div>
 
   <div class="rm wrap">
-    {phases.map((ph) => {
-      const labs = byPhase(ph.n);
-      const isFirst = ph.n === 1;
-      return (
-        <div class={`phase ${isFirst ? 'open' : ''}`}>
-          <button class="ph-head" onclick="this.parentElement.classList.toggle('open')">
-            <div class="ph-idx">{ph.n}</div>
-            <div class="ph-tw"><h3>{ph.title}</h3><div class="ph-sub">{ph.sub}</div></div>
-            <div class="ph-count mono">{labs.length} labs</div>
-            <svg class="ph-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="ph-body">
-            <div class="ph-inner">
-              {labs.length === 0 && <div class="empty mono">Labs for this phase are being written.</div>}
-              {labs.map((l) => (
-                <a href={`/labs/${l.id}`} class="lab-row">
-                  <span class="lr-num mono">{String(l.data.number).padStart(2,'0')}</span>
-                  <div class="lr-main">
-                    <div class="lr-title">{l.data.title}</div>
-                    <div class="lr-sub">{l.data.summary}</div>
-                  </div>
-                  <span class={`lr-tag t-${l.data.type}`}>{typeTag[l.data.type]}</span>
-                  <span class="lr-time mono">{l.data.time.replace('~','')}</span>
-                </a>
-              ))}
+    {
+      phases.map((ph) => {
+        const labs = byPhase(ph.number);
+        const isFirst = ph.number === 0;
+
+        return (
+          <div class={`phase ${isFirst ? 'open' : ''}`}>
+            <button
+              class="ph-head"
+              onclick="this.parentElement.classList.toggle('open')"
+            >
+              <div class="ph-idx">{ph.number}</div>
+
+              <div class="ph-tw">
+                <h3>{ph.title}</h3>
+                <div class="ph-sub">{ph.sub}</div>
+              </div>
+
+              <div class="ph-count mono">
+                {labs.length} {labs.length === 1 ? 'lab' : 'labs'}
+              </div>
+
+              <svg
+                class="ph-chev"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            <div class="ph-body">
+              <div class="ph-inner">
+                {
+                  labs.length === 0 && (
+                    <div class="empty mono">
+                      Labs for this phase are being written.
+                    </div>
+                  )
+                }
+
+                {
+                  labs.map((lab) => (
+                    <a href={`/labs/${lab.id}`} class="lab-row">
+                      <span class="lr-num mono">
+                        {labLabel(lab)}
+                      </span>
+
+                      <div class="lr-main">
+                        <div class="lr-title">{lab.data.title}</div>
+                        <div class="lr-sub">{lab.data.summary}</div>
+                      </div>
+
+                      <span class={`lr-tag t-${lab.data.type}`}>
+                        {typeTag[lab.data.type]}
+                      </span>
+
+                      <span class="lr-time mono">
+                        {lab.data.time.replace('~', '')}
+                      </span>
+                    </a>
+                  ))
+                }
+              </div>
             </div>
           </div>
-        </div>
-      );
-    })}
+        );
+      })
+    }
   </div>
 
   <style>
-    .rm-head{padding:50px 0 6px;text-align:center}
-    .rm-head h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
-    .rm-head p{color:var(--ink-dim);font-size:16.5px;max-width:560px;margin:0 auto}
-    .rm{max-width:860px;padding-bottom:66px;display:flex;flex-direction:column;gap:11px;margin-top:28px}
-    .phase{background:var(--canvas-2);border:1px solid var(--line);border-radius:var(--rad-lg);overflow:hidden;box-shadow:var(--sh-sm)}
-    .ph-head{display:flex;align-items:center;gap:14px;padding:16px 19px;cursor:pointer;width:100%;background:none;border:none;font-family:inherit;text-align:left;color:var(--ink)}
-    .ph-head:hover{background:var(--panel)}
-    .ph-idx{width:36px;height:36px;border-radius:9px;background:var(--panel);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:var(--ink-dim);flex:none}
-    .phase.open .ph-idx{background:var(--accent-soft);color:var(--accent)}
-    .ph-tw{flex:1;min-width:0}
-    .ph-tw h3{font-size:17px;margin-bottom:2px}
-    .ph-sub{font-size:13px;color:var(--ink-faint)}
-    .ph-count{font-size:12px;color:var(--ink-faint);flex:none}
-    .ph-chev{color:var(--ink-faint);transition:transform .25s;flex:none}
-    .phase.open .ph-chev{transform:rotate(180deg)}
-    .ph-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-    .phase.open .ph-body{max-height:900px}
-    .ph-inner{padding:2px 19px 17px}
-    .lab-row{display:flex;align-items:center;gap:13px;padding:11px 13px;background:var(--canvas);border:1px solid var(--line);border-radius:10px;margin-top:7px;transition:.13s}
-    [data-theme="dark"] .lab-row{background:var(--panel)}
-    .lab-row:hover{border-color:var(--accent);transform:translateX(3px)}
-    .lr-num{font-size:11px;color:var(--ink-faint);flex:none}
-    .lr-main{flex:1;min-width:0}
-    .lr-title{font-size:14px;font-weight:500}
-    .lr-sub{font-size:12.5px;color:var(--ink-faint);margin-top:1px}
-    .lr-tag{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:2px 7px;border-radius:5px;flex:none}
-    .t-lab{background:var(--accent-soft);color:var(--accent)}
-    .t-concept{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
-    .t-challenge{background:var(--cost-soft);color:var(--cost)}
-    .lr-time{font-size:11px;color:var(--ink-faint);flex:none;width:38px;text-align:right}
-    .empty{font-size:13px;color:var(--ink-faint);padding:12px 4px}
+    .rm-head {
+      padding: 50px 0 6px;
+      text-align: center;
+    }
+
+    .rm-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 12px;
+    }
+
+    .rm-head p {
+      color: var(--ink-dim);
+      font-size: 16.5px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .rm {
+      max-width: 860px;
+      padding-bottom: 66px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-top: 28px;
+    }
+
+    .phase {
+      background: var(--canvas-2);
+      border: 1px solid var(--line);
+      border-radius: var(--rad-lg);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+    }
+
+    .ph-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 19px;
+      cursor: pointer;
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: inherit;
+      text-align: left;
+      color: var(--ink);
+    }
+
+    .ph-head:hover {
+      background: var(--panel);
+    }
+
+    .ph-idx {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink-dim);
+      flex: none;
+    }
+
+    .phase.open .ph-idx {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .ph-tw {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ph-tw h3 {
+      font-size: 17px;
+      margin-bottom: 2px;
+    }
+
+    .ph-sub {
+      font-size: 13px;
+      color: var(--ink-faint);
+    }
+
+    .ph-count {
+      font-size: 12px;
+      color: var(--ink-faint);
+      flex: none;
+    }
+
+    .ph-chev {
+      color: var(--ink-faint);
+      transition: transform 0.25s;
+      flex: none;
+    }
+
+    .phase.open .ph-chev {
+      transform: rotate(180deg);
+    }
+
+    .ph-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .phase.open .ph-body {
+      max-height: 1200px;
+    }
+
+    .ph-inner {
+      padding: 2px 19px 17px;
+    }
+
+    .lab-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 11px 13px;
+      background: var(--canvas);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-top: 7px;
+      transition: 0.13s;
+    }
+
+    [data-theme='dark'] .lab-row {
+      background: var(--panel);
+    }
+
+    .lab-row:hover {
+      border-color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    .lr-num {
+      font-size: 11px;
+      color: var(--ink-faint);
+      flex: none;
+      min-width: 28px;
+    }
+
+    .lr-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lr-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .lr-sub {
+      font-size: 12.5px;
+      color: var(--ink-faint);
+      margin-top: 1px;
+    }
+
+    .lr-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      flex: none;
+    }
+
+    .t-lab {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .t-concept {
+      background: color-mix(in srgb, var(--ok) 15%, transparent);
+      color: var(--ok);
+    }
+
+    .t-challenge {
+      background: var(--cost-soft);
+      color: var(--cost);
+    }
+
+    .lr-time {
+      font-size: 11px;
+      color: var(--ink-faint);
+      flex: none;
+      width: 38px;
+      text-align: right;
+    }
+
+    .empty {
+      font-size: 13px;
+      color: var(--ink-faint);
+      padding: 12px 4px;
+    }
+
+    @media (max-width: 650px) {
+      .ph-head {
+        padding: 14px;
+      }
+
+      .ph-sub {
+        display: none;
+      }
+
+      .ph-count {
+        display: none;
+      }
+
+      .ph-inner {
+        padding: 2px 12px 13px;
+      }
+
+      .lab-row {
+        gap: 9px;
+        padding: 10px;
+      }
+
+      .lr-sub {
+        display: none;
+      }
+
+      .lr-time {
+        display: none;
+      }
+    }
   </style>
 </Base>
