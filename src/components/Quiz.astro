@@ -1,0 +1,108 @@
+---
+// End-of-lab recap quiz. Takes the `questions` array from a lab's frontmatter.
+// Behaviour: pick an answer -> if wrong, show a hint and let them retry ->
+// after a second wrong try (or on correct), reveal the full explanation.
+const { questions = [] } = Astro.props;
+const kindLabel = { recall: 'Recall', cause: 'Cause & effect', predict: 'Predict' };
+---
+{questions.length > 0 && (
+  <section class="quiz">
+    <h2 class="quiz-title">Check yourself</h2>
+    <p class="quiz-sub">Three quick questions on what you just did. Wrong answers give a hint first, then explain.</p>
+
+    {questions.map((item, qi) => (
+      <div class="q" data-correct={item.correct} data-tries="0">
+        <div class="q-head">
+          <span class={`q-kind k-${item.kind}`}>{kindLabel[item.kind]}</span>
+          <span class="q-num mono">Q{qi + 1}</span>
+        </div>
+        <p class="q-text" set:html={item.q} />
+        <div class="q-options">
+          {item.options.map((opt, oi) => (
+            <button class="q-opt" data-i={oi} set:html={opt} />
+          ))}
+        </div>
+        <div class="q-hint" hidden><b>Hint:</b> <span set:html={item.hint} /></div>
+        <div class="q-explain" hidden>
+          <div class="q-verdict"></div>
+          <p set:html={item.explain} />
+        </div>
+      </div>
+    ))}
+  </section>
+)}
+
+<style>
+.quiz{margin:44px 0 0;padding-top:28px;border-top:1px solid var(--line)}
+.quiz-title{font-size:22px;margin-bottom:6px}
+.quiz-sub{color:var(--ink-dim);font-size:14.5px;margin-bottom:22px}
+.q{background:var(--canvas-2);border:1px solid var(--line);border-radius:var(--rad);padding:20px;margin-bottom:14px;box-shadow:var(--sh-sm)}
+.q-head{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.q-kind{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:3px 8px;border-radius:6px;background:var(--panel-2);color:var(--ink-dim)}
+.k-recall{background:var(--accent-soft);color:var(--accent)}
+.k-cause{background:color-mix(in srgb,var(--amber) 16%,transparent);color:var(--amber)}
+.k-predict{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
+.q-num{margin-left:auto;font-size:11px;color:var(--ink-faint)}
+.q-text{font-size:15.5px;font-weight:500;margin-bottom:14px;line-height:1.5}
+.q-options{display:flex;flex-direction:column;gap:8px}
+.q-opt{text-align:left;background:var(--canvas);border:1px solid var(--line);border-radius:9px;padding:11px 14px;font-family:inherit;font-size:14px;color:var(--ink);cursor:pointer;transition:.13s}
+[data-theme="dark"] .q-opt{background:var(--panel)}
+.q-opt:hover:not(:disabled){border-color:var(--accent)}
+.q-opt:disabled{cursor:default}
+.q-opt.correct{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,transparent)}
+.q-opt.wrong{border-color:var(--cost);background:color-mix(in srgb,var(--cost) 8%,transparent)}
+.q-hint{margin-top:12px;background:color-mix(in srgb,var(--amber) 9%,transparent);border:1px solid color-mix(in srgb,var(--amber) 28%,transparent);border-radius:9px;padding:11px 14px;font-size:13.5px;color:var(--ink-dim)}
+.q-hint b{color:var(--amber)}
+.q-explain{margin-top:12px;background:var(--panel);border:1px solid var(--line-2);border-radius:9px;padding:13px 15px;font-size:13.5px;color:var(--ink-dim);line-height:1.55}
+.q-verdict{font-weight:600;margin-bottom:5px}
+.q-verdict.right{color:var(--ok)}
+.q-verdict.revealed{color:var(--cost)}
+</style>
+
+<script>
+  document.querySelectorAll('.q').forEach((q) => {
+    const correct = Number(q.dataset.correct);
+    const opts = q.querySelectorAll('.q-opt');
+    const hintEl = q.querySelector('.q-hint');
+    const explainEl = q.querySelector('.q-explain');
+    const verdict = q.querySelector('.q-verdict');
+
+    opts.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        const i = Number(opt.dataset.i);
+        let tries = Number(q.dataset.tries);
+
+        if (i === correct) {
+          opt.classList.add('correct');
+          opts.forEach((o) => (o.disabled = true));
+          hintEl?.setAttribute('hidden', '');
+          verdict.textContent = 'Correct';
+          verdict.classList.add('right');
+          explainEl?.removeAttribute('hidden');
+          return;
+        }
+
+        // wrong answer
+        tries += 1;
+        q.dataset.tries = String(tries);
+        opt.classList.add('wrong');
+        opt.disabled = true;
+
+        if (tries === 1) {
+          // first miss: show a hint, let them retry
+          hintEl?.removeAttribute('hidden');
+        } else {
+          // second miss: reveal correct answer + explanation
+          opts.forEach((o) => {
+            o.disabled = true;
+            if (Number(o.dataset.i) === correct) o.classList.add('correct');
+          });
+          hintEl?.setAttribute('hidden', '');
+          verdict.textContent = 'Here’s the answer';
+          verdict.classList.add('revealed');
+          explainEl?.removeAttribute('hidden');
+        }
+      });
+    });
+  });
+</script>

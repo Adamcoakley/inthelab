@@ -1,0 +1,56 @@
+/* ============================================================
+   inthelab design tokens
+   Ink & Paper (light, default) + Graphite (dark) themes.
+   UI is restrained/professional. Diagrams carry the vivid look.
+   ============================================================ */
+:root, [data-theme="light"]{
+  --canvas:#FFFFFF; --canvas-2:#FFFFFF; --panel:#F6F7F9; --panel-2:#EEF0F3;
+  --line:#E5E7EB; --line-2:#EDEEF1;
+  --ink:#16181D; --ink-dim:#5A606B; --ink-faint:#8B909B;
+  --accent:#3B62D4; --accent-soft:#EAEFFC;
+  --cost:#C43A66; --cost-soft:#FBEDF1;
+  --ok:#2E9E5B; --amber:#B4791E;
+  --sh-sm:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
+  --sh:0 1px 2px rgba(16,24,40,.04),0 4px 12px rgba(16,24,40,.05);
+  --rad:12px; --rad-lg:16px;
+}
+[data-theme="dark"]{
+  --canvas:#17181B; --canvas-2:#1E2024; --panel:#26282E; --panel-2:#2C2F35;
+  --line:#33363D; --line-2:#2C2F35;
+  --ink:#EDEEF0; --ink-dim:#A0A4AD; --ink-faint:#6B7079;
+  --accent:#6E96F2; --accent-soft:#232A3B;
+  --cost:#E7789A; --cost-soft:#2B1F26;
+  --ok:#4ADE80; --amber:#E0A83C;
+  --sh-sm:none; --sh:none;
+}
+/* diagram palette, vivid, shared, used only inside .diagram panels */
+:root{ --d-flow:#22C7B8; --d-node:#F5A524; --d-struct:#8B7BF0; --d-add:#34D399; --d-line:#3D5170; --d-ink:#8FA0BD; }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behaviour:smooth}
+body{
+  background:var(--canvas);color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  transition:background .2s,color .2s;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-weight:600;line-height:1.18;letter-spacing:-.015em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition:none!important}}
+
+/* shared building blocks reused across pages */
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent);margin-bottom:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);color:var(--ink-dim);font-size:13px;padding:6px 13px;border-radius:100px}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.btn-primary{background:var(--accent);color:#fff;font-weight:600;font-size:15.5px;border:none;border-radius:11px;padding:14px 24px;cursor:pointer;font-family:inherit;transition:.14s;box-shadow:var(--sh-sm);display:inline-block}
+.btn-primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-ghost{background:var(--canvas-2);color:var(--ink);font-weight:500;font-size:15.5px;border:1px solid var(--line);border-radius:11px;padding:14px 22px;cursor:pointer;font-family:inherit;transition:.14s;display:inline-block}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* the one vivid element: diagram panels (same in both themes) */
+.diagram{background:#0C1220;border:1px solid #1B2740;border-radius:var(--rad);padding:20px;position:relative;overflow:hidden;margin:18px 0}
+.diagram::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#17233A 1px,transparent 1px),linear-gradient(90deg,#17233A 1px,transparent 1px);background-size:26px 26px;opacity:.55;-webkit-mask-image:radial-gradient(ellipse 72% 82% at 50% 42%,#000,transparent);mask-image:radial-gradient(ellipse 72% 82% at 50% 42%,#000,transparent)}
+.diagram svg{width:100%;height:auto;display:block;position:relative;z-index:1}
+.diagram .dcap{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#5B7290;text-align:center;margin-top:12px;position:relative;z-index:1}

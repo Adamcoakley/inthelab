@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+*.log
+.DS_Store
+# local test artifacts
+shot_*.py
+site_*.png
+
+# personal notes, never committed
+notes/

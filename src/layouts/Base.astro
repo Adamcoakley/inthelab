@@ -1,0 +1,93 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+const { title = 'inthelab, Learn AWS by using it', path = '' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- set theme before paint to avoid a flash -->
+  <script is:inline>
+    (function(){
+      try{
+        var t = localStorage.getItem('bp_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
+    })();
+  </script>
+</head>
+<body>
+  <Nav path={path} />
+  <slot />
+
+  <footer>
+    <div class="foot-inner">
+      <span class="mono">inthelab · hands-on AWS labs</span>
+      <span style="margin-left:auto" class="mono" data-personalize set:html="signed in as: {{ns}}"></span>
+    </div>
+  </footer>
+
+  <style>
+    footer{border-top:1px solid var(--line);padding:26px 0;margin-top:40px}
+    .foot-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;gap:16px;color:var(--ink-faint);font-size:13px}
+  </style>
+
+  <!-- All shared client behaviour: theme toggle, name modal, personalisation -->
+  <script>
+    import { personalizePage, getName, setName, toSlug } from '../lib/personalize.js';
+
+    // --- theme toggle ---
+    const themeBtn = document.getElementById('themeBtn');
+    const iconTheme = document.getElementById('iconTheme');
+    const SUN = '<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+    const MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>';
+    function syncThemeIcon(){
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (iconTheme) iconTheme.innerHTML = dark ? SUN : MOON;
+    }
+    syncThemeIcon();
+    themeBtn?.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('bp_theme', next); } catch {}
+      syncThemeIcon();
+    });
+
+    // --- name modal ---
+    const modal = document.getElementById('nameModal');
+    const input = document.getElementById('nameInput');
+    const preview = document.getElementById('namePreview');
+    document.getElementById('nameChip')?.addEventListener('click', () => {
+      if (input) input.value = getName();
+      if (preview && input) preview.textContent = (toSlug(input.value) || 'adam') + '-vpc';
+      modal?.removeAttribute('hidden');
+      input?.focus();
+    });
+    input?.addEventListener('input', () => {
+      if (preview) preview.textContent = (toSlug(input.value) || 'adam') + '-vpc';
+    });
+    function closeModal(){ modal?.setAttribute('hidden',''); }
+    document.getElementById('nameCancel')?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.getElementById('nameSave')?.addEventListener('click', () => {
+      setName((input?.value || '').trim());
+      personalizePage();
+      closeModal();
+    });
+    input?.addEventListener('keydown', (e) => { if (e.key === 'Enter') document.getElementById('nameSave')?.click(); });
+
+    // --- run personalisation on load ---
+    personalizePage();
+    // if no name set yet, gently prompt once
+    if (!getName()) { setTimeout(() => document.getElementById('nameChip')?.click(), 400); }
+  </script>
+</body>
+</html>

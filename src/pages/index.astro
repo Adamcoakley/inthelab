@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="inthelab, Learn AWS by using it" path="/">
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        
+        <h1>Learn AWS by actually using it.</h1>
+        <p class="lede">Real labs where you build things, run into the same problems everyone does, and work out why.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/roadmap">Start the roadmap</a>
+          <a class="btn-ghost" href="/labs/08-launch-first-ec2">See a sample lab</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="n">49</div><div class="l">hands-on labs</div></div>
+          <div><div class="n">7</div><div class="l">phases, beginner to production</div></div>
+          <div><div class="n">100%</div><div class="l">self-paced, in your own account</div></div>
+        </div>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 460 296">
+          <defs><filter id="hg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <rect x="18" y="18" width="424" height="262" rx="13" fill="none" stroke="#22345080" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <text x="30" y="38" fill="#5B7290" font-family="JetBrains Mono" font-size="11" data-personalize set:html="{{ns}}-vpc 10.0.0.0/16"></text>
+          <rect x="40" y="52" width="216" height="210" rx="11" fill="rgba(245,165,36,.05)" stroke="#F5A52466" stroke-width="1.3"/>
+          <text x="52" y="72" fill="#F5A524" font-family="JetBrains Mono" font-size="10.5">private subnet</text>
+          <g filter="url(#hg)"><rect x="86" y="112" width="124" height="76" rx="12" fill="#0C1220" stroke="#F5A524" stroke-width="1.7"/><rect x="104" y="130" width="88" height="7" rx="3.5" fill="#F5A524" opacity=".5"/><rect x="104" y="144" width="60" height="6" rx="3" fill="#22345066"/><rect x="104" y="156" width="74" height="6" rx="3" fill="#22345066"/><text x="148" y="180" fill="#8FA0BD" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">EC2 instance</text></g>
+          <g filter="url(#hg)"><ellipse cx="378" cy="122" rx="44" ry="29" fill="#0C1220" stroke="#2D5BA8" stroke-width="1.5"/><text x="378" y="118" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">Internet</text><text x="378" y="132" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">(updates)</text></g>
+          <path d="M210 150 L300 150 L300 122 L332 122" fill="none" stroke="#3D5170" stroke-width="2" stroke-dasharray="6 5"/>
+          <circle id="packet" r="5.5" fill="#22C7B8" opacity="0" filter="url(#hg)"/>
+          <g id="failMark" opacity="0" filter="url(#hg)"><circle cx="300" cy="150" r="14" fill="#0C1220" stroke="#F26D9C" stroke-width="2"/><path d="M294 144 L306 156 M306 144 L294 156" stroke="#F26D9C" stroke-width="2.3" stroke-linecap="round"/></g>
+        </svg>
+        <div class="dcap" id="dcap">tries to reach the internet, and hits a wall</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-sec wrap">
+    <div class="sec-head">
+      <div class="kicker">// how the labs work</div>
+      <h2>Build it, break it, understand it</h2>
+      <p>Most tutorials hand you a finished setup and explain the parts. You copy it, it works, you forget it. We do it the other way round.</p>
+    </div>
+    <div class="how">
+      <div class="how-step"><div class="hs-k mono">first</div><h3>You build something</h3><p>Follow clear steps to set up a real resource. A server, a network, a database. Nothing simulated.</p></div>
+      <div class="how-step"><div class="hs-k mono">then</div><h3 style="color:var(--amber)">It doesn't work</h3><p>You try something normal and hit a wall. The same wall most people hit their first time. On purpose.</p></div>
+      <div class="how-step"><div class="hs-k mono">so</div><h3 style="color:var(--accent)">You find the fix</h3><p>Now the tool that solves it makes sense, because you felt the problem first. That's the part that sticks.</p></div>
+    </div>
+  </section>
+
+  <style>
+    .hero{padding:70px 0 44px}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
+    .hero h1{font-size:clamp(38px,5.2vw,60px);font-weight:700;margin-bottom:20px;letter-spacing:-.03em;line-height:1.05}
+    .lede{font-size:18.5px;color:var(--ink-dim);max-width:40ch;margin-bottom:28px;line-height:1.55}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:28px;margin-top:40px}
+    .hero-stats .n{font-size:27px;font-weight:700}
+    .hero-stats .l{font-size:13px;color:var(--ink-faint)}
+    .how-sec{padding:56px 0}
+    .sec-head{text-align:center;max-width:600px;margin:0 auto 44px}
+    .sec-head h2{font-size:clamp(27px,3.4vw,38px);margin-bottom:13px}
+    .sec-head p{color:var(--ink-dim);font-size:16.5px}
+    .sec-head .kicker{text-align:center}
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--canvas-2);border:1px solid var(--line);border-radius:var(--rad-lg);overflow:hidden;box-shadow:var(--sh)}
+    .how-step{padding:26px;border-right:1px solid var(--line)}
+    .how-step:last-child{border-right:none}
+    .hs-k{font-size:12px;color:var(--ink-faint);margin-bottom:11px}
+    .how-step h3{font-size:18.5px;margin-bottom:8px}
+    .how-step p{color:var(--ink-dim);font-size:14.5px}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.diagram{order:-1}.how{grid-template-columns:1fr}.how-step{border-right:none;border-bottom:1px solid var(--line)}}
+  </style>
+
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const pkt = document.getElementById('packet');
+      const fail = document.getElementById('failMark');
+      const cap = document.getElementById('dcap');
+      if (pkt && fail && cap) {
+        const start = {x:210,y:150}, wall = {x:300,y:150};
+        let t = 0, phase = 'move';
+        const frame = () => {
+          if (phase === 'move') { t += 0.017; pkt.setAttribute('cx', start.x+(wall.x-start.x)*t); pkt.setAttribute('cy',150); pkt.setAttribute('opacity',1);
+            if (t>=1){ phase='fail'; t=0; fail.setAttribute('opacity','1'); pkt.setAttribute('opacity','0'); cap.textContent='blocked, no route to the internet'; cap.style.color='#F26D9C'; } }
+          else if (phase === 'fail') { t += 0.011; if (t>=1){ phase='reset'; t=0; } }
+          else { t += 0.02; fail.setAttribute('opacity', String(1-t)); if (t>=1){ phase='move'; t=0; fail.setAttribute('opacity','0'); cap.textContent='tries to reach the internet, and hits a wall'; cap.style.color='#5B7290'; } }
+          requestAnimationFrame(frame);
+        };
+        frame();
+      }
+    }
+  </script>
+</Base>

@@ -1,0 +1,76 @@
+---
+// Shared top navigation. Appears on every page via the Base layout.
+const { path = '' } = Astro.props;
+const links = [
+  { href: '/',        label: 'Home' },
+  { href: '/roadmap', label: 'Roadmap' },
+];
+---
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="inthelab home">
+      <span class="wm"><span class="wm-a">inthe</span><span class="wm-b">lab</span></span>
+      <svg class="logo-mark" viewBox="0 0 28 32" fill="none" aria-hidden="true">
+        <path d="M11 5 L11 14 L4.5 27 A2.5 2.5 0 0 0 6.7 30.5 L21.3 30.5 A2.5 2.5 0 0 0 23.5 27 L17 14 L17 5" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/>
+        <line x1="8.8" y1="5" x2="19.2" y2="5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        <path d="M8 22.5 L20 22.5 L23.5 27 A2.5 2.5 0 0 1 21.3 30.5 L6.7 30.5 A2.5 2.5 0 0 1 4.5 27 Z" fill="var(--accent)"/>
+      </svg>
+    </a>
+    <div class="nav-links">
+      {links.map((l) => (
+        <a href={l.href} class={path === l.href ? 'active' : ''}>{l.label}</a>
+      ))}
+    </div>
+    <div class="nav-right">
+      <button class="name-chip" id="nameChip" title="Set your name for resource naming">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <span class="mono">name: <b data-name-display>not set</b></span>
+      </button>
+      <button class="theme-btn" id="themeBtn" title="Toggle light / dark">
+        <svg id="iconTheme" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Name dialogue (hidden until the chip is clicked) -->
+<div class="name-modal" id="nameModal" hidden>
+  <div class="name-card">
+    <h3>What's your name?</h3>
+    <p>Used to name your AWS resources so they don't clash with other learners. You'll see things like <span class="mono" id="namePreview">adam-vpc</span>. Stored only in this browser.</p>
+    <input type="text" id="nameInput" placeholder="e.g. Adam" autocomplete="given-name" />
+    <div class="name-actions">
+      <button class="btn-ghost" id="nameCancel">Cancel</button>
+      <button class="btn-primary" id="nameSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<style>
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--canvas) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:22px}
+.logo{display:flex;align-items:center;gap:9px}
+.logo .wm{font-weight:700;font-size:19px;letter-spacing:-.03em;line-height:1}
+.logo .wm-a{color:var(--ink)}
+.logo .wm-b{color:var(--accent)}
+.logo-mark{width:19px;height:22px;flex:none;color:var(--ink)}
+.nav-links{display:flex;gap:2px;margin-left:4px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim);padding:8px 12px;border-radius:8px;transition:.14s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a.active{color:var(--accent);background:var(--accent-soft)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.name-chip{display:flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer;color:var(--ink-dim);font-family:inherit;font-size:12.5px;transition:.14s}
+.name-chip:hover{border-color:var(--accent);color:var(--ink)}
+.name-chip b{color:var(--accent)}
+.theme-btn{width:34px;height:34px;border-radius:9px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink-dim);transition:.14s}
+.theme-btn:hover{color:var(--ink);border-color:var(--accent)}
+.name-modal{position:fixed;inset:0;z-index:100;background:rgba(10,12,20,.5);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px}
+.name-modal[hidden]{display:none!important}
+.name-card{background:var(--canvas-2);border:1px solid var(--line);border-radius:var(--rad-lg);padding:26px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.name-card h3{font-size:20px;margin-bottom:8px}
+.name-card p{font-size:14px;color:var(--ink-dim);margin-bottom:16px;line-height:1.5}
+.name-card input{width:100%;background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:15px;color:var(--ink);outline:none;transition:.14s}
+.name-card input:focus{border-color:var(--accent)}
+.name-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+@media(max-width:560px){.nav-links{display:none}.name-chip span{display:none}.name-chip{padding:8px}}
+</style>
