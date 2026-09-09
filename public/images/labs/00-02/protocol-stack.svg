@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 250">
+<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
+<rect x="18" y="72" width="116" height="86" rx="6" fill="#141E2C" stroke="#F5A524" stroke-width="1.6"/>
+<circle cx="32" cy="82" r="3" fill="#3D5170"/>
+<circle cx="44" cy="82" r="3" fill="#3D5170"/>
+<circle cx="56" cy="82" r="3" fill="#3D5170"/>
+<line x1="18" y1="92" x2="134" y2="92" stroke="#F5A524" stroke-width="1.2" opacity=".5"/>
+<rect x="30" y="104" width="92" height="4" rx="2" fill="#3D5170"/>
+<rect x="30" y="118" width="70" height="4" rx="2" fill="#3D5170"/>
+<rect x="30" y="132" width="84" height="4" rx="2" fill="#3D5170"/>
+<text x="76" y="176" fill="#F5A524" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">your browser</text>
+<line x1="134" y1="115" x2="158" y2="115" stroke="#22C7B8" stroke-width="1.5"/>
+<polygon points="158,110 168,115 158,120" fill="#22C7B8"/>
+<rect x="168" y="40" width="292" height="150" rx="9" fill="#0A1220" stroke="#8B7BF0" stroke-width="1.8"/>
+<text x="186" y="62" fill="#8B7BF0" font-family="JetBrains Mono" font-size="12">IP</text>
+<text x="212" y="62" fill="#5B7290" font-family="JetBrains Mono" font-size="9">which machine to send it to</text>
+<rect x="188" y="74" width="252" height="100" rx="7" fill="#0C1220" stroke="#22C7B8" stroke-width="1.6"/>
+<text x="204" y="96" fill="#22C7B8" font-family="JetBrains Mono" font-size="12">TCP</text>
+<text x="240" y="96" fill="#5B7290" font-family="JetBrains Mono" font-size="9">in order, nothing lost</text>
+<rect x="208" y="108" width="212" height="52" rx="6" fill="#141E2C" stroke="#F5A524" stroke-width="1.6"/>
+<text x="224" y="128" fill="#F5A524" font-family="JetBrains Mono" font-size="12">HTTP</text>
+<text x="266" y="128" fill="#5B7290" font-family="JetBrains Mono" font-size="9">what you actually asked for</text>
+<text x="224" y="148" fill="#8FA0BD" font-family="JetBrains Mono" font-size="10.5">GET /index.html</text>
+<line x1="460" y1="115" x2="484" y2="115" stroke="#22C7B8" stroke-width="1.5"/>
+<polygon points="484,110 494,115 484,120" fill="#22C7B8"/>
+<path d="M498 72 L514 60 L592 60 L576 72 Z" fill="#1B2738" stroke="#22C7B8" stroke-width="1.3" stroke-linejoin="round"/>
+<path d="M576 72 L592 60 L592 160 L576 172 Z" fill="#161F2D" stroke="#22C7B8" stroke-width="1.3" stroke-linejoin="round"/>
+<rect x="498" y="72" width="78" height="100" rx="3" fill="#141E2C" stroke="#22C7B8" stroke-width="1.6"/>
+<rect x="508" y="84" width="58" height="16" rx="2" fill="#0A1220" stroke="#2D3D52"/>
+<rect x="508" y="106" width="58" height="16" rx="2" fill="#0A1220" stroke="#2D3D52"/>
+<rect x="508" y="128" width="58" height="16" rx="2" fill="#0A1220" stroke="#2D3D52"/>
+<circle cx="514" cy="158" r="3" fill="#34D399"/>
+<text x="537" y="192" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">the server</text>
+<text x="310" y="222" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">HTTPS is this same request, encrypted</text>
+</svg>

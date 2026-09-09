@@ -40,7 +40,7 @@ questions:
     explain: "AWS secures the building, the hardware and the virtualisation layer, everything up to where your virtual machine begins. The operating system inside it, and everything you install on it, is yours. This split is the Shared Responsibility Model, and misunderstanding it causes a lot of real breaches."
 ---
 
-**What you'll learn:** What a server actually is, why renting one changes everything, and how AWS is physically laid out. Nothing to build here, but it is the mental model the rest of the course sits on.
+**What you'll learn:** What a server actually is, why renting one changes everything, and how AWS is physically laid out. 
 
 ---
 
@@ -54,14 +54,12 @@ Strip away the word "cloud" for a moment. A server is a computer, the same as th
     alt="A server with CPU, memory, disk and network components labelled."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
-  <div class="dcap">a server, and the four things it is made of</div>
+  <div class="dcap">a server and four of it's core parts</div>
 </div>
-
-Your application is not mysterious either. It is a **process**: a program the operating system is running, using some of that CPU and memory.
 
 ## Buying versus renting
 
-If you own physical servers, you have to buy for your busiest moment. Black Friday, results day, the morning you get written about. So you buy for the peak, and most of the time most of it sits idle, already paid for.
+If you own physical servers, you have to buy for your busiest moment: Black Friday, a concert ticket release, a big product launch. Most days, you won't need anywhere near that much capacity. The problem is that you still own and pay for all that capacity, even when it's not being used.
 
 <div class="diagram">
   <img
@@ -72,7 +70,7 @@ If you own physical servers, you have to buy for your busiest moment. Black Frid
   <div class="dcap">every shaded gap is capacity you paid for and did not use</div>
 </div>
 
-<div class="callout why"><b>This is the problem the cloud solves first.</b> Not "servers on the internet", but the mismatch between what you own and what you need right now. If you can add capacity in seconds and give it back when you are done, you stop paying for the gaps. That is <b>elasticity</b>, and you will build it yourself in Phase 7.</div>
+<div class="callout why"><b>This is the problem the cloud solves first.</b> Instead of buying enough servers for your busiest day, you can add capacity when demand rises and give it back when demand falls. </div>
 
 ## How one computer becomes many
 
@@ -87,11 +85,13 @@ If AWS had to hand you a whole physical machine every time you asked for a small
   <div class="dcap">one real machine underneath, three independent computers on top</div>
 </div>
 
-When you launch an EC2 instance later, this is what you are getting: a slice of a machine in a building you will never visit, billed by the second.
+When you launch an EC2 instance later, this is what you are getting: a slice of a machine in a building you will never visit.
 
 ## How much do you want to manage?
 
-Renting compute is not all or nothing. The more AWS manages, the less work you do, and the less control you have.
+Running an application takes more than just your code. Someone has to look after the physical server, the operating system, the software your application needs, and the application itself.
+
+You can manage all of that yourself, or let a cloud provider manage some of it for you. The further right you go below, the more the provider takes care of.
 
 <div class="diagram">
   <img
@@ -102,9 +102,9 @@ Renting compute is not all or nothing. The more AWS manages, the less work you d
   <div class="dcap">the further right, the less you look after and the less you control</div>
 </div>
 
-This course lives in the middle. You rent virtual machines and stay responsible for what runs on them, because that is where you learn how everything fits together.
+This course starts with virtual machines (EC2). AWS looks after the physical hardware, while you manage the operating system and what runs on it. 
 
-## Where your server physically is
+## Where your server physically lives
 
 "The cloud" is an unhelpful word. It suggests something floating and placeless. It is the opposite: buildings, with security guards, full of racks of machines, in specific countries.
 
@@ -117,7 +117,9 @@ This course lives in the middle. You rent virtual machines and stay responsible 
   <div class="dcap">a Region is an area containing several separate data centres</div>
 </div>
 
-<div class="callout why"><b>Why two buildings matter.</b> A Region is a geographic area, like Ireland. Inside it are several Availability Zones, each a physically separate data centre with its own power, far enough apart that a fire or flood in one does not touch the others. Run in only one Zone and a bad day there is a bad day for you. Spreading across two is how you survive it, and you will do that in Phase 6.</div>
+When you create a resource in AWS, you choose a Region - a part of the world where AWS has infrastructure, such as Ireland.
+
+Each Region is split into several Availability Zones (AZs). These are separate locations within the Region, designed so that a problem in one does not necessarily affect the others.
 
 ## So who secures what?
 
