@@ -4,7 +4,6 @@ order: 1
 title: What actually is "the cloud"?
 type: concept
 time: ~15 min
-cost: Free
 summary: Servers are just computers. Everything else follows from that one idea.
 draft: false
 questions:

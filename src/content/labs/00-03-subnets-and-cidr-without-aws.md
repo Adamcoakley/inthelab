@@ -3,331 +3,158 @@ phase: 0
 order: 3
 title: Subnets and CIDR without AWS
 type: concept
-time: ~20 min
+time: ~15 min
 cost: Free
-summary: Learn how IP addresses are divided into networks, and how CIDR controls the size of those networks.
+summary: How an IP address identifies a network and a device, what /24 means, and how one network becomes several smaller ones.
 draft: false
 questions:
   - kind: recall
     q: "What does the <code>/24</code> in <code>192.168.1.0/24</code> tell you?"
     options:
-      - "The network contains exactly 24 devices"
+      - "The network contains 24 devices"
       - "The first 24 bits identify the network"
       - "Port 24 is open"
-      - "The address is public"
+      - "The address is private"
     correct: 1
-    hint: "The number after the slash describes where the network part ends."
-    explain: "CIDR tells you how many bits belong to the network portion of an IP address. In a /24, the first 24 bits identify the network and the remaining 8 bits are available for addresses inside it."
+    hint: "An IPv4 address contains 32 bits in total."
+    explain: "The /24 says that the first 24 of the address's 32 bits identify the network. That leaves 8 bits for addresses inside that network."
 
   - kind: cause
     q: "Why does a <code>/26</code> contain fewer addresses than a <code>/24</code>?"
     options:
       - "Because /26 is an older IP format"
-      - "Because more bits are used to identify the network, leaving fewer bits for addresses inside it"
+      - "Because more bits identify the network, leaving fewer bits for addresses inside it"
       - "Because /26 blocks public internet access"
       - "Because /26 only works with private IP addresses"
     correct: 1
-    hint: "There are only 32 bits in an IPv4 address."
-    explain: "IPv4 addresses have 32 bits. A larger CIDR prefix uses more of those bits for the network itself, leaving fewer combinations for addresses inside that network."
+    hint: "There are always 32 bits. If the network uses more of them, what is left?"
+    explain: "A /24 leaves 8 bits for addresses. A /26 leaves only 6. Fewer bits are left for addresses, so the network is smaller."
 
   - kind: predict
-    q: "You split <code>10.0.0.0/24</code> into two equal-sized subnets. What size would each subnet be?"
+    q: "You need a network with room for about 60 addresses. Which is the best fit?"
     options:
-      - "/23"
       - "/24"
       - "/25"
       - "/26"
+      - "/27"
     correct: 2
-    hint: "Splitting one network in half uses one more bit for the network portion."
-    explain: "Adding one bit to the prefix halves the number of addresses. A /24 split into two equal networks becomes two /25 networks."
+    hint: "A /24 has 256 addresses. Each step up halves the size."
+    explain: "A /26 contains 64 addresses. A /27 contains only 32, while /24 and /25 are larger than needed."
 ---
 
-**What you'll learn:** What a subnet actually is, what the number after the slash means, and why `/24`, `/25` and `/26` describe different-sized networks.
+**What you'll learn:** How an IP address identifies a network and a device, what `/24` actually means, and how one network is split into smaller subnets.
 
 ---
 
-## An IP address is only part of the story
+## Every IP address has two parts
 
-You already know an IP address identifies a destination on a network.
+Take this address: `192.168.1.10`
 
-For example:
+Part of it says **which network**. The rest says **which device on that network**.
 
-`192.168.1.10`
+On a home network, every device usually shares the same first three numbers and differs only in the last one:
 
-But there is a missing piece.
+- laptop: `192.168.1.10`
+- phone: `192.168.1.11`
+- printer: `192.168.1.12`
 
-Which part means **the network**, and which part identifies an address **inside that network**?
+So `192.168.1` is the network they all share, and the last number identifies each device on that network. However, the split does not always fall between the third and fourth numbers.
 
-The IP address alone does not tell you.
+## The IP address does not say where the split is
 
-That is what **CIDR** does.
+Here is the problem. Look at `192.168.1.10` on its own. Nothing in it tells you where the network part stops.
 
-<!--
-VISUAL: cidr-boundary.svg
+It could stop after `192.168.1`. It could stop after `192.168`. The IP address alone gives you no way to tell where that split is.
 
-Purpose:
-Show that an IP address needs a boundary between the network part and the address/host part.
+<div class="diagram">
+  <img
+    src="/images/labs/00-03/address-split.svg"
+    alt="The address 192.168.1.10 shown twice, with the boundary between the network part and the device part falling in two different places."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+</div>
 
-Must show:
-- 192.168.1.10
-- A clear visual split for a /24:
-  192.168.1 | 10
-- Left side labelled "network"
-- Right side labelled "address inside the network"
-- /24 shown as the thing defining that boundary
+## CIDR marks the line
 
-Style notes:
-- Same clean technical art direction as the rest of inthelab
-- Minimal text
-- This should make the idea understandable before reading the paragraph below
--->
+The IP address needs something extra to mark the line. That something is a slash and a number, called the **CIDR prefix**, added to the end of an IP address: `192.168.1.0/24`
 
-## CIDR tells us where the boundary is
+It does one job: the `/24` says how much of the address belongs to the network.
 
-You will often see an IP range written like this:
+## Why /24?
 
-`192.168.1.0/24`
+Each of the four numbers in an address counts as 8 bits. You never need to work with bits directly, just remember that each number is worth 8.
 
-The `/24` is called the **CIDR prefix**.
+<div class="diagram">
+  <img
+    src="/images/labs/00-03/cidr-24.svg"
+    alt="192.168.1.0/24 split into four 8-bit numbers, the first three forming the network and the last one left for devices."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">the slash counts bits, not the numbers you can see</div>
+</div>
 
-IPv4 addresses contain **32 bits** in total.
+So `/24` is not "three numbers", it is 24 bits, which happens to be three numbers worth. That is why it is `/24` and not `/3`.
 
-A `/24` means:
+## The part that catches most people
 
-- the first **24 bits** describe the network
-- the remaining **8 bits** are left for addresses inside it
+Imaging you need a network **smaller** than a `/24`. Do you use `/25` or `/23`?
 
-You do not need to become comfortable reading binary yet.
+Most people say `/23`, because 23 is the smaller number. It is the other way round. A `/25` is the smaller network.
 
-For now, think of the slash number as:
+Here is why. Like we explained above, an IP address always has **32 bits**.
 
-> **How much of this address belongs to the network?**
+The slash tells you how many of those bits belong to the **network**. Whatever is left can be used for addresses inside that network.
 
-The bigger the number after the slash, the more specific — and therefore smaller — the network becomes.
+- `/24` → 24 bits for the network, **8 left** → 256 addresses
+- `/25` → 25 bits for the network, **7 left** → 128 addresses
+- `/26` → 26 bits for the network, **6 left** → 64 addresses
 
-<div class="callout why"><b>One useful rule.</b> A larger CIDR number means a smaller network. <code>/26</code> is smaller than <code>/24</code>.</div>
+Each time the slash number goes up by one, the network takes one more bit. That leaves half as many possible addresses.
 
-## What is a subnet?
+So the rule is simple: **bigger slash number, smaller network.**
 
-A **subnet** is simply a network that forms part of a larger network.
+<div class="diagram">
+  <img
+    src="/images/labs/00-03/cidr-size-comparison.svg"
+    alt="Three bars showing /24, /25 and /26, each one half the length of the bar above it."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">every slot the network takes halves what is left</div>
+</div>
 
-Imagine you have one large office.
+## Splitting a network into smaller pieces
 
-You could keep everybody in one huge room.
+Imagine you start with this network: `10.0.0.0/24`
 
-Or you could divide the space into smaller rooms:
+It contains 256 addresses.
 
-- engineering
-- finance
-- support
-- visitors
+You do not have to keep all 256 addresses in one network. You can divide that space into smaller networks.
 
-It is still one building, but each room is its own section.
+If you split the `/24` exactly in half, you get two `/25` networks:
 
-Subnetting does the same thing with an IP address range.
+- `10.0.0.0/25` → first half
+- `10.0.0.128/25` → second half
 
-<!--
-VISUAL: subnet-splitting.svg
+Each one contains 128 IP addresses.
 
-Purpose:
-Make "subnet" feel obvious rather than mathematical.
+Nothing has been added or removed. You have simply taken one large network and divided it into two smaller ones.
 
-Must show:
-- One larger network: 10.0.0.0/24
-- It being divided into two smaller equal networks
-- 10.0.0.0/25
-- 10.0.0.128/25
-- Visually make it clear these two smaller networks together fill the original /24
+<div class="callout why"><b>Those smaller networks are called subnets.</b> A subnet is simply a smaller network created from a larger address range.</div>
 
-Preferred concept:
-One large horizontal address space splitting cleanly into two halves.
+## Why make subnets?
 
-Avoid:
-- Dense binary
-- Lots of calculations
-- Decorative boxes with paragraphs inside them
--->
+Different parts of your infrastructure often need different access. For example:
 
-For example, this network:
+- a **web server** that users need to reach from the internet
+- a **database** that should stay private
 
-`10.0.0.0/24`
-
-can be divided into two equal subnets:
-
-`10.0.0.0/25`
-
-and:
-
-`10.0.0.128/25`
-
-Together, those two `/25` networks cover the same address space as the original `/24`.
-
-## Why does changing the slash change the size?
-
-There are always **32 bits** in an IPv4 address.
-
-If 24 bits describe the network:
-
-`/24`
-
-then 8 bits remain for addresses inside it.
-
-Eight bits can form:
-
-`2^8 = 256`
-
-different combinations.
-
-So a `/24` contains **256 total IPv4 addresses**.
-
-If you move to `/25`, one more bit is used for the network:
-
-`32 - 25 = 7`
-
-Seven remaining bits gives:
-
-`2^7 = 128`
-
-addresses.
-
-And `/26` leaves six bits:
-
-`2^6 = 64`
-
-addresses.
-
-You do not need to memorise the maths. The pattern matters more.
-
-<!--
-VISUAL: cidr-size-comparison.svg
-
-Purpose:
-Show the relationship between prefix size and address count at a glance.
-
-Must show three equal-style rows or bars:
-- /24 → 256 addresses
-- /25 → 128 addresses
-- /26 → 64 addresses
-
-Key visual idea:
-As the slash number goes UP, the available address space goes DOWN.
-
-Nice-to-have:
-Show /24 as one full bar, /25 as half, /26 as quarter.
-
-Keep it clean enough that the learner understands the pattern instantly.
--->
-
-| CIDR | Total addresses |
-|---|---:|
-| `/24` | 256 |
-| `/25` | 128 |
-| `/26` | 64 |
-| `/27` | 32 |
-| `/28` | 16 |
-
-<div class="callout why"><b>You do not need to memorise this table.</b> You need to understand the pattern: every time the prefix increases by one, the address space halves.</div>
-
-## The first and last addresses are special
-
-Take this network:
-
-`192.168.1.0/24`
-
-Its full range runs from:
-
-`192.168.1.0`
-
-to:
-
-`192.168.1.255`
-
-In traditional IPv4 subnetting, the first address identifies the **network itself**:
-
-`192.168.1.0`
-
-and the last address is the **broadcast address**:
-
-`192.168.1.255`
-
-That leaves the addresses between them available for devices.
-
-So although a `/24` contains **256 total addresses**, a traditional subnet has **254 usable host addresses**.
-
-<div class="callout why"><b>AWS will be slightly different.</b> AWS reserves additional addresses inside each subnet. Do not learn those rules yet — when we build an AWS subnet, we will look at exactly what AWS keeps and why.</div>
-
-## Subnets must not overlap
-
-Two separate subnets cannot claim the same address space.
-
-For example, these are cleanly separated:
-
-`10.0.0.0/24`
-
-`10.0.1.0/24`
-
-But if two subnet ranges overlap, the network can no longer make a clear decision about where an address belongs.
-
-That idea matters a lot later when you design VPCs.
-
-<!--
-VISUAL: overlap.svg
-
-Optional visual — only use if it genuinely improves the section.
-
-Purpose:
-Show valid non-overlapping ranges versus two ranges that overlap.
-
-Could show:
-GOOD:
-10.0.0.0/24 | 10.0.1.0/24
-
-BAD:
-Two translucent address-range bars overlapping each other.
-
-Key idea:
-Each subnet needs its own distinct slice of the address space.
-
-If Claude thinks the text already carries this clearly, this visual can be skipped.
--->
-
-## Why make smaller networks at all?
-
-Why not put everything into one enormous network?
-
-Because separating a network gives you control.
-
-Later, you might want:
-
-- internet-facing servers in one subnet
-- private application servers in another
-- databases somewhere even more restricted
-
-Those groups can then have different routes and different security rules.
-
-For now, the important idea is simply:
-
-> **Subnetting lets you divide one address range into smaller networks.**
+Put them in different subnets, and each subnet can have its own **routes and rules**.
 
 ## The mental model to keep
 
-If you see:
+- an IP address has a **network part** and a **device part**
+- **CIDR** marks where one ends and the other begins
+- a **bigger** slash number means a **smaller** network
+- a **subnet** is a network carved out of a bigger one
 
-`10.0.1.0/24`
-
-read it as:
-
-> **A network beginning at `10.0.1.0`, with a `/24` defining its size.**
-
-And remember:
-
-- an **IP address** identifies a destination
-- **CIDR** tells you the network boundary and size
-- a **subnet** is a smaller network carved from a larger address space
-- increasing the CIDR prefix makes the network smaller
-
-You now have enough networking knowledge to understand the next question:
-
-If your destination is **not inside your own subnet**, where does the traffic go next?
-
-That is what **routes** solve.
+You can now look at any address and work out whether it belongs to a given network.

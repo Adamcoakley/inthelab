@@ -31,7 +31,7 @@ questions:
     explain: "The IP identifies the machine; the port identifies the service. If port 80 is not accepting traffic, there may be no web server listening there or a firewall may be blocking it."
 
   - kind: predict
-    q: "You type <code>example.com</code> into a browser. What does DNS do?"
+    q: "You type <code>inthelab.ie</code> into a browser. What does DNS do?"
     options:
       - "It sends you the web page"
       - "It helps your computer find the IP address to connect to"
@@ -115,7 +115,7 @@ When you put the IP address and port together, it looks like this: `203.0.113.10
 - machine IP → `203.0.113.10`
 - port → `443`
 
-You will use IP addresses and ports when configuring **firewalls and Security Groups** to control what traffic is allowed through.
+You will use IP addresses and ports when configuring **firewalls and security groups** to control what traffic is allowed through.
 
 ## Protocols are the rules
 
@@ -157,12 +157,12 @@ Neither is "better" - they solve different problems.
 
 ## DNS turns names into addresses
 
-DNS helps turn that domain names into a destination your computer can use. Humans remember `example.com`  more easily than an IP address.
+DNS helps turn that domain names into a destination your computer can use. Humans remember `inthelab.ie` more easily than an IP address.
 
 <div class="diagram">
   <img
     src="/images/labs/00-02/dns-lookup.svg"
-    alt="A browser asking DNS where example.com is, getting an address back, then connecting to the server directly."
+    alt="A browser asking DNS where inthelab.ie is, getting an address back, then connecting to the server directly."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
   <div class="dcap">DNS hands over the address, then your browser does the rest</div>
@@ -172,7 +172,7 @@ DNS helps turn that domain names into a destination your computer can use. Human
 
 ## Put the whole journey together
 
-When you type `https://example.com`, several things happen in sequence:
+When you type `https://inthelab.ie`, several things happen in sequence:
 
 <div class="diagram">
   <img
@@ -183,7 +183,7 @@ When you type `https://example.com`, several things happen in sequence:
   <div class="dcap">each stop can fail on its own, which is why you check them in order</div>
 </div>
 
-1. Your browser sees the name `example.com`.
+1. Your browser sees the name `inthelab.ie`.
 2. DNS helps it find the destination IP address.
 3. Your computer connects to that machine.
 4. HTTPS normally reaches the service on port `443`.

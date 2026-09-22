@@ -5,294 +5,176 @@ title: Routes
 type: concept
 time: ~15 min
 cost: Free
-summary: Learn how a computer decides where to send traffic when the destination is somewhere else.
+summary: How a computer decides where to send traffic, and what happens when the destination is on another network.
 draft: false
 questions:
   - kind: recall
     q: "What does a <b>route</b> tell a device?"
     options:
       - "Which application should open the traffic"
-      - "Where traffic for a destination should be sent next"
-      - "Which password should be used"
+      - "Where to send traffic for a destination next"
+      - "Which password to use"
       - "How large a subnet is"
     correct: 1
-    hint: "A route is about the next step in a packet's journey."
-    explain: "A route matches a destination network and tells the device where traffic for that destination should go next."
+    hint: "A route is about the next step in the journey."
+    explain: "A route is a rule: for addresses in this range, send the traffic here next."
 
   - kind: cause
-    q: "Your laptop wants to reach a device on its own local subnet. Why does it not need to send that traffic to the default gateway first?"
+    q: "Your laptop sends something to a printer on the same subnet. Why doesn't it go through the router?"
     options:
-      - "Local traffic does not use IP addresses"
-      - "The destination is directly reachable on the same network"
-      - "Routers cannot handle private IP addresses"
-      - "The firewall automatically redirects it"
+      - "Local traffic doesn't use IP addresses"
+      - "The printer is on the same network, so the laptop can reach it directly"
+      - "Routers can't handle private IP addresses"
+      - "The firewall redirects it"
     correct: 1
-    hint: "Think about whether another network has to be crossed."
-    explain: "Devices on the same subnet can communicate directly at the local network layer. A router is needed when traffic must leave that network for another one."
+    hint: "Does the traffic need to leave your network?"
+    explain: "Devices on the same subnet can talk to each other directly. The router is only needed when traffic has to leave for a different network."
 
   - kind: predict
-    q: "A routing table has a route for <code>10.0.0.0/8</code> and a default route for <code>0.0.0.0/0</code>. Traffic is going to <code>10.20.30.40</code>. Which route wins?"
+    q: "A routing table has a route for <code>10.0.0.0/8</code> and a default route <code>0.0.0.0/0</code>. Traffic is going to <code>10.20.30.40</code>. Which route is used?"
     options:
       - "The default route"
       - "The 10.0.0.0/8 route"
-      - "Both routes at the same time"
-      - "Neither route"
+      - "Both at the same time"
+      - "Neither"
     correct: 1
-    hint: "Routers prefer the most specific matching destination."
-    explain: "10.20.30.40 matches both routes, but 10.0.0.0/8 is more specific than 0.0.0.0/0, so that route is chosen."
+    hint: "Both match. Which one is more specific?"
+    explain: "10.20.30.40 fits inside both, but 10.0.0.0/8 is a smaller, more specific range than 0.0.0.0/0, so it wins."
 ---
 
-**What you'll learn:** How devices decide whether a destination is local, when traffic needs a router, and how a routing table chooses the next step.
+**What you'll learn:** How a device decides whether to send traffic directly to another device or through a router.
 
 ---
 
-## You know the destination. Now what?
+## What is routing?
 
-Suppose your laptop wants to send data to:
+Let's say your laptop wants to send a document to a printer on the network. It already knows the destination IP address, now it just needs to figure out how to reach it.
 
-`192.168.1.20`
+So before sending anything, your laptop asks one question: is this destination IP on my own network, or somewhere else?
 
-It already has the destination IP.
+That decision is called **routing**.
 
-But knowing **where** you want to go is not the same as knowing **how to get there**.
-
-The computer has to decide:
-
-> Is that destination on my own network, or do I need to send this somewhere else first?
-
-That decision is routing.
-
-<!--
-VISUAL: local-vs-remote.svg
-
-Purpose:
-Show the first routing decision visually.
-
-Must show:
-- Laptop: 192.168.1.10
-- Local printer: 192.168.1.20
-- Router/default gateway: 192.168.1.1
-- A remote server somewhere beyond the router
-- Local traffic going directly to the printer
-- Remote traffic going to the router first
-
-Key idea:
-Same subnet = directly reachable.
-Different network = send to a router.
-
-Keep the routes visually distinct and minimal.
--->
+<div class="diagram">
+  <img
+    src="/images/labs/00-04/local-vs-remote.svg"
+    alt="A laptop sending directly to a printer on the same network, and sending to a router to reach a server on another network."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">same network goes direct, anything else goes to the router</div>
+</div>
 
 ## Same network? Send it directly
 
-Imagine your laptop is:
+Your laptop is `192.168.1.10/24` and your printer is `192.168.1.20/24`.
 
-`192.168.1.10/24`
+In the last lab, you saw that a `/24` means the first three numbers of the IP address identify the network.
 
-and your printer is:
+Both addresses start with `192.168.1`, so they are both on the same network: `192.168.1.0/24`.
 
-`192.168.1.20/24`
+This means the laptop can send the document straight to the printer. No router needed.
 
-A `/24` tells us both devices are inside:
+## Different network? Hand it to the router
 
-`192.168.1.0/24`
+Let's say your laptop wants to reach a server at `8.8.8.8`.
 
-They are on the same subnet.
+That IP address doesn't start with `192.168.1`, so it isn't on your network. This means your laptop has no way to reach it on its own.
 
-The laptop does not need another network to reach the printer. It can deliver the traffic locally.
+Instead, it hands the traffic to your home router at `192.168.1.1`. The router is connected to both your home network and the internet, so it can pass traffic between them.
 
-That is the first routing idea:
-
-> **If the destination is on your local network, send it there directly.**
-
-## Different network? You need a router
-
-Now suppose the destination is:
-
-`8.8.8.8`
-
-That address is not inside:
-
-`192.168.1.0/24`
-
-Your laptop cannot reach it directly on the local network.
-
-So it sends the packet to a device that knows how to reach other networks:
-
-a **router**.
-
-At home, that is normally your home router.
-
-Its local address might be:
-
-`192.168.1.1`
-
-That router becomes your **default gateway**: the place your device sends traffic when the destination is somewhere outside the local network.
-
-<div class="callout why"><b>The router is not the final destination.</b> It is the next stop. The packet still contains the IP address of the destination it is ultimately trying to reach.</div>
+The router is where traffic goes by default whenever it's leaving your network, the router is called your **default gateway**. It's the exit door out of your network.
 
 ## A route is a rule
 
-A route is essentially:
+Your laptop doesn’t work out where to send traffic from scratch every time. It keeps a short list of rules called a **routing table**.
 
-> **For this destination, send traffic this way.**
+Each rule is called a **route**. 
 
-A device keeps those rules in a **routing table**.
+Your laptop might have just two routes:
 
-A simplified routing table might look like this:
+- `192.168.1.0/24` → send it directly, because it is on the local network
+- `0.0.0.0/0` → send it to the router at `192.168.1.1`
 
-| Destination | Send traffic to |
-|---|---|
-| `192.168.1.0/24` | local network |
-| `0.0.0.0/0` | `192.168.1.1` |
+<div class="diagram">
+  <img
+    src="/images/labs/00-04/routing-table.svg"
+    alt="Traffic to 192.168.1.20 matches the local route and goes straight to the printer. Traffic to 8.8.8.8 matches the catch-all route and goes to the router."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">look at the destination, find the matching rule, follow it</div>
+</div>
 
-The first route says:
+## The default route means “everything else”
 
-> Anything for my own subnet is local.
+`0.0.0.0/0` looks strange the first time you see it. It means any IPv4 address.
 
-The second says:
+So if traffic does not match a more specific route, the default route is used.
 
-> Anything else goes to my router.
+On your laptop, that usually means: anything outside your local network → send it to the router.
 
-<!--
-VISUAL: routing-table.svg
+That is why it is called the **default route**.
 
-Purpose:
-Turn the routing table into a visual decision rather than just another table.
+## The most specific route wins
 
-Must show:
-- Destination 192.168.1.20 matching 192.168.1.0/24 → LOCAL
-- Destination 8.8.8.8 not matching local route → 0.0.0.0/0 → ROUTER 192.168.1.1
+Sometimes an address matches more than one route. Say a router has these three routes:
 
-Key idea:
-Routes are destination-based decisions.
+- `0.0.0.0/0` → Router A
+- `10.0.0.0/8` → Router B
+- `10.20.0.0/16` → Router C
 
-Could be shown as two clean packet journeys beside a compact route table.
--->
+If traffic is going to `10.20.30.40`, that address fits inside all three ranges. So which one is used?
 
-## The default route
+The router picks the **most specific** one, meaning the smallest range that still contains the address. Here that's `10.20.0.0/16`, so the traffic goes to Router C.
 
-This route looks strange the first time you see it:
+<div class="diagram">
+  <img
+    src="/images/labs/00-04/longest-prefix-match.svg"
+    alt="Three nested ranges, 0.0.0.0/0, 10.0.0.0/8 and 10.20.0.0/16, with 10.20.30.40 inside all of them. The smallest range, /16, is chosen."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">all three match, the smallest range wins</div>
+</div>
 
-`0.0.0.0/0`
+Several routes can match the same destination. The router chooses the most specific match - the smallest network that still contains the destination IP.
 
-A `/0` uses zero bits to describe a specific network.
+Remember from the last lab: a bigger number after the slash means a smaller, more specific range. You may hear this called **longest prefix match**. You don't need to remember the name, just the idea.
 
-That means it matches **every IPv4 address**.
+## Routers pass it along, one step at a time
 
-It is called the **default route**.
+No single router knows the whole internet. Each one only knows enough to pick the **next step**.
 
-You can think of it as:
+So your traffic gets passed from router to router. Each one asks the same question, "where next?", and hands it on. Each handover is called a **hop**.
 
-> **If no more specific route tells you what to do, use this one.**
+<div class="diagram">
+  <img
+    src="/images/labs/00-04/hop-by-hop.svg"
+    alt="Traffic to 8.8.8.8 passing from a laptop through a home router, an ISP router and Google's router before arriving at the server."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">each router only decides the next hop</div>
+</div>
 
-On your laptop, the default route normally points to your home router.
+The number of hops changes from trip to trip. What stays the same is that every router makes the same small decision.
 
-Later in AWS, you will see the exact same idea.
+## Getting there isn't the same as getting in
 
-## More specific routes win
+Routing only gets traffic **to** a machine. It says nothing about whether that machine will **accept** it.
 
-A destination can sometimes match more than one route.
+A route can deliver a request right to a server's door, and the server can still refuse to open it. That's a separate job, and it's what the next lab is about.
 
-Imagine this table:
+## What to remember
 
-| Destination | Target |
-|---|---|
-| `10.0.0.0/8` | Router A |
-| `10.20.0.0/16` | Router B |
-| `0.0.0.0/0` | Router C |
+When a device sends something:
 
-Now traffic is going to:
+1. It looks at the destination IP.
+2. If the destination is on its own network, it sends it directly.
+3. If not, it checks its routing table for a matching route.
+4. If several routes match, the most specific one wins.
+5. If nothing else matches, the default route sends it to the router. 
 
-`10.20.30.40`
+So far you know three pieces:
 
-Technically, that destination matches all three routes.
+- **IP address** tells you where the destination is.
+- **CIDR** tells you which network it belongs to.
+- **Route** tells traffic where to go next.
 
-But the `/16` is the most specific match.
-
-So the traffic goes to:
-
-`Router B`
-
-This is called **longest prefix match**.
-
-You do not need to memorise the name yet. Remember the behaviour:
-
-> **When several routes match, the most specific one wins.**
-
-<!--
-VISUAL: longest-prefix-match.svg
-
-Purpose:
-Make "most specific route wins" immediately understandable.
-
-Must show:
-Destination: 10.20.30.40
-
-Candidate routes:
-- 0.0.0.0/0
-- 10.0.0.0/8
-- 10.20.0.0/16
-
-Highlight /16 as the selected route.
-
-Key idea:
-All three match, but /16 describes the destination most precisely.
-
-Avoid binary unless it can be shown extremely lightly.
--->
-
-## Routers do this again and again
-
-The internet is not one giant router with a map of every individual computer.
-
-Traffic moves through networks one step at a time.
-
-A router receives a packet, looks at its destination IP, checks its routes, and chooses where to send it next.
-
-Then another router may do the same thing.
-
-And another.
-
-<!--
-VISUAL: hop-by-hop.svg
-
-Optional visual.
-
-Purpose:
-Show routing as a sequence of next-hop decisions.
-
-Could show:
-Laptop → home router → ISP router → another router → destination server
-
-Do not imply that every internet request always follows this exact number of hops.
-
-Key idea:
-Each router only needs to decide the next useful step.
--->
-
-<div class="callout why"><b>Routing is about reachability.</b> A route can tell traffic where to go, but that does not mean the destination will accept it. Reaching a machine and being allowed to communicate with it are separate problems.</div>
-
-## The mental model to keep
-
-When a device wants to send a packet:
-
-1. It knows the **destination IP**.
-2. It checks whether that destination is on a network it can reach directly.
-3. If not, it looks for a matching **route**.
-4. The route tells it the **next hop**.
-5. If several routes match, the **most specific** one wins.
-
-So far, we have answered:
-
-- **IP address** — where is the destination?
-- **CIDR/subnet** — which network does it belong to?
-- **route** — where should the packet go next?
-
-But there is still another question.
-
-Even if traffic can reach the destination:
-
-> **Should it be allowed in?**
-
-That is what **firewalls** solve.
+The last question is: once traffic arrives, is it allowed in? That's what **firewalls** decide.

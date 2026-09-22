@@ -19,7 +19,7 @@
 <circle cx="68" cy="150" r="13" fill="#0C1220" stroke="#F5A524" stroke-width="1.6"/>
 <text x="68" y="154" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">1</text>
 <text x="68" y="180" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">you type the name</text>
-<text x="68" y="194" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">example.com</text>
+<text x="68" y="194" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">inthelab.ie</text>
 <rect x="152" y="68" width="76" height="46" rx="7" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.7"/>
 <text x="190" y="96" fill="#8B7BF0" font-family="JetBrains Mono" font-size="13" text-anchor="middle">DNS</text>
 <circle cx="190" cy="150" r="13" fill="#0C1220" stroke="#8B7BF0" stroke-width="1.6"/>
