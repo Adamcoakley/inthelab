@@ -53,7 +53,7 @@ Strip away the word "cloud" for a moment. A server is a computer, the same as th
     alt="A server with CPU, memory, disk and network components labelled."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
-  <div class="dcap">a server and four of it's core parts</div>
+  <div class="dcap">a server and four of its core parts</div>
 </div>
 
 ## Buying versus renting
@@ -73,7 +73,7 @@ If you own physical servers, you have to buy for your busiest moment: Black Frid
 
 ## How one computer becomes many
 
-If AWS had to hand you a whole physical machine every time you asked for a small server, none of this would work. **Virtualisation** is the answer: software divides one machine into slices, and each slice behaves like a complete, independent computer that cannot see the others.
+If AWS had to hand you a whole physical machine every time you asked for a small server, none of this would work. **Virtualisation** is the answer: software divides one machine into slices, and each slice behaves like a complete, independent computer.
 
 <div class="diagram">
   <img
@@ -113,7 +113,7 @@ This course starts with virtual machines (EC2). AWS looks after the physical har
     alt="Two separate Availability Zones inside one AWS Region."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
-  <div class="dcap">a Region is an area containing several separate data centres</div>
+  <div class="dcap">a Region contains several separate Availability Zones</div>
 </div>
 
 When you create a resource in AWS, you choose a Region - a part of the world where AWS has infrastructure, such as Ireland.

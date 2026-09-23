@@ -82,7 +82,7 @@ It does one job: the `/24` says how much of the address belongs to the network.
 
 ## Why /24?
 
-Each of the four numbers in an address counts as 8 bits. You never need to work with bits directly, just remember that each number is worth 8.
+Each of the four numbers represents 8 bits. You never need to work with bits directly, just remember that each number is worth 8.
 
 <div class="diagram">
   <img
@@ -97,7 +97,7 @@ So `/24` is not "three numbers", it is 24 bits, which happens to be three number
 
 ## The part that catches most people
 
-Imaging you need a network **smaller** than a `/24`. Do you use `/25` or `/23`?
+Imagine you need a network **smaller** than a `/24`. Do you use `/25` or `/23`?
 
 Most people say `/23`, because 23 is the smaller number. It is the other way round. A `/25` is the smaller network.
 

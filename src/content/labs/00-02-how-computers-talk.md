@@ -142,7 +142,7 @@ Two transport protocols you will hear about often are **TCP** and **UDP**. They 
 
 **TCP** sends missing data again and keeps everything in order. It is used by web pages and downloads, where one missing piece ruins the result.
 
-**UDP** does not send missing data again, it just moves on. It is used for live video call, where a lost moment is better skipped than replayed late.
+**UDP** does not send missing data again, it just moves on. It is used for live video calls, where a lost moment is better skipped than replayed late.
 
 <div class="diagram">
   <img
@@ -157,7 +157,7 @@ Neither is "better" - they solve different problems.
 
 ## DNS turns names into addresses
 
-DNS helps turn that domain names into a destination your computer can use. Humans remember `inthelab.ie` more easily than an IP address.
+DNS helps turn domain names into a destination IP your computer can use. Humans remember `inthelab.ie` more easily than an IP address.
 
 <div class="diagram">
   <img
