@@ -60,15 +60,6 @@ That's what makes it flexible, as covered in Lab 0.1. It also means a resource y
 
 Plenty of things are free, including IAM users, groups and policies, VPCs, subnets, route tables and security groups.
 
-<div class="diagram">
-  <img
-    src="/images/labs/01-05/pricing-meters.svg"
-    alt="Four meters showing running time, storage, data sent out and public IPv4 addresses as common types of AWS charges."
-    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
-  />
-  <div class="dcap">the main types of charge you'll see in this course</div>
-</div>
-
 ## Stop vs terminate
 
 These are charged differently:
@@ -118,3 +109,46 @@ You saw one in the last lab:
 
 ```text
 arn:aws:iam::123456789012:user/admin
+```
+
+It contains several pieces:
+
+- `arn:aws` → tells us this is an AWS resource
+- `iam` → the service
+- `123456789012` → the AWS account ID
+- `user/admin` → the resource itself
+
+A regional resource includes its Region. For example, an EC2 instance in Ireland might have an ARN like:
+
+```text
+arn:aws:ec2:eu-west-1:123456789012:instance/i-0a1b2c3d4e5f67890
+```
+
+You'll mostly come across ARNs in permissions, policies and error messages.
+
+## Phase 0 concepts in AWS
+
+Most of the networking ideas you learned in Phase 0 have an AWS equivalent.
+
+You already know what the pieces do. From here on, you’ll start learning the AWS names for them and building them yourself.
+
+<div class="diagram">
+  <img
+    src="/images/labs/01-05/pricing-meters.svg"
+    alt="Four meters showing running time, storage, data sent out and public IPv4 addresses as common types of AWS charges."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+  <div class="dcap">the main types of charge you'll see in this course</div>
+</div>
+
+## Cleaning up after labs
+
+Labs that create paid resources end with a cleanup step.
+
+Each time:
+
+1. Delete what the lab tells you to.
+2. Make sure you're in the right Region.
+3. Check Billing later and look into anything unexpected.
+
+In Phase 2, you'll start building these pieces yourself in AWS.
