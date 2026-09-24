@@ -27,7 +27,7 @@
 :root{ --d-flow:#22C7B8; --d-node:#F5A524; --d-struct:#8B7BF0; --d-add:#34D399; --d-line:#3D5170; --d-ink:#8FA0BD; }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behaviour:smooth}
+html{scroll-behavior:smooth}
 body{
   background:var(--canvas);color:var(--ink);
   font-family:'Inter',system-ui,-apple-system,sans-serif;
@@ -54,3 +54,10 @@ h1,h2,h3,h4{font-weight:600;line-height:1.18;letter-spacing:-.015em}
 .diagram::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#17233A 1px,transparent 1px),linear-gradient(90deg,#17233A 1px,transparent 1px);background-size:26px 26px;opacity:.55;-webkit-mask-image:radial-gradient(ellipse 72% 82% at 50% 42%,#000,transparent);mask-image:radial-gradient(ellipse 72% 82% at 50% 42%,#000,transparent)}
 .diagram svg{width:100%;height:auto;display:block;position:relative;z-index:1}
 .diagram .dcap{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#5B7290;text-align:center;margin-top:12px;position:relative;z-index:1}
+
+/* console screenshots in labs: <figure class="screenshot"><img ...><figcaption>optional</figcaption></figure>
+   selectors include .lab-body and figure so they override the default lab image style in Lab.astro */
+.lab-body figure.screenshot{margin:1.5rem 0}
+.lab-body figure.screenshot img{display:block;max-width:100%;height:auto;margin:0 auto;border:1px solid var(--line);border-radius:6px;box-shadow:none}
+[data-theme="dark"] .lab-body figure.screenshot img{border-color:transparent}
+.lab-body figure.screenshot figcaption{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:7px}

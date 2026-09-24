@@ -1,14 +1,16 @@
 ---
 import Base from './Base.astro';
 import Quiz from '../components/Quiz.astro';
-const { lab } = Astro.props;   // the full entry from the labs collection
+import { labLabel } from '../lib/labs.js';
+const { lab, next } = Astro.props;   // the lab entry, plus where the next button goes
 const d = lab.data;
+const label = labLabel(lab);
 const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(--cost)' };
 ---
-<Base title={`Lab ${d.number} · ${d.title}`} path="/roadmap">
+<Base title={`Lab ${label} · ${d.title}`} path="/roadmap">
   <div class="lab-wrap">
     <article class="lab-main">
-      <div class="lab-crumb mono">roadmap / phase {d.phase} / <span style="color:var(--accent)">lab {d.number}</span></div>
+      <div class="lab-crumb mono">roadmap / phase {d.phase} / <span style="color:var(--accent)">lab {label}</span></div>
       <h1>{d.title}</h1>
       <div class="lab-meta">
         <span class="meta-pill" style={`color:${typeColor[d.type]}`}>◆ {d.type}</span>
@@ -26,9 +28,27 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
 
       <div class="lab-foot">
         <a href="/roadmap" class="btn-ghost">← Back to roadmap</a>
+        {next && (
+          <a href={next.href} class="btn-primary next-btn">{next.text} →</a>
+        )}
       </div>
     </article>
   </div>
+
+  <!-- remember this lab so the roadmap opens at the right phase -->
+  <script is:inline define:vars={{ lastLab: { id: lab.id, phase: d.phase } }}>
+    try { localStorage.setItem('bp_last_lab', JSON.stringify(lastLab)); } catch (e) {}
+  </script>
+
+  <!-- links to other websites in the lab text open in a new tab -->
+  <script is:inline>
+    document.querySelectorAll('.lab-body a[href^="http"]').forEach(function (a) {
+      if (a.host !== location.host) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    });
+  </script>
 
   <style>
     .lab-wrap{max-width:820px;margin:0 auto;padding:32px 24px 40px}
@@ -44,13 +64,17 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
     .lab-body :global(ul),.lab-body :global(ol){color:var(--ink-dim);font-size:15.5px;margin:11px 0;padding-left:24px;line-height:1.7}
     .lab-body :global(li){margin:5px 0}
     .lab-body :global(strong){color:var(--ink)}
+    .lab-body :global(a){color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+    .lab-body :global(a:hover){text-decoration-thickness:2px}
     .lab-body :global(code){font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--panel);border:1px solid var(--line-2);border-radius:5px;padding:1px 6px;color:var(--ink)}
     .lab-body :global(pre){background:#0A0D24;border:1px solid var(--line);border-radius:11px;padding:16px;overflow-x:auto;margin:14px 0}
     .lab-body :global(pre code){background:none;border:none;color:#c7d0e8;padding:0;font-size:13.5px}
     .lab-body :global(blockquote){border-left:3px solid var(--accent);background:var(--panel);border-radius:0 9px 9px 0;padding:12px 16px;margin:14px 0;color:var(--ink-dim);font-size:14.5px}
     .lab-body :global(blockquote.note){border-left-color:var(--accent)}
     .lab-body :global(hr){border:none;border-top:1px solid var(--line);margin:26px 0}
-    .lab-foot{margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
+    .lab-foot{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .next-btn{margin-left:auto}
+    @media (max-width:560px){.lab-foot{flex-direction:column-reverse;align-items:stretch}.next-btn{margin-left:0}.lab-foot a{text-align:center}}
 
     /* screenshots / images added in Markdown with ![alt](/images/x.png) */
     .lab-body :global(img){display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:11px;margin:16px 0;box-shadow:var(--sh-sm)}

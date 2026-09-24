@@ -1,81 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import { getOrderedLabs, labLabel } from '../lib/labs.js';
 
-const phases = [
-  {
-    number: 0,
-    title: 'Cloud & Networking Foundations',
-    sub: 'Understand the building blocks before touching AWS.',
-  },
-  {
-    number: 1,
-    title: 'AWS Foundations',
-    sub: 'Set up AWS safely and learn the core tools.',
-  },
-  {
-    number: 2,
-    title: 'Build Your First AWS Network',
-    sub: 'Create a VPC, subnets, routes, EC2 and internet access.',
-  },
-  {
-    number: 3,
-    title: 'Run a Real Server',
-    sub: 'Understand EC2 properly and automate what runs on it.',
-  },
-  {
-    number: 4,
-    title: 'Build Private Infrastructure',
-    sub: 'Move workloads away from direct internet access.',
-  },
-  {
-    number: 5,
-    title: 'NAT and Network Architecture',
-    sub: 'Give private infrastructure controlled outbound connectivity.',
-  },
-  {
-    number: 6,
-    title: 'Build a Highly Available Application',
-    sub: 'Spread across Availability Zones and add load balancing.',
-  },
-  {
-    number: 7,
-    title: 'Automate Scaling',
-    sub: 'Replace individual servers with scalable, self-healing infrastructure.',
-  },
-  {
-    number: 8,
-    title: 'Secure the Application',
-    sub: 'Add DNS, HTTPS, certificates and web application protection.',
-  },
-  {
-    number: 9,
-    title: 'Observe and Troubleshoot It',
-    sub: 'Use metrics, logs and network visibility to understand failures.',
-  },
-  {
-    number: 10,
-    title: 'Infrastructure as Code',
-    sub: 'Rebuild the architecture using repeatable CloudFormation templates.',
-  },
-  {
-    number: 11,
-    title: 'The Final Challenge',
-    sub: 'Build the complete architecture from scratch.',
-  },
-];
+import { phases } from '../data/phases.js';
 
-const all = (await getCollection('labs', ({ data }) => !data.draft))
-  .sort((a, b) => {
-    if (a.data.phase !== b.data.phase) {
-      return a.data.phase - b.data.phase;
-    }
-
-    return (
-      (a.data.order ?? a.data.number ?? 0) -
-      (b.data.order ?? b.data.number ?? 0)
-    );
-  });
+const all = await getOrderedLabs();
 
 const byPhase = (phaseNumber) =>
   all.filter((lab) => lab.data.phase === phaseNumber);
@@ -86,13 +15,6 @@ const typeTag = {
   challenge: 'challenge',
 };
 
-const labLabel = (lab) => {
-  if (lab.data.order !== undefined) {
-    return `${lab.data.phase}.${lab.data.order}`;
-  }
-
-  return String(lab.data.number ?? '');
-};
 ---
 
 <Base title="Roadmap, inthelab" path="/roadmap">
@@ -114,7 +36,7 @@ const labLabel = (lab) => {
         const isFirst = ph.number === 0;
 
         return (
-          <div class={`phase ${isFirst ? 'open' : ''}`}>
+          <div class={`phase ${isFirst ? 'open' : ''}`} id={`phase-${ph.number}`} data-phase={ph.number}>
             <button
               class="ph-head"
               onclick="this.parentElement.classList.toggle('open')"
@@ -155,7 +77,7 @@ const labLabel = (lab) => {
 
                 {
                   labs.map((lab) => (
-                    <a href={`/labs/${lab.id}`} class="lab-row">
+                    <a href={`/labs/${lab.id}`} class="lab-row" data-lab={lab.id}>
                       <span class="lr-num mono">
                         {labLabel(lab)}
                       </span>
@@ -182,6 +104,36 @@ const labLabel = (lab) => {
       })
     }
   </div>
+
+  <script is:inline>
+    // Open the phase the learner is working on, instead of always phase 0.
+    // Priority: a #phase-N link (from a "next phase" button), then the last lab they opened.
+    (function () {
+      var target = null, lastLab = null;
+      var hash = location.hash.match(/^#phase-(\d+)$/);
+      if (hash) target = hash[1];
+      if (target === null) {
+        try {
+          var last = JSON.parse(localStorage.getItem('bp_last_lab') || 'null');
+          if (last) { target = String(last.phase); lastLab = last.id; }
+        } catch (e) {}
+      }
+      if (target === null) return;
+      var el = document.getElementById('phase-' + target);
+      if (!el) return;
+      document.documentElement.classList.add('rm-no-anim');
+      document.querySelectorAll('.phase.open').forEach(function (p) { p.classList.remove('open'); });
+      el.classList.add('open');
+      if (lastLab) {
+        var row = el.querySelector('[data-lab="' + lastLab + '"]');
+        if (row) row.classList.add('last');
+      }
+      if (hash || Number(target) > 1) el.scrollIntoView({ block: 'start' });
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { document.documentElement.classList.remove('rm-no-anim'); });
+      });
+    })();
+  </script>
 
   <style>
     .rm-head {
@@ -290,6 +242,23 @@ const labLabel = (lab) => {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
+    }
+
+    :global(.rm-no-anim) .ph-body,
+    :global(.rm-no-anim) .ph-chev {
+      transition: none;
+    }
+
+    .lab-row.last {
+      border-color: var(--accent);
+    }
+
+    .lab-row.last .lr-num {
+      color: var(--accent);
+    }
+
+    .phase {
+      scroll-margin-top: 80px;
     }
 
     .phase.open .ph-body {

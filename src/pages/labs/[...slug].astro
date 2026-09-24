@@ -1,19 +1,20 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import Lab from '../../layouts/Lab.astro';
+import { getOrderedLabs, getNext } from '../../lib/labs.js';
 
 // One page per lab file. Astro builds these all to static HTML at build time.
 export async function getStaticPaths() {
-  const labs = await getCollection('labs', ({ data }) => !data.draft);
+  const labs = await getOrderedLabs();
   return labs.map((lab) => ({
     params: { slug: lab.id },
-    props: { lab },
+    props: { lab, next: getNext(lab, labs) },
   }));
 }
 
-const { lab } = Astro.props;
+const { lab, next } = Astro.props;
 const { Content } = await render(lab);
 ---
-<Lab lab={lab}>
+<Lab lab={lab} next={next}>
   <Content />
 </Lab>
