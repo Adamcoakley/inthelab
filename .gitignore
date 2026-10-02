@@ -9,3 +9,10 @@ site_*.png
 
 # personal notes, never committed
 notes/
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key

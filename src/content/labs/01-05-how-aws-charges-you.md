@@ -53,10 +53,9 @@ Most AWS pricing is based on usage: how long something runs, how much you store,
 
 That's what makes it flexible, as covered in Lab 0.1. It also means a resource you forget about can keep costing money until you delete it.
 
-- **Running time:** servers are charged while they're running. Load balancers and NAT gateways are charged for every hour they exist, busy or not.
+- **Running time:** servers are charged while they're running. Some services like load balancers and NAT gateways are charged for every hour they exist, busy or not.
 - **Storage:** disks, snapshots and files are charged based on how much storage you use. Disks are charged for their allocated size, even if they're mostly empty.
 - **Data out:** data sent from AWS to the internet can be charged per GB. Incoming data is generally free.
-- **Public IPv4 addresses:** about `$0.005` an hour each, roughly `$3.65` for a 730-hour month, even if unused.
 
 Plenty of things are free, including IAM users, groups and policies, VPCs, subnets, route tables and security groups.
 

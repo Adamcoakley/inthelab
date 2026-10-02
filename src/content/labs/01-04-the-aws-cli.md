@@ -10,7 +10,7 @@ summary: Use the AWS CLI in CloudShell to check who you're signed in as and look
 draft: false
 questions:
   - kind: recall
-    q: "What does <code>aws sts get-caller-identity</code> tell you?"
+    q: "What does<code>aws sts get-caller-identity</code> tell you?"
     options:
       - "How much you've spent this month"
       - "Which account and which user your commands are running as"
