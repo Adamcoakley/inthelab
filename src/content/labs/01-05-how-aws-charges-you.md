@@ -134,7 +134,7 @@ You already know what the pieces do. From here on, you’ll start learning the A
 
 <div class="diagram">
   <img
-    src="/images/labs/01-05/AWSvsPhase0.svg"
+    src="/images/labs/01-05/phase-0-to-aws.svg"
     alt="Phase 0 concepts vs what AWS calls it"
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />

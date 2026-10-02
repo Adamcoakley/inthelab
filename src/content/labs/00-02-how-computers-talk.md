@@ -186,7 +186,7 @@ When you type `https://inthelab.ie`, several things happen in sequence:
 1. Your browser sees the name `inthelab.ie`.
 2. DNS helps it find the destination IP address.
 3. Your computer connects to that machine.
-4. HTTPS normally reaches the service on port `443`. 
+4. HTTPS normally reaches the service on port `443`.
 5. The server sends the response back.
 
 Every one of those steps can fail separately.
