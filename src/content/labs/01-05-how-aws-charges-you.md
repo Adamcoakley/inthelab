@@ -137,7 +137,6 @@ You already know what the pieces do. From here on, you’ll start learning the A
     alt="Four meters showing running time, storage, data sent out and public IPv4 addresses as common types of AWS charges."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
-  <div class="dcap">the main types of charge you'll see in this course</div>
 </div>
 
 ## Cleaning up after labs

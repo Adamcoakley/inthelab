@@ -175,11 +175,16 @@ Add MFA to this user as well: open the account menu in the top-right corner, cho
 
 ## Step 6: Test a user without permission
 
-Using the same steps as above, create a second group called `read-only` and attach the `ReadOnlyAccess` policy. Then create a user called `readonly-user` with console access, and add them to `read-only` group.
+Using the same steps as before:
 
-Open a **new browser window**, go to your sign-in link, and sign in as `readonly-user`.You can open IAM and see users and groups, because read access is allowed.
+1. Create a group called `read-only` and attach the `ReadOnlyAccess` policy.
+2. Create a user called `readonly-user`. Tick **Provide user access to the AWS Management Console**, set a custom password, and add the user to the `read-only` group.
 
-Now try to create something. In IAM, choose **User groups**, then **Create group**, give it any name, and choose **Create user group**.
+## Step 7: Try to create something
+
+1. Go to your sign-in link, and sign in as `readonly-user`.
+2. Open IAM. You can see users and groups, because reading is allowed.
+3. Choose **User groups**, then **Create group**. Enter any name and choose **Create user group**.
 
 <figure class="screenshot">
   <img
@@ -195,6 +200,12 @@ Read the error message. It tells you:
 - **why** it failed: no policy allows it
 
 You'll see errors like this again during the course. They always tell you which user and which action were involved, which makes them quick to fix.
+
+## Step 8: Clean up
+
+Sign out of `readonly-user`, and sign back into with your `admin` user, choose **Users** in IAM, tick `readonly-user`, and choose **Delete**.
+
+You only needed this user to see the error. Unused logins are a security risk, even read-only ones, so delete them when you're done.
 
 ## Summary
 

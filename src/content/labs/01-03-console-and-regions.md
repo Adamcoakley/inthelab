@@ -9,16 +9,16 @@ buildsOn: Lab 1.2
 summary: The parts of the AWS console you'll use most, and how Regions affect what you see.
 draft: false
 questions:
-  - kind: recall
-    q: "Which of these is <b>global</b> rather than tied to one Region?"
+    - kind: recall
+    q: "What is <code>eu-west-1</code>?"
     options:
-      - "An EC2 server"
-      - "An IAM user"
-      - "A VPC"
-      - "A server's disk"
-    correct: 1
-    hint: "What did the Region selector show when you were in IAM?"
-    explain: "IAM is global, so users, groups and policies work in every Region. Servers, VPCs and disks are regional: they exist in the Region where you created them."
+      - "The code for the Ireland Region"
+      - "An Availability Zone in Ireland"
+      - "The ID of your first server"
+      - "Your AWS account ID"
+    correct: 0
+    hint: "Look at the Region selector in the top-right corner."
+    explain: "eu-west-1 is the code for the Ireland Region. Availability Zones inside it add a letter on the end, like eu-west-1a and eu-west-1b. You'll choose one of those when you create a subnet in Phase 2."
 
   - kind: cause
     q: "You launched a server yesterday. Today the EC2 page shows no servers at all. What's the most likely reason?"
