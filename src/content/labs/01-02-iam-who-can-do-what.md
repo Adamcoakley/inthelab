@@ -203,7 +203,7 @@ You'll see errors like this again during the course. They always tell you which 
 
 ## Step 8: Clean up
 
-Sign out of `readonly-user`, and sign back into with your `admin` user, choose **Users** in IAM, tick `readonly-user`, and choose **Delete**.
+Sign out of `readonly-user`, and sign back in as `admin`. In IAM, click on **Users**, tick `readonly-user`, and choose **Delete**.
 
 You only needed this user to see the error. Unused logins are a security risk, even read-only ones, so delete them when you're done.
 

@@ -56,6 +56,7 @@ That's what makes it flexible, as covered in Lab 0.1. It also means a resource y
 - **Running time:** servers are charged while they're running. Some services like load balancers and NAT gateways are charged for every hour they exist, busy or not.
 - **Storage:** disks, snapshots and files are charged based on how much storage you use. Disks are charged for their allocated size, even if they're mostly empty.
 - **Data out:** data sent from AWS to the internet can be charged per GB. Incoming data is generally free.
+- **Public IPv4 addresses:** charged by the hour for each one, even if it isn't being used.
 
 Plenty of things are free, including IAM users, groups and policies, VPCs, subnets, route tables and security groups.
 
@@ -133,8 +134,8 @@ You already know what the pieces do. From here on, you’ll start learning the A
 
 <div class="diagram">
   <img
-    src="/images/labs/01-05/pricing-meters.svg"
-    alt="Four meters showing running time, storage, data sent out and public IPv4 addresses as common types of AWS charges."
+    src="/images/labs/01-05/AWSvsPhase0.svg"
+    alt="Phase 0 concepts vs what AWS calls it"
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
 </div>

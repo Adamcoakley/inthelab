@@ -9,7 +9,7 @@ buildsOn: Lab 1.2
 summary: The parts of the AWS console you'll use most, and how Regions affect what you see.
 draft: false
 questions:
-    - kind: recall
+  - kind: recall
     q: "What is <code>eu-west-1</code>?"
     options:
       - "The code for the Ireland Region"

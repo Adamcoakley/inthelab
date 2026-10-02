@@ -140,7 +140,7 @@ Each one contains 128 IP addresses.
 <div class="diagram">
   <img
     src="/images/labs/00-03/subnet-splitting.svg"
-    alt="Three bars showing /24, /25 and /26, each one half the length of the bar above it."
+    alt="10.0.0.0/24 cut in half into 10.0.0.0/25, covering .0 to .127, and 10.0.0.128/25, covering .128 to .255."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
 </div>
