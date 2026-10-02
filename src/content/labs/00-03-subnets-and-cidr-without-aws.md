@@ -137,6 +137,14 @@ If you split the `/24` exactly in half, you get two `/25` networks:
 
 Each one contains 128 IP addresses.
 
+<div class="diagram">
+  <img
+    src="/images/labs/00-03/subnet-splitting.svg"
+    alt="Three bars showing /24, /25 and /26, each one half the length of the bar above it."
+    style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
+  />
+</div>
+
 Nothing has been added or removed. You have simply taken one large network and divided it into two smaller ones.
 
 <div class="callout why"><b>Those smaller networks are called subnets.</b> A subnet is simply a smaller network created from a larger address range.</div>
