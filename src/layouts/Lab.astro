@@ -50,6 +50,25 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
     });
   </script>
 
+  <!-- OS switch: remember the learner's operating system and show matching steps.
+       State lives on <html data-os>, so it survives personalisation re-rendering the lab body. -->
+  <script is:inline>
+    (function () {
+      var KEY = 'inthelab_os';
+      var root = document.documentElement;
+      var os = null;
+      try { os = localStorage.getItem(KEY); } catch (e) {}
+      if (!os) os = /Win/i.test(navigator.platform || navigator.userAgent) ? 'windows' : 'mac';
+      root.dataset.os = os;
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-os-pick]');
+        if (!btn) return;
+        root.dataset.os = btn.dataset.osPick;
+        try { localStorage.setItem(KEY, btn.dataset.osPick); } catch (e) {}
+      });
+    })();
+  </script>
+
   <style>
     .lab-wrap{max-width:820px;margin:0 auto;padding:32px 24px 40px}
     .lab-crumb{font-size:12px;color:var(--ink-faint);margin-bottom:14px}
@@ -89,6 +108,19 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
     .lab-body :global(.callout.break){border-left-color:var(--amber);background:color-mix(in srgb,var(--amber) 6%,transparent)}
     .lab-body :global(.callout.break b){color:var(--amber)}
     .lab-body :global(.callout.aha){border-left-color:var(--accent);background:var(--accent-soft)}
+    
+    /* OS switch, usable from Markdown: <div class="os-switch"> with tabs and .os-panel children */
+    .lab-body :global(.os-switch){border:1px solid var(--line);border-radius:11px;margin:16px 0;background:var(--canvas-2);overflow:hidden}
+    .lab-body :global(.os-tabs){display:flex;gap:4px;padding:6px;background:var(--panel);border-bottom:1px solid var(--line)}
+    .lab-body :global(.os-tabs button){font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border:1px solid transparent;border-radius:7px;background:none;color:var(--ink-dim);cursor:pointer}
+    .lab-body :global(.os-tabs button:hover){color:var(--ink)}
+    .lab-body :global(.os-panel){padding:2px 16px 4px}
+    :global(html[data-os="mac"]) .lab-body :global(.os-panel[data-os="windows"]),
+    :global(html:not([data-os])) .lab-body :global(.os-panel[data-os="windows"]),
+    :global(html[data-os="windows"]) .lab-body :global(.os-panel[data-os="mac"]){display:none}
+    :global(html[data-os="mac"]) .lab-body :global(.os-tabs [data-os-pick="mac"]),
+    :global(html:not([data-os])) .lab-body :global(.os-tabs [data-os-pick="mac"]),
+    :global(html[data-os="windows"]) .lab-body :global(.os-tabs [data-os-pick="windows"]){background:var(--canvas-2);border-color:var(--line);color:var(--accent);box-shadow:var(--sh-sm)}
     .lab-body :global(.callout.shot){border-style:dashed;border-left-style:dashed;background:var(--panel);text-align:center;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-faint)}
   </style>
 </Base>
