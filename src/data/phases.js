@@ -1,5 +1,4 @@
 // The roadmap phases, in order. Used by the roadmap page and the lab pages
-// (for the "next phase" button).
 export const phases = [
   {
     number: 0,
@@ -14,12 +13,12 @@ export const phases = [
   {
     number: 2,
     title: 'Build Your First AWS Network',
-    sub: 'Create a VPC, subnets, routes, EC2 and internet access.',
+    sub: 'Create a VPC, carve out a subnet, and decide where traffic goes.',
   },
   {
     number: 3,
     title: 'Run a Real Server',
-    sub: 'Understand EC2 properly and automate what runs on it.',
+    sub: 'Launch a server, open it to the internet, look inside, and rebuild it automatically.',
   },
   {
     number: 4,
