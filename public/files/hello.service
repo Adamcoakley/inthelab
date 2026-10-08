@@ -1,0 +1,12 @@
+[Unit]
+Description=inthelab hello server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/hello/hello-server.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
