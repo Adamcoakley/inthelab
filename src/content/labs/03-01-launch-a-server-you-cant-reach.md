@@ -28,7 +28,7 @@ questions:
       - "Private IPs are blocked by the security group"
       - "The AMI doesn't support the internet"
     correct: 0
-    hint: "Lab 0.2: which kind of address works across the internet?"
+    hint: "Which kind of address works across the internet?"
     explain: "A private IP like 10.0.1.23 only has meaning inside your VPC. Without a public IP, there's no address on the internet that leads to your server at all."
 
   - kind: predict

@@ -1,26 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<rect x="20" y="12" width="580" height="276" rx="10" fill="#8B7BF0" fill-opacity="0.04" stroke="#8B7BF0" stroke-width="1.5"/>
-<text x="32" y="30" fill="#8B7BF0" font-family="JetBrains Mono" font-size="10" text-anchor="start">your VPC</text>
-<text x="588" y="30" fill="#8B7BF0" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.0.0/16</text>
-<rect x="40" y="44" width="256" height="228" rx="10" fill="none" stroke="#3D5170" stroke-width="1.2" stroke-dasharray="6 5"/>
-<text x="52" y="62" fill="#3D5170" font-family="JetBrains Mono" font-size="10" text-anchor="start">eu-west-1a</text>
-<rect x="56" y="76" width="224" height="80" rx="10" fill="#22C7B8" fill-opacity="0.08" stroke="#22C7B8" stroke-width="1.5"/>
-<text x="68" y="94" fill="#22C7B8" font-family="JetBrains Mono" font-size="10" text-anchor="start">public-a</text>
-<text x="268" y="94" fill="#22C7B8" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.1.0/24</text>
-<text x="68" y="132" fill="#22C7B8" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">you build this now</text>
-<rect x="56" y="172" width="224" height="80" rx="10" fill="none" stroke="#3D5170" stroke-width="1.2" stroke-dasharray="6 5"/>
-<text x="68" y="190" fill="#3D5170" font-family="JetBrains Mono" font-size="10" text-anchor="start">private-a</text>
-<text x="268" y="190" fill="#3D5170" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.2.0/24</text>
-<text x="68" y="228" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">phase 4</text>
-<rect x="324" y="44" width="256" height="228" rx="10" fill="none" stroke="#3D5170" stroke-width="1.2" stroke-dasharray="6 5"/>
-<text x="336" y="62" fill="#3D5170" font-family="JetBrains Mono" font-size="10" text-anchor="start">eu-west-1b</text>
-<rect x="340" y="76" width="224" height="80" rx="10" fill="none" stroke="#3D5170" stroke-width="1.2" stroke-dasharray="6 5"/>
-<text x="352" y="94" fill="#3D5170" font-family="JetBrains Mono" font-size="10" text-anchor="start">public-b</text>
-<text x="552" y="94" fill="#3D5170" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.3.0/24</text>
-<text x="352" y="132" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">phase 6</text>
-<rect x="340" y="172" width="224" height="80" rx="10" fill="none" stroke="#3D5170" stroke-width="1.2" stroke-dasharray="6 5"/>
-<text x="352" y="190" fill="#3D5170" font-family="JetBrains Mono" font-size="10" text-anchor="start">private-b</text>
-<text x="552" y="190" fill="#3D5170" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.4.0/24</text>
-<text x="352" y="228" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">phase 6</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 310"><title>Four subnets across two Availability Zones. public-a is built now; the rest come later</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<rect x="16" y="10" width="628" height="290" rx="0" class="s-net" fill="none" stroke-width="1.5"/>
+<g transform="translate(16.00 10.00) scale(0.6500)"><g fill="none" fill-rule="evenodd"><path fill="#8c4fff" d="M0 0h40v40H0z"/><path fill="#fff" d="m30.97 21.03-2.943-1.264v10.49c2.545-.353 2.932-2.969 2.948-3.088zm-3.943 9.24V19.76l-3.035 1.272v6.201c.013.054.445 2.767 3.035 3.036m.306-11.723a.5.5 0 0 1 .39.001l3.945 1.692a.5.5 0 0 1 .303.46v6.533c-.183 1.447-1.357 4.063-4.527 4.063-3.075 0-4.254-2.612-4.448-3.994l-.004-6.603c0-.2.12-.383.306-.46zm5.65.637-5.461-2.406-5.53 2.327v7.128c-.001.042-.054 2.868 1.657 4.623.917.941 2.194 1.42 3.795 1.42 1.602 0 2.887-.48 3.819-1.423 1.735-1.758 1.72-4.585 1.72-4.613zM31.98 31.55c-1.127 1.144-2.654 1.725-4.536 1.725-1.884 0-3.404-.58-4.517-1.727-2.005-2.063-1.94-5.197-1.935-5.329v-7.446a.5.5 0 0 1 .305-.46l6.035-2.54a.5.5 0 0 1 .396.003l5.956 2.625c.182.08.299.26.299.457v7.375c.002.125.027 3.255-2.003 5.317m-20.988-7.314h8v1h-8c-2.811 0-4.811-2.016-4.98-5.016A4 4 0 0 1 6 19.841c0-2.509 1.318-4.223 3.817-4.979a8 8 0 0 1-.032-.647c0-2.916 1.577-5.445 4.017-6.445 3.298-1.348 7.042-.894 9.106 1.104a8.2 8.2 0 0 1 1.76 2.485c.609-.45 1.4-.66 2.349-.614 1.78.09 3.149 1.713 3.433 4.007 1.498.124 2.485.883 3.01 2.308l-.937.346c-.428-1.157-1.208-1.673-2.531-1.673a.5.5 0 0 1-.5-.47c-.138-2.338-1.406-3.463-2.526-3.519-.945-.053-1.645.22-2.08.791a.5.5 0 0 1-.472.193.5.5 0 0 1-.395-.323 7.4 7.4 0 0 0-1.807-2.814c-1.788-1.73-5.09-2.099-8.031-.895-2.063.845-3.396 3.011-3.396 5.52 0 .272.035.695.066.958a.5.5 0 0 1-.376.544C8.169 16.29 7 17.678 7 19.841c0 .101-.001.201.009.302.14 2.495 1.703 4.093 3.983 4.093"/></g></g>
+<text x="50" y="27" class="f-ink" font-size="12" font-weight="500" text-anchor="start">your VPC</text>
+<text x="634" y="27" class="f-sub mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.0.0/16</text>
+<rect x="34" y="46" width="288" height="238" rx="0" class="s-priv" fill="none" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="42" y="61" class="f-ink" font-size="12" font-weight="500" text-anchor="start">eu-west-1a</text>
+<rect x="50" y="78" width="256" height="88" rx="0" class="s-pub f-pubtint" stroke-width="1.5"/>
+<g transform="translate(50.00 78.00) scale(0.6500)"><g fill="none" fill-rule="evenodd"><path fill="#7aa116" d="M0 0h40v40H0z"/><path fill="#fff" d="M19.536 22.049c1.106 0 2.006.899 2.006 2.005s-.9 2.006-2.006 2.006-2.006-.9-2.006-2.006.9-2.005 2.006-2.005m-.524 4.958v3.494h1v-3.489a3 3 0 0 0 2.53-2.958 3.01 3.01 0 0 0-3.006-3.005 3.01 3.01 0 0 0-3.006 3.005 3.006 3.006 0 0 0 2.482 2.953M10 33.014h19.012V18H10zm4.046-20.53A5.49 5.49 0 0 1 19.529 7a5.49 5.49 0 0 1 5.483 5.484V17H14.046zM29.512 17h-3.5v-4.516A6.49 6.49 0 0 0 19.529 6a6.49 6.49 0 0 0-6.483 6.484V17H9.5a.5.5 0 0 0-.5.5v16.014a.5.5 0 0 0 .5.5h20.012a.5.5 0 0 0 .5-.5V17.5a.5.5 0 0 0-.5-.5"/></g></g>
+<text x="84" y="95" class="f-ink" font-size="12" font-weight="500" text-anchor="start">Public subnet: public-a</text>
+<text x="296" y="95" class="f-sub mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.1.0/24</text>
+<text x="62" y="142" class="f-you" font-size="11" font-weight="600" text-anchor="start">you build this now</text>
+<rect x="50" y="180" width="256" height="88" rx="0" class="s-faint" fill="none" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="62" y="202" class="f-faint" font-size="11.5" font-weight="500" text-anchor="start">private-a</text>
+<text x="296" y="202" class="f-faint mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.2.0/24</text>
+<text x="62" y="244" class="f-faint" font-size="11" font-weight="400" text-anchor="start">phase 4</text>
+<rect x="338" y="46" width="288" height="238" rx="0" class="s-priv" fill="none" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="346" y="61" class="f-ink" font-size="12" font-weight="500" text-anchor="start">eu-west-1b</text>
+<rect x="354" y="78" width="256" height="88" rx="0" class="s-faint" fill="none" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="366" y="100" class="f-faint" font-size="11.5" font-weight="500" text-anchor="start">public-b</text>
+<text x="600" y="100" class="f-faint mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.3.0/24</text>
+<text x="366" y="142" class="f-faint" font-size="11" font-weight="400" text-anchor="start">phase 6</text>
+<rect x="354" y="180" width="256" height="88" rx="0" class="s-faint" fill="none" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="366" y="202" class="f-faint" font-size="11.5" font-weight="500" text-anchor="start">private-b</text>
+<text x="600" y="202" class="f-faint mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.4.0/24</text>
+<text x="366" y="244" class="f-faint" font-size="11" font-weight="400" text-anchor="start">phase 6</text>
 </svg>

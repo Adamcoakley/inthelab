@@ -28,7 +28,7 @@ questions:
       - "A /16 is more secure"
       - "It leaves plenty of room to carve out many subnets later"
     correct: 3
-    hint: "Lab 0.3: a smaller slash number means a bigger network."
+    hint: "A smaller slash number means a bigger network."
     explain: "A /16 holds 65,536 addresses, so you can split it into lots of /24 subnets. A /24 VPC would only have room for one /24 subnet, and changing a VPC's range later is awkward."
 
   - kind: predict
@@ -39,7 +39,7 @@ questions:
       - "Nothing, because private ranges only have meaning inside each network"
       - "Your VPC gets renamed automatically"
     correct: 2
-    hint: "Lab 0.2: two homes can both use 192.168.1.10."
+    hint: "Two homes can both use 192.168.1.10."
     explain: "10.0.0.0/16 is a private range. Like two homes using the same 192.168.1.10, the same private range in two separate VPCs causes no conflict. It only matters if you ever connect those two networks together."
 ---
 

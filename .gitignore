@@ -16,3 +16,5 @@ notes/
 
 *.pem
 *.key
+
+*:Zone.Identifier

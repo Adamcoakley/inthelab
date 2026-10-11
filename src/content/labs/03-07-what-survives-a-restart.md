@@ -28,7 +28,7 @@ questions:
       - "The app was saved in memory"
       - "The security group restarted it"
     correct: 0
-    hint: "Lab 3.4, step 6."
+    hint: "Think about the systemctl command you ran when you set the app up as a service."
     explain: "systemctl enable told systemd to start the hello service every time the server boots. Without it, the app would have stayed off until you started it by hand."
 
   - kind: predict
@@ -101,7 +101,7 @@ uptime
 
 Your note is still there. The uptime started again from zero.
 
-Open the website at the new public IP. It works, because you ran `systemctl enable` in Lab 3.4. But **requests served** has started again from 1, because that count only lived in memory.
+Open the website at the new public IP. It works, because you ran `systemctl enable` when you set the app up as a service. But **requests served** has started again from 1, because that count only lived in memory.
 
 <div class="diagram">
   <img

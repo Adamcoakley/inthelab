@@ -77,7 +77,7 @@ When you launch a server, you can give it a script called **user data**. The ser
   <div class="dcap">the same result, without you in the loop</div>
 </div>
 
-Here's the script. It does exactly what you did by hand in Lab 3.4:
+Here's the script. It does exactly what you did by hand when you put the website on your server:
 
 ```bash
 #!/bin/bash
@@ -97,7 +97,7 @@ There's no `sudo`, because user data already runs as root. You can also [downloa
 
 ## Step 3: Launch a server with user data
 
-Launch a new server, the same way as Lab 3.1, with these differences:
+Launch a new server, the same way as your first one, with these differences:
 
 1. **Name:** `{{ns}}-web-2`
 2. **Key pair:** choose your existing `{{ns}}-key`.

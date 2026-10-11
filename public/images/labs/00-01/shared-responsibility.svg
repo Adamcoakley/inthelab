@@ -1,41 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 260">
-
-<defs><filter id="s6" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-
-<g filter="url(#s6)"><rect x="46" y="26" width="250" height="200" rx="12" fill="rgba(245,165,36,.05)" stroke="#F5A524" stroke-width="1.6"/></g>
-
-<text x="171" y="50" fill="#F5A524" font-family="JetBrains Mono" font-size="11.5" text-anchor="middle">YOURS</text>
-
-<text x="171" y="66" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">security IN the cloud</text>
-
-<text x="70" y="94" fill="#8FA0BD" font-family="Inter" font-size="11">your application code</text>
-
-<text x="70" y="118" fill="#8FA0BD" font-family="Inter" font-size="11">the operating system and patches</text>
-
-<text x="70" y="142" fill="#8FA0BD" font-family="Inter" font-size="11">who can log in, and how</text>
-
-<text x="70" y="166" fill="#8FA0BD" font-family="Inter" font-size="11">firewall rules you configure</text>
-
-<text x="70" y="190" fill="#8FA0BD" font-family="Inter" font-size="11">your data, and its encryption</text>
-
-<line x1="310" y1="40" x2="310" y2="212" stroke="#3D5170" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-<g filter="url(#s6)"><rect x="324" y="26" width="250" height="200" rx="12" fill="rgba(34,199,184,.05)" stroke="#22C7B8" stroke-width="1.6"/></g>
-
-<text x="449" y="50" fill="#22C7B8" font-family="JetBrains Mono" font-size="11.5" text-anchor="middle">AWS</text>
-
-<text x="449" y="66" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">security OF the cloud</text>
-
-<text x="348" y="94" fill="#8FA0BD" font-family="Inter" font-size="11">the physical buildings</text>
-
-<text x="348" y="118" fill="#8FA0BD" font-family="Inter" font-size="11">the hardware and racks</text>
-
-<text x="348" y="142" fill="#8FA0BD" font-family="Inter" font-size="11">the virtualisation layer</text>
-
-<text x="348" y="166" fill="#8FA0BD" font-family="Inter" font-size="11">power, cooling, guards</text>
-
-<text x="348" y="190" fill="#8FA0BD" font-family="Inter" font-size="11">the network between Regions</text>
-
-<text x="310" y="246" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">the line sits exactly where your virtual machine begins</text>
-
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 250"><title>The Shared Responsibility Model</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<rect x="20" y="14" width="290" height="216" rx="8" class="s-you f-youtint" stroke-width="1.6"/>
+<text x="165" y="40" class="f-you" font-size="14" font-weight="700" text-anchor="middle">Yours</text>
+<text x="165" y="56" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">security in the cloud</text>
+<text x="40" y="88" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">your application code</text>
+<text x="40" y="115" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">the operating system and patches</text>
+<text x="40" y="142" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">who can log in, and how</text>
+<text x="40" y="169" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">firewall rules you configure</text>
+<text x="40" y="196" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">your data, and its encryption</text>
+<path d="M330 24 L330 222" class="s-faint" fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 4"/>
+<rect x="350" y="14" width="290" height="216" rx="8" class="s-ink f-surface" stroke-width="1.6"/>
+<g transform="translate(470.00 26.00) scale(0.6000)"><g fill="none" fill-rule="evenodd"><path fill="#242f3e" d="M0 0h40v40H0z"/><path fill="#fff" d="M32.698 23.9c.361.47-.4 2.4-.74 3.264-.105.262.117.365.35.168 1.512-1.284 1.904-3.975 1.593-4.363-.307-.386-2.95-.717-4.563.432-.249.177-.206.42.07.389.907-.112 2.93-.357 3.29.11m-.842 2.01c.518-.378.074-.941-.454-.72-3.513 1.464-7.327 2.173-10.8 2.173-5.143 0-10.127-1.39-14.156-3.695-.352-.202-.613.155-.319.414 3.733 3.316 8.67 5.309 14.147 5.309 3.91 0 8.451-1.208 11.582-3.481m-2.144-5.215a6.6 6.6 0 0 1-1.459-.161q-.714-.163-1.093-.373-.233-.128-.29-.258a.7.7 0 0 1-.059-.26v-.47q0-.29.216-.292.083.002.173.033.091.034.241.098.48.21 1.044.324.564.113 1.126.113.895 0 1.384-.308a.97.97 0 0 0 .49-.873.88.88 0 0 0-.258-.65q-.256-.258-.952-.484l-1.375-.421q-1.045-.325-1.517-.938a2.17 2.17 0 0 1-.472-1.347q0-.581.258-1.027.255-.445.676-.761.427-.314.99-.478A4.3 4.3 0 0 1 30.025 12q.315 0 .64.04a6.3 6.3 0 0 1 1.15.252q.248.082.4.162a.9.9 0 0 1 .28.227.5.5 0 0 1 .083.308v.436q0 .291-.217.29-.114.002-.364-.111c-.54-.24-1.15-.356-1.82-.356q-.815 0-1.262.258-.448.26-.448.827 0 .388.283.655.281.267 1.044.51l1.342.423q1.028.322 1.466.888.441.568.441 1.295 0 .6-.25 1.078-.248.477-.689.817a3.1 3.1 0 0 1-1.05.518q-.615.179-1.343.178m-12.165-.244q-.248.002-.365-.087-.117-.09-.199-.365l-2.222-7.157a1.8 1.8 0 0 1-.082-.371q0-.227.233-.227h.927q.265 0 .374.09.106.086.19.364l1.59 6.12 1.477-6.12q.066-.278.181-.364.116-.09.38-.09h.765q.263 0 .38.09.116.086.182.364l1.493 6.2 1.64-6.2q.082-.278.19-.364.109-.09.373-.09h.878q.233 0 .233.227a1 1 0 0 1-.016.144 2 2 0 0 1-.068.227l-2.286 7.157q-.083.275-.2.365-.116.088-.364.087h-.813q-.264.001-.38-.094-.116-.099-.182-.373l-1.476-5.96-1.457 5.96q-.067.274-.183.373-.116.095-.38.094zM9.94 19.449q.465 0 .98-.17.513-.17.893-.592.232-.259.324-.591.09-.33.09-.801v-.388a8 8 0 0 0-1.757-.211q-.945 0-1.408.373-.464.37-.465 1.07 0 .645.35.978.347.332.993.332m3.846-1.408q0 .517.107.825.11.31.307.664a.4.4 0 0 1 .066.209q0 .148-.182.276l-.597.39a.5.5 0 0 1-.248.08.4.4 0 0 1-.282-.128 2 2 0 0 1-.339-.43 6 6 0 0 1-.29-.544q-1.112 1.28-2.785 1.28-1.194.001-1.89-.664-.696-.664-.696-1.78 0-1.182.863-1.903.86-.72 2.32-.721.48 0 1.002.073t1.084.203v-.68q.001-1.052-.446-1.482-.446-.428-1.54-.428a4.5 4.5 0 0 0-1.02.12 7.5 7.5 0 0 0-1.02.315 3 3 0 0 1-.33.122.7.7 0 0 1-.15.024q-.199.001-.2-.292v-.452q.001-.228.068-.323.066-.099.265-.195a6 6 0 0 1 1.192-.421 6 6 0 0 1 1.476-.18c1.126 0 1.952.254 2.477.754q.787.753.788 2.275z"/></g></g>
+<text x="500" y="43" class="f-ink" font-size="14" font-weight="700" text-anchor="start">AWS</text>
+<text x="495" y="60" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">security of the cloud</text>
+<text x="370" y="88" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">the physical buildings</text>
+<text x="370" y="115" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">the hardware and racks</text>
+<text x="370" y="142" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">the virtualisation layer</text>
+<text x="370" y="169" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">power, cooling, guards</text>
+<text x="370" y="196" class="f-ink" font-size="11.5" font-weight="400" text-anchor="start">the network between Regions</text>
 </svg>

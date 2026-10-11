@@ -1,106 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 250">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<g>
-<rect x="46" y="70" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="52" y="76" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="59" cy="84" r="2.2" fill="#34D399"/><circle cx="66" cy="84" r="2.2" fill="#3D5170"/>
-<line x1="78.0" y1="80" x2="78.0" y2="88" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="82.5" y1="80" x2="82.5" y2="88" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="87.0" y1="80" x2="87.0" y2="88" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="91.5" y1="80" x2="91.5" y2="88" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="52" y="95" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="59" cy="103" r="2.2" fill="#22C7B8"/><circle cx="66" cy="103" r="2.2" fill="#3D5170"/>
-<line x1="78.0" y1="99" x2="78.0" y2="107" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="82.5" y1="99" x2="82.5" y2="107" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="87.0" y1="99" x2="87.0" y2="107" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="91.5" y1="99" x2="91.5" y2="107" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="52" y="114" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="59" cy="122" r="2.2" fill="#22C7B8"/><circle cx="66" cy="122" r="2.2" fill="#3D5170"/>
-<line x1="78.0" y1="118" x2="78.0" y2="126" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="82.5" y1="118" x2="82.5" y2="126" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="87.0" y1="118" x2="87.0" y2="126" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="91.5" y1="118" x2="91.5" y2="126" stroke="#3D5170" stroke-width="1.2"/>
-</g>
-<text x="74" y="152" fill="#8FA0BD" font-family="JetBrains Mono" font-size="10" text-anchor="middle">web-2</text>
-<text x="74" y="165" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">patched, app installed</text>
-<line x1="108" y1="103" x2="205.0" y2="103.0" stroke="#F5A524" stroke-width="1.6"/>
-<polygon points="214,103 205.0,98.5 205.0,107.5" fill="#F5A524"/>
-<rect x="111.0" y="73" width="100" height="22" rx="11" fill="#0A1220" stroke="#F5A524" stroke-width="1.3"/>
-<text x="161" y="87.5" fill="#F5A524" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">create image</text>
-<rect x="220" y="64" width="140" height="78" rx="8" fill="#0A1220" stroke="#F5A524" stroke-width="1.6"/>
-<text x="290" y="92" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">AMI</text>
-<text x="290" y="110" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">web-ami</text>
-<text x="290" y="126" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">+ a disk snapshot</text>
-<g>
-<rect x="520" y="20" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="526" y="26" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="34" r="2.2" fill="#34D399"/><circle cx="540" cy="34" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="30" x2="552.0" y2="38" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="30" x2="556.5" y2="38" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="30" x2="561.0" y2="38" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="30" x2="565.5" y2="38" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="45" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="53" r="2.2" fill="#22C7B8"/><circle cx="540" cy="53" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="49" x2="552.0" y2="57" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="49" x2="556.5" y2="57" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="49" x2="561.0" y2="57" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="49" x2="565.5" y2="57" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="64" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="72" r="2.2" fill="#22C7B8"/><circle cx="540" cy="72" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="68" x2="552.0" y2="76" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="68" x2="556.5" y2="76" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="68" x2="561.0" y2="76" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="68" x2="565.5" y2="76" stroke="#3D5170" stroke-width="1.2"/>
-</g>
-<line x1="362" y1="103" x2="505.5" y2="55.8" stroke="#3D5170" stroke-width="1.3"/>
-<polygon points="514,53 504.0,51.5 506.9,60.1" fill="#3D5170"/>
-<g>
-<rect x="520" y="96" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="526" y="102" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="110" r="2.2" fill="#34D399"/><circle cx="540" cy="110" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="106" x2="552.0" y2="114" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="106" x2="556.5" y2="114" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="106" x2="561.0" y2="114" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="106" x2="565.5" y2="114" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="121" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="129" r="2.2" fill="#22C7B8"/><circle cx="540" cy="129" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="125" x2="552.0" y2="133" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="125" x2="556.5" y2="133" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="125" x2="561.0" y2="133" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="125" x2="565.5" y2="133" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="140" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="148" r="2.2" fill="#22C7B8"/><circle cx="540" cy="148" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="144" x2="552.0" y2="152" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="144" x2="556.5" y2="152" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="144" x2="561.0" y2="152" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="144" x2="565.5" y2="152" stroke="#3D5170" stroke-width="1.2"/>
-</g>
-<line x1="362" y1="103" x2="505.1" y2="127.5" stroke="#3D5170" stroke-width="1.3"/>
-<polygon points="514,129 505.9,123.0 504.4,131.9" fill="#3D5170"/>
-<g>
-<rect x="520" y="172" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="526" y="178" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="186" r="2.2" fill="#34D399"/><circle cx="540" cy="186" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="182" x2="552.0" y2="190" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="182" x2="556.5" y2="190" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="182" x2="561.0" y2="190" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="182" x2="565.5" y2="190" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="197" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="205" r="2.2" fill="#22C7B8"/><circle cx="540" cy="205" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="201" x2="552.0" y2="209" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="201" x2="556.5" y2="209" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="201" x2="561.0" y2="209" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="201" x2="565.5" y2="209" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="526" y="216" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="533" cy="224" r="2.2" fill="#22C7B8"/><circle cx="540" cy="224" r="2.2" fill="#3D5170"/>
-<line x1="552.0" y1="220" x2="552.0" y2="228" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="556.5" y1="220" x2="556.5" y2="228" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="561.0" y1="220" x2="561.0" y2="228" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="565.5" y1="220" x2="565.5" y2="228" stroke="#3D5170" stroke-width="1.2"/>
-</g>
-<line x1="362" y1="103" x2="506.5" y2="200.0" stroke="#3D5170" stroke-width="1.3"/>
-<polygon points="514,205 509.0,196.2 504.0,203.7" fill="#3D5170"/>
-<text x="450" y="240" fill="#22C7B8" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">identical every time</text>
-<text x="110" y="200" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">user data: build it on every boot</text>
-<text x="110" y="216" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">AMI: build it once, copy it</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 250"><title>web-2 becomes an AMI, and every server launched from it is an identical copy</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<g transform="translate(42.00 70.00) scale(1.1667)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<text x="70" y="142" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">web-2</text>
+<text x="70" y="156" class="f-sub" font-size="10" font-weight="400" text-anchor="middle">patched, app installed</text>
+<path d="M110 98 L214.0 98.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="220.0,98.0 210.0,93.0 210.0,103.0" class="f-line"/>
+<rect x="113.0" y="69" width="104" height="22" rx="11" class="s-ink f-panel" stroke-width="1.4"/>
+<text x="165" y="83.78" class="f-ink" font-size="10.5" font-weight="500" text-anchor="middle">create image</text>
+<rect x="226" y="56" width="150" height="86" rx="8" class="s-cmp f-surface" stroke-width="1.6"/>
+<g transform="translate(236.00 66.00) scale(0.7500)"><path class="f-cmp" fill-rule="evenodd" d="M30.143 37.727h8.456V26.656h-8.456zm-20.914 0h8.457V26.656H9.229zm10.457 0h8.457V26.656h-8.457zm19.913-13.071H8.229a1 1 0 0 0-1 1v13.071a1 1 0 0 0 1 1h31.37a1 1 0 0 0 1-1V25.656a1 1 0 0 0-1-1m-9.456-5.228h8.456v-8.457h-8.456zm-20.914 0h8.457v-8.457H9.229zm10.457 0h8.457v-8.457h-8.457zM39.599 8.971H8.229a1 1 0 0 0-1 1v10.457a1 1 0 0 0 1 1h31.37a1 1 0 0 0 1-1V9.971a1 1 0 0 0-1-1m4.228 30.408a4.45 4.45 0 0 1-4.447 4.448H8.448A4.453 4.453 0 0 1 4 39.379V8.448A4.453 4.453 0 0 1 8.448 4H39.38a4.45 4.45 0 0 1 4.447 4.448zM39.38 2H8.448A6.455 6.455 0 0 0 2 8.448v30.931a6.456 6.456 0 0 0 6.448 6.448H39.38a6.455 6.455 0 0 0 6.447-6.448V8.448A6.454 6.454 0 0 0 39.38 2"/></g>
+<text x="280" y="82" class="f-ink" font-size="13" font-weight="700" text-anchor="start">AMI</text>
+<text x="280" y="98" class="f-sub mono" font-size="10.5" font-weight="400" text-anchor="start">web-ami</text>
+<text x="240" y="128" class="f-sub" font-size="10" font-weight="400" text-anchor="start">+ a disk snapshot</text>
+<g transform="translate(548.00 16.00) scale(0.9167)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<path d="M378 99 L534.4 40.1" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="540.0,38.0 528.9,36.8 532.4,46.2" class="f-faint"/>
+<g transform="translate(548.00 88.00) scale(0.9167)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<path d="M378 99 L534.0 109.6" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="540.0,110.0 530.4,104.3 529.7,114.3" class="f-faint"/>
+<g transform="translate(548.00 160.00) scale(0.9167)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<path d="M378 99 L534.7 179.3" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="540.0,182.0 533.4,173.0 528.8,181.9" class="f-faint"/>
+<text x="570" y="238" class="f-you" font-size="10.5" font-weight="600" text-anchor="middle">identical every time</text>
+<text x="30" y="196" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">user data: build it on every boot</text>
+<text x="30" y="214" class="f-ink" font-size="10.5" font-weight="600" text-anchor="start">AMI: build it once, copy it</text>
 </svg>

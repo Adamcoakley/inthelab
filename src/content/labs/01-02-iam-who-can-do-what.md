@@ -28,7 +28,7 @@ questions:
       - "No policy attached to the viewer allows that action, so it's denied by default"
       - "Only the root user can create groups"
     correct: 2
-    hint: "Think about the firewall rule list from Lab 0.5."
+    hint: "Like a firewall: if no rule allows it, the answer is no."
     explain: "IAM denies everything unless a policy allows it. ReadOnlyAccess allows looking, not creating, so the request is refused."
 
   - kind: predict

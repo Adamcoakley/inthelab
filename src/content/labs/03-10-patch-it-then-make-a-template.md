@@ -49,7 +49,7 @@ questions:
 
 ## Your side of the line
 
-In Lab 0.1, the Shared Responsibility Model split security between AWS and you. AWS keeps the hardware and virtualisation up to date. Everything inside your instance, starting with the operating system, is yours. Nobody else is going to install its updates.
+Under the Shared Responsibility Model, security is split between AWS and you. AWS keeps the hardware and virtualisation up to date. Everything inside your instance, starting with the operating system, is yours. Nobody else is going to install its updates.
 
 ## Step 1: Install updates
 
@@ -73,7 +73,7 @@ If nothing needs updating, that's fine: your AMI was recent. On a real server, y
 
 ## AMIs: a server you can copy
 
-In Lab 3.8, user data built a server from nothing on every launch. There's another way: set one server up exactly how you want it, then copy its disk into an **AMI**. Every server launched from that AMI starts as an exact copy, with nothing to install.
+User data builds a server from nothing on every launch. There's another way: set one server up exactly how you want it, then copy its disk into an **AMI**. Every server launched from that AMI starts as an exact copy, with nothing to install.
 
 <div class="diagram">
   <img
@@ -128,7 +128,7 @@ Once it's running, open `http://WEB_3_PUBLIC_IP`.
 
 The page loads straight away, with a new server name. There was no script and nothing to download: the app and its service were already on the disk.
 
-<div class="callout break"><b>An AMI copies everything on the disk.</b> If you'd saved access keys or passwords on <code>web-2</code>, every server launched from this AMI would have them too. That's one more reason Lab 3.9 used a role.</div>
+<div class="callout break"><b>An AMI copies everything on the disk.</b> If you'd saved access keys or passwords on <code>web-2</code>, every server launched from this AMI would have them too. That's one more reason to give servers permissions with a role, not saved keys.</div>
 
 ## User data or AMI?
 

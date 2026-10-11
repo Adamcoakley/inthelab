@@ -1,69 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 368">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<defs><filter id="g1" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<text x="150" y="22" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">what you learned in Phase 0</text>
-<text x="412" y="22" fill="#22C7B8" font-family="JetBrains Mono" font-size="10" text-anchor="middle">what AWS calls it</text>
-<rect x="30" y="38" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="56" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">one or more data centres</text>
-<line x1="276" y1="52" x2="307.0" y2="52.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,52.0 307.0,56.5 307.0,47.5" fill="#3D5170"/>
-<rect x="322" y="38" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="56" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">Availability Zone</text>
-<text x="516" y="56" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">you've met it</text>
-<rect x="30" y="74" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="92" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">network</text>
-<line x1="276" y1="88" x2="307.0" y2="88.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,88.0 307.0,92.5 307.0,83.5" fill="#3D5170"/>
-<rect x="322" y="74" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="92" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">VPC</text>
-<text x="516" y="92" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 2</text>
-<rect x="30" y="110" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="128" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">subnet</text>
-<line x1="276" y1="124" x2="307.0" y2="124.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,124.0 307.0,128.5 307.0,119.5" fill="#3D5170"/>
-<rect x="322" y="110" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="128" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">subnet</text>
-<text x="516" y="128" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 2</text>
-<rect x="30" y="146" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="164" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">routing table</text>
-<line x1="276" y1="160" x2="307.0" y2="160.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,160.0 307.0,164.5 307.0,155.5" fill="#3D5170"/>
-<rect x="322" y="146" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="164" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">route table</text>
-<text x="516" y="164" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 2</text>
-<rect x="30" y="182" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="200" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">home router's internet link</text>
-<line x1="276" y1="196" x2="307.0" y2="196.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,196.0 307.0,200.5 307.0,191.5" fill="#3D5170"/>
-<rect x="322" y="182" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="200" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">Internet Gateway</text>
-<text x="516" y="200" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 2</text>
-<rect x="30" y="218" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="236" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">firewall</text>
-<line x1="276" y1="232" x2="307.0" y2="232.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,232.0 307.0,236.5 307.0,227.5" fill="#3D5170"/>
-<rect x="322" y="218" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="236" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">Security Group</text>
-<text x="516" y="236" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 2</text>
-<rect x="30" y="254" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="272" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">server</text>
-<line x1="276" y1="268" x2="307.0" y2="268.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,268.0 307.0,272.5 307.0,263.5" fill="#3D5170"/>
-<rect x="322" y="254" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="272" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">EC2 instance</text>
-<text x="516" y="272" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 3</text>
-<rect x="30" y="290" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="308" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">sharing one public IP</text>
-<line x1="276" y1="304" x2="307.0" y2="304.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,304.0 307.0,308.5 307.0,299.5" fill="#3D5170"/>
-<rect x="322" y="290" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="308" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">NAT Gateway</text>
-<text x="516" y="308" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 5</text>
-<rect x="30" y="326" width="240" height="28" rx="6" fill="#0A1220" stroke="#F5A524" stroke-width="1.2"/>
-<text x="150" y="344" fill="#F5A524" font-family="JetBrains Mono" font-size="10" text-anchor="middle">DNS</text>
-<line x1="276" y1="340" x2="307.0" y2="340.0" stroke="#3D5170" stroke-width="1.4"/>
-<polygon points="316.0,340.0 307.0,344.5 307.0,335.5" fill="#3D5170"/>
-<rect x="322" y="326" width="180" height="28" rx="6" fill="#141E2C" stroke="#22C7B8" stroke-width="1.4"/>
-<text x="412" y="344" fill="#22C7B8" font-family="JetBrains Mono" font-size="10.5" text-anchor="middle">Route 53</text>
-<text x="516" y="344" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="start">phase 8</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 380"><title>Phase 0 ideas and their AWS names, with the phase where you'll build each one</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<text x="150" y="18" class="f-you" font-size="11" font-weight="600" text-anchor="middle">what you learned in Phase 0</text>
+<text x="430" y="18" class="f-ink" font-size="11" font-weight="600" text-anchor="middle">what AWS calls it</text>
+<rect x="20" y="30" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="49" class="f-you" font-size="11" font-weight="500" text-anchor="middle">one or more data centres</text>
+<path d="M286 45 L318.0 45.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,45.0 314.0,40.0 314.0,50.0" class="f-faint"/>
+<rect x="330" y="30" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<rect x="339" y="36" width="18" height="18" rx="2" class="s-priv" fill="none" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="368" y="49" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">Availability Zone</text>
+<text x="546" y="49" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">you've met it</text>
+<rect x="20" y="68" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="87" class="f-you" font-size="11" font-weight="500" text-anchor="middle">network</text>
+<path d="M286 83 L318.0 83.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,83.0 314.0,78.0 314.0,88.0" class="f-faint"/>
+<rect x="330" y="68" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 71.00) scale(0.6000)"><g fill="none" fill-rule="evenodd"><path fill="#8c4fff" d="M0 0h40v40H0z"/><path fill="#fff" d="m30.97 21.03-2.943-1.264v10.49c2.545-.353 2.932-2.969 2.948-3.088zm-3.943 9.24V19.76l-3.035 1.272v6.201c.013.054.445 2.767 3.035 3.036m.306-11.723a.5.5 0 0 1 .39.001l3.945 1.692a.5.5 0 0 1 .303.46v6.533c-.183 1.447-1.357 4.063-4.527 4.063-3.075 0-4.254-2.612-4.448-3.994l-.004-6.603c0-.2.12-.383.306-.46zm5.65.637-5.461-2.406-5.53 2.327v7.128c-.001.042-.054 2.868 1.657 4.623.917.941 2.194 1.42 3.795 1.42 1.602 0 2.887-.48 3.819-1.423 1.735-1.758 1.72-4.585 1.72-4.613zM31.98 31.55c-1.127 1.144-2.654 1.725-4.536 1.725-1.884 0-3.404-.58-4.517-1.727-2.005-2.063-1.94-5.197-1.935-5.329v-7.446a.5.5 0 0 1 .305-.46l6.035-2.54a.5.5 0 0 1 .396.003l5.956 2.625c.182.08.299.26.299.457v7.375c.002.125.027 3.255-2.003 5.317m-20.988-7.314h8v1h-8c-2.811 0-4.811-2.016-4.98-5.016A4 4 0 0 1 6 19.841c0-2.509 1.318-4.223 3.817-4.979a8 8 0 0 1-.032-.647c0-2.916 1.577-5.445 4.017-6.445 3.298-1.348 7.042-.894 9.106 1.104a8.2 8.2 0 0 1 1.76 2.485c.609-.45 1.4-.66 2.349-.614 1.78.09 3.149 1.713 3.433 4.007 1.498.124 2.485.883 3.01 2.308l-.937.346c-.428-1.157-1.208-1.673-2.531-1.673a.5.5 0 0 1-.5-.47c-.138-2.338-1.406-3.463-2.526-3.519-.945-.053-1.645.22-2.08.791a.5.5 0 0 1-.472.193.5.5 0 0 1-.395-.323 7.4 7.4 0 0 0-1.807-2.814c-1.788-1.73-5.09-2.099-8.031-.895-2.063.845-3.396 3.011-3.396 5.52 0 .272.035.695.066.958a.5.5 0 0 1-.376.544C8.169 16.29 7 17.678 7 19.841c0 .101-.001.201.009.302.14 2.495 1.703 4.093 3.983 4.093"/></g></g>
+<text x="368" y="87" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">VPC</text>
+<text x="546" y="87" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 2</text>
+<rect x="20" y="106" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="125" class="f-you" font-size="11" font-weight="500" text-anchor="middle">subnet</text>
+<path d="M286 121 L318.0 121.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,121.0 314.0,116.0 314.0,126.0" class="f-faint"/>
+<rect x="330" y="106" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 109.00) scale(0.6000)"><g fill="none" fill-rule="evenodd"><path fill="#7aa116" d="M0 0h40v40H0z"/><path fill="#fff" d="M19.536 22.049c1.106 0 2.006.899 2.006 2.005s-.9 2.006-2.006 2.006-2.006-.9-2.006-2.006.9-2.005 2.006-2.005m-.524 4.958v3.494h1v-3.489a3 3 0 0 0 2.53-2.958 3.01 3.01 0 0 0-3.006-3.005 3.01 3.01 0 0 0-3.006 3.005 3.006 3.006 0 0 0 2.482 2.953M10 33.014h19.012V18H10zm4.046-20.53A5.49 5.49 0 0 1 19.529 7a5.49 5.49 0 0 1 5.483 5.484V17H14.046zM29.512 17h-3.5v-4.516A6.49 6.49 0 0 0 19.529 6a6.49 6.49 0 0 0-6.483 6.484V17H9.5a.5.5 0 0 0-.5.5v16.014a.5.5 0 0 0 .5.5h20.012a.5.5 0 0 0 .5-.5V17.5a.5.5 0 0 0-.5-.5"/></g></g>
+<text x="368" y="125" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">subnet</text>
+<text x="546" y="125" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 2</text>
+<rect x="20" y="144" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="163" class="f-you" font-size="11" font-weight="500" text-anchor="middle">routing table</text>
+<path d="M286 159 L318.0 159.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,159.0 314.0,154.0 314.0,164.0" class="f-faint"/>
+<rect x="330" y="144" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 147.00) scale(0.5000)"><path class="f-net" fill-rule="evenodd" d="M42.828 23v2H29.311l2.638 2.638-1.414 1.414-4.345-4.345a1 1 0 0 1 0-1.414l4.345-4.345 1.414 1.414L29.311 23zM21.81 24.707l-4.344 4.345-1.414-1.414L18.69 25H5.173v-2H18.69l-2.637-2.638 1.414-1.414 4.344 4.345a1 1 0 0 1 0 1.414m5.828 11.621 1.414 1.414-4.345 4.345a.997.997 0 0 1-1.414 0l-4.345-4.345 1.414-1.414L23 38.966V9.325l-2.585 3.016-1.52-1.301 4.345-5.069c.381-.444 1.14-.444 1.52 0l4.344 5.069-1.519 1.301L25 9.325v29.641zM24 44C12.972 44 4 35.028 4 24S12.972 4 24 4s20 8.972 20 20-8.972 20-20 20m0-42C11.87 2 2 11.869 2 24s9.87 22 22 22 22-9.869 22-22S36.131 2 24 2"/></g>
+<text x="368" y="163" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">route table</text>
+<text x="546" y="163" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 2</text>
+<rect x="20" y="182" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="201" class="f-you" font-size="11" font-weight="500" text-anchor="middle">home router's internet link</text>
+<path d="M286 197 L318.0 197.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,197.0 314.0,192.0 314.0,202.0" class="f-faint"/>
+<rect x="330" y="182" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 185.00) scale(0.5000)"><path class="f-net" fill-rule="evenodd" d="M33.431 35.178h-1.498V17.502a1 1 0 0 0-.589-.911l-.092-.042c-2.009-.907-4.088-1.846-7.076-1.846-3.123 0-5.415 1.009-7.68 2.134a1 1 0 0 0-.556.896v17.445h-1.463V16.312c2.434-1.98 5.943-3.107 9.71-3.107 3.5 0 6.838.997 9.244 2.748zm-9.245-23.973c-4.425 0-8.569 1.419-11.37 3.895a1 1 0 0 0-.339.749v20.329a1 1 0 0 0 1 1h3.463a1 1 0 0 0 1-1V18.356c1.92-.927 3.78-1.653 6.236-1.653 2.335 0 4.033.675 5.757 1.446v18.029a1 1 0 0 0 1 1h3.498a1 1 0 0 0 1-1v-20.72c0-.304-.139-.592-.378-.783-2.774-2.205-6.735-3.47-10.867-3.47m-.232 32.704C12.952 43.909 4 34.957 4 23.954S12.952 4 23.954 4C34.957 4 43.91 12.95 43.91 23.954c0 11.003-8.952 19.955-19.955 19.955m0-41.91C11.848 2 2 11.85 2 23.955c0 12.107 9.85 21.955 21.955 21.955 12.106 0 21.955-9.848 21.955-21.955C45.91 11.849 36.06 2 23.954 2"/></g>
+<text x="368" y="201" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">internet gateway</text>
+<text x="546" y="201" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 2</text>
+<rect x="20" y="220" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="239" class="f-you" font-size="11" font-weight="500" text-anchor="middle">firewall</text>
+<path d="M286 235 L318.0 235.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,235.0 314.0,230.0 314.0,240.0" class="f-faint"/>
+<rect x="330" y="220" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<rect x="339" y="226" width="18" height="18" rx="2" class="s-sec" fill="none" stroke-width="1.6"/>
+<text x="368" y="239" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">security group</text>
+<text x="546" y="239" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 3</text>
+<rect x="20" y="258" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="277" class="f-you" font-size="11" font-weight="500" text-anchor="middle">server</text>
+<path d="M286 273 L318.0 273.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,273.0 314.0,268.0 314.0,278.0" class="f-faint"/>
+<rect x="330" y="258" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 261.00) scale(0.5000)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<text x="368" y="277" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">EC2 instance</text>
+<text x="546" y="277" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 3</text>
+<rect x="20" y="296" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="315" class="f-you" font-size="11" font-weight="500" text-anchor="middle">sharing one public IP</text>
+<path d="M286 311 L318.0 311.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,311.0 314.0,306.0 314.0,316.0" class="f-faint"/>
+<rect x="330" y="296" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 299.00) scale(0.5000)"><path class="f-net" fill-rule="evenodd" d="M13.626 35.92v-2.837l1.774 1.419zm-.375-5.7a1.001 1.001 0 0 0-1.625.781v7a1.001 1.001 0 0 0 1.625.782l4.374-3.5a1 1 0 0 0 0-1.562zm24-3.383v-3.922l1.962 1.96zm4.083-2.668-4.376-4.375a1 1 0 0 0-1.706.707v3.375h-7.627v-9.5a1 1 0 0 0-1-1h-7.693v2h6.694v8.5H18.75v2h6.875v8.5h-6.693v2h7.694a1 1 0 0 0 1-1v-9.5h7.625v3.376a1 1 0 0 0 1.708.707l4.374-4.376a1 1 0 0 0 0-1.414m-27.708 2.127v-2.84l1.774 1.42zm-.375-5.701a1 1 0 0 0-1.625.78v7.002a1.001 1.001 0 0 0 1.625.78l4.374-3.5a1 1 0 0 0 0-1.562zm.375-4.8v-2.838l1.774 1.419zm-.375-5.7a1.001 1.001 0 0 0-1.625.781v7a1.001 1.001 0 0 0 1.625.78l4.374-3.5a1 1 0 0 0 0-1.561zM24 44.003C12.971 44.003 4 35.03 4 24S12.973 4 24 4c11.03 0 20.002 8.973 20.002 20 0 11.03-8.973 20.003-20.002 20.003M24 2C11.868 2 2 11.869 2 24c0 12.133 9.869 22.003 22 22.003 12.133 0 22.002-9.87 22.002-22.002S36.133 2 24 2"/></g>
+<text x="368" y="315" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">NAT gateway</text>
+<text x="546" y="315" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 5</text>
+<rect x="20" y="334" width="260" height="30" rx="6" class="s-you f-youtint" stroke-width="1.3"/>
+<text x="150" y="353" class="f-you" font-size="11" font-weight="500" text-anchor="middle">DNS</text>
+<path d="M286 349 L318.0 349.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="324.0,349.0 314.0,344.0 314.0,354.0" class="f-faint"/>
+<rect x="330" y="334" width="200" height="30" rx="6" class="s-ink f-surface" stroke-width="1.3"/>
+<g transform="translate(336.00 337.00) scale(0.3750)"><g fill="none" fill-rule="evenodd"><path fill="#8c4fff" d="M0 0h64v64H0z"/><path fill="#fff" d="M38.761 32.527q.862.796.862 2.137 0 1.46-1.049 2.33t-2.82.871a6.9 6.9 0 0 1-2.768-.595v-1.192q1.622.536 2.768.536 1.13 0 1.741-.506.611-.507.611-1.444 0-1.802-2.278-1.802-.714 0-1.414.074v-.983l3.126-3.41h-4.406v-1.221h6.059v1.177l-3.067 3.246a1 1 0 0 1 .149-.015h.149q1.474 0 2.337.797m-8.647-.26q.906.848.907 2.337 0 1.46-1.057 2.36-1.058.901-2.783.901-1.518 0-2.843-.595v-1.192q1.653.536 2.828.536 1.131 0 1.734-.513.603-.514.602-1.482.001-1.057-.565-1.534-.565-.476-1.846-.476-.922 0-2.307.149v-.983l.284-4.453H30.5v1.222h-4.182l-.195 3.023q.819-.15 1.474-.15 1.608 0 2.517.85m11.147 10.697c-3.745.672-7.028 2.182-9.261 3.431-2.232-1.25-5.515-2.76-9.26-3.431-1.032-.185-6.174-1.256-6.174-4.14 0-1.361.497-2.282 1.451-3.924 1.116-1.926 2.646-4.564 2.646-8.226 0-2.564-.659-5.023-1.96-7.32l.269-.331c1.955.95 3.987 1.43 6.053 1.43 2.546 0 4.889-.657 6.975-1.951 2.086 1.294 4.43 1.95 6.976 1.95 2.065 0 4.097-.48 6.053-1.43l.268.331c-1.301 2.298-1.96 4.757-1.96 7.32 0 3.663 1.53 6.3 2.647 8.227.954 1.642 1.451 2.563 1.451 3.925 0 2.883-5.143 3.954-6.174 4.139m4.076-16.29c0-2.415.682-4.73 2.025-6.882a1 1 0 0 0-.074-1.162c-.395-.485-.809-.994-1.218-1.5a1 1 0 0 0-1.261-.246c-1.883 1.04-3.846 1.568-5.833 1.568-2.4 0-4.494-.644-6.406-1.97a1 1 0 0 0-1.139 0c-1.912 1.326-4.007 1.97-6.406 1.97-1.988 0-3.951-.528-5.833-1.568a1 1 0 0 0-1.261.246c-.409.506-.823 1.015-1.219 1.5a1 1 0 0 0-.073 1.162c1.343 2.152 2.024 4.467 2.024 6.882 0 3.124-1.262 5.3-2.377 7.221-1.066 1.84-1.72 3.06-1.72 4.93 0 4.363 5.985 5.778 7.82 6.108 3.75.674 7.024 2.265 9.111 3.48a1 1 0 0 0 1.006 0c2.087-1.215 5.362-2.806 9.112-3.48 1.834-.33 7.82-1.745 7.82-6.108 0-1.87-.654-3.09-1.721-4.93-1.114-1.92-2.377-4.097-2.377-7.221m-3.269 20.785c-4.666.838-8.6 3.296-10.068 4.309-1.468-1.013-5.401-3.47-10.067-4.31-2.33-.418-9.933-2.28-9.933-8.633 0-2.655 1.004-4.387 2.068-6.22.998-1.72 2.03-3.498 2.03-5.931 0-3.667-2.027-6.302-3.157-7.487 1.154-1.405 3.695-4.506 5.088-6.29 2.122 1.935 4.571 2.988 6.996 2.988 2.701 0 4.942-1.065 6.975-3.336 2.033 2.27 4.275 3.336 6.976 3.336 2.425 0 4.874-1.053 6.996-2.988 1.393 1.784 3.934 4.885 5.088 6.29-1.13 1.185-3.157 3.82-3.157 7.487 0 2.433 1.032 4.212 2.03 5.932C50.996 34.438 52 36.17 52 38.825c0 6.354-7.602 8.215-9.932 8.634M51.662 31.6c-.944-1.627-1.759-3.033-1.759-4.927 0-4.002 3.121-6.603 3.15-6.627a1 1 0 0 0 .143-1.414c-.052-.062-5.147-6.24-6.311-7.835a1 1 0 0 0-1.538-.094c-1.917 2.05-4.18 3.18-6.371 3.18-2.416 0-4.322-1.083-6.182-3.513-.379-.495-1.209-.495-1.588 0-1.859 2.43-3.765 3.513-6.181 3.513-2.192 0-4.454-1.13-6.371-3.18a1 1 0 0 0-1.539.094c-1.164 1.596-6.258 7.773-6.31 7.835-.17.206-.25.47-.224.737.028.266.159.51.367.677.032.026 3.15 2.595 3.15 6.627 0 1.894-.816 3.3-1.76 4.927C11.242 33.49 10 35.631 10 38.825c0 5.336 4.328 9.3 11.579 10.604 5.316.954 9.768 4.33 9.813 4.365a1 1 0 0 0 1.218-.001c.044-.034 4.478-3.406 9.811-4.364C49.672 48.125 54 44.16 54 38.825c0-3.194-1.242-5.335-2.338-7.224"/></g></g>
+<text x="368" y="353" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">Route 53</text>
+<text x="546" y="353" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">phase 8</text>
 </svg>

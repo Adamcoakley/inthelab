@@ -17,7 +17,7 @@ questions:
       - "free -h"
       - "ip addr"
     correct: 1
-    hint: "Lab 0.2: the port finds the service. This command shows that link."
+    hint: "The IP finds the machine; the port finds the service. This command shows which service is on which port."
     explain: "ss lists network connections. -t is TCP, -l is listening, -n shows numbers instead of names, and -p shows the program. sudo lets it see every program's name."
 
   - kind: cause
@@ -49,7 +49,7 @@ questions:
 
 ## A server is still just a computer
 
-In Lab 0.1, a server was a computer with a CPU, memory, a disk and a network connection. Your EC2 instance is exactly that. You've only seen it from the outside, as an icon in the console. Now look inside.
+Every server has a CPU, memory, a disk and a network connection, and your EC2 instance is no different. You've only seen it from the outside, as an icon in the console. Now look inside.
 
 <div class="diagram">
   <img
@@ -62,9 +62,23 @@ In Lab 0.1, a server was a computer with a CPU, memory, a disk and a network con
 
 SSH in to your server to follow along:
 
+<div class="os-switch">
+<div class="os-tabs"><button type="button" data-os-pick="mac">macOS / Linux</button><button type="button" data-os-pick="windows">Windows</button></div>
+<div class="os-panel" data-os="mac">
+
 ```bash
 ssh -i ~/Downloads/{{ns}}-key.pem ec2-user@PUBLIC_IP
 ```
+
+</div>
+<div class="os-panel" data-os="windows">
+
+```powershell
+ssh -i $HOME\Downloads\{{ns}}-key.pem ec2-user@PUBLIC_IP
+```
+
+</div>
+</div>
 
 ## Step 1: Find the app's process
 
@@ -97,7 +111,7 @@ LISTEN  0  5    0.0.0.0:80   0.0.0.0:*  users:(("python3",pid=2034,fd=3))
 LISTEN  0  128  0.0.0.0:22   0.0.0.0:*  users:(("sshd",pid=1688,fd=3))
 ```
 
-That's Lab 0.2, for real: port 80 belongs to your app, and port 22 belongs to `sshd`, the SSH service you log in through. `0.0.0.0` means it's listening on every network address the server has.
+The IP address got your traffic to this machine; the port picks the service. Port 80 belongs to your app, and port 22 belongs to `sshd`, the SSH service you log in through. `0.0.0.0` means it's listening on every network address the server has.
 
 ## Step 3: Read the app's log
 
@@ -139,7 +153,17 @@ Find the network card called `ens5`. It has one IPv4 address, from your subnet:
 inet 10.0.1.23/24 ...
 ```
 
-There's no public IP anywhere on this server. Now ask AWS what the public IP is:
+There's no public IP anywhere on this server.
+
+Now look at the server's own routing table:
+
+```bash
+ip route
+```
+
+The first line says `default via 10.0.1.1`. That's the VPC router, at the `.1` address AWS reserves in every subnet. Anything leaving the subnet goes there, and your route table decides where it goes next.
+
+The server has no public IP of its own, but AWS knows what it is. Ask:
 
 ```bash
 ec2-metadata --public-ipv4
@@ -162,13 +186,13 @@ Your server's public IP only exists at the internet gateway. When a request arri
 
 That's why your prompt and the website both show `ip-10-0-1-23`. As far as the server knows, that's its only address.
 
-<div class="callout why"><b>Your home router does something similar.</b> In Lab 0.2, devices at home had private addresses and shared the router's public one. Phase 5 builds on this exact idea.</div>
+<div class="callout why"><b>Your home router does something similar.</b> Devices at home have private addresses and share the router's public one. Phase 5 builds on this exact idea.</div>
 
 ## The metadata service
 
 `ec2-metadata` asked the **instance metadata service**, a special address, `169.254.169.254`, that every EC2 instance can reach. It answers questions about the instance itself: its ID, Availability Zone, IPs and more.
 
-Your test app uses it to find the name and Availability Zone it shows on the page. You'll use it again in Lab 3.9.
+Your test app uses it to find the name and Availability Zone it shows on the page. You'll use it again later in this phase.
 
 ## Summary
 

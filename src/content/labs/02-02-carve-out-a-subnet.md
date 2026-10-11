@@ -28,7 +28,7 @@ questions:
       - "It's outside the VPC's range"
       - "You can only have one subnet per VPC"
     correct: 1
-    hint: "Lab 0.3: no gap and no overlap."
+    hint: "Each block starts where the last one ended: no gap and no overlap."
     explain: "10.0.1.128/25 covers 10.0.1.128 to 10.0.1.255, which is already part of public-a. Two subnets in the same VPC can never share addresses."
 
   - kind: predict

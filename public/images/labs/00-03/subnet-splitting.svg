@@ -1,19 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 262">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<text x="60" y="44" fill="#5B7290" font-size="9.5">10.0.0.0</text>
-<text x="560" y="44" fill="#5B7290" font-size="9.5" text-anchor="end">10.0.0.255</text>
-<rect x="60" y="54" width="500" height="40" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="310" y="79" fill="#22C7B8" font-size="12.5" text-anchor="middle">10.0.0.0/24</text>
-<line x1="310" y1="94" x2="310" y2="156" stroke="#8B7BF0" stroke-width="1.8" stroke-dasharray="5 4"/>
-<circle cx="310" cy="94" r="3.4" fill="#8B7BF0"/>
-<circle cx="310" cy="156" r="3.4" fill="#8B7BF0"/>
-<text x="324" y="120" fill="#8B7BF0" font-size="10">cut it exactly in half</text>
-<text x="324" y="136" fill="#5B7290" font-size="9.5">the second half starts at .128</text>
-<rect x="60" y="156" width="250" height="40" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<rect x="310" y="156" width="250" height="40" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<line x1="310" y1="156" x2="310" y2="196" stroke="#8B7BF0" stroke-width="2.2"/>
-<text x="185" y="181" fill="#22C7B8" font-size="12" text-anchor="middle">10.0.0.0/25</text>
-<text x="435" y="181" fill="#22C7B8" font-size="12" text-anchor="middle">10.0.0.128/25</text>
-<text x="185" y="214" fill="#5B7290" font-size="9.5" text-anchor="middle">10.0.0.0 to 10.0.0.127</text>
-<text x="435" y="214" fill="#5B7290" font-size="9.5" text-anchor="middle">10.0.0.128 to 10.0.0.255</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 240"><title>10.0.0.0/24 cut in half into two /25 subnets</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<text x="40" y="22" class="f-sub mono" font-size="10" font-weight="400" text-anchor="start">10.0.0.0</text>
+<text x="620" y="22" class="f-sub mono" font-size="10" font-weight="400" text-anchor="end">10.0.0.255</text>
+<rect x="40" y="32" width="580" height="44" rx="6" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="330" y="59" class="f-net mono" font-size="13" font-weight="600" text-anchor="middle">10.0.0.0/24</text>
+<path d="M330 80 L330 150" class="s-net" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="344" y="104" class="f-ink" font-size="11" font-weight="500" text-anchor="start">cut it exactly in half</text>
+<text x="344" y="120" class="f-sub" font-size="10.5" font-weight="400" text-anchor="start">the second half starts at .128</text>
+<rect x="40" y="152" width="286" height="44" rx="6" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="183" y="179" class="f-net mono" font-size="13" font-weight="600" text-anchor="middle">10.0.0.0/25</text>
+<text x="183" y="216" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">10.0.0.0 to 10.0.0.127</text>
+<rect x="334" y="152" width="286" height="44" rx="6" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="477" y="179" class="f-net mono" font-size="13" font-weight="600" text-anchor="middle">10.0.0.128/25</text>
+<text x="477" y="216" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">10.0.0.128 to 10.0.0.255</text>
 </svg>

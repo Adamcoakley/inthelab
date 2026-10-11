@@ -1,96 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 250">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<defs><filter id="g1" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<line x1="24" y1="142" x2="656" y2="142" stroke="#2D3D52" stroke-width="1.5"/>
-<polygon points="112,137 120,142 112,147" fill="#3D5170"/>
-<polygon points="224,137 232,142 224,147" fill="#3D5170"/>
-<polygon points="336,137 344,142 336,147" fill="#3D5170"/>
-<polygon points="448,137 456,142 448,147" fill="#3D5170"/>
-<polygon points="560,137 568,142 560,147" fill="#3D5170"/>
-<rect x="18.0" y="50" width="84" height="56" rx="5" fill="#141E2C" stroke="#F5A524" stroke-width="1.5"/>
-<circle cx="27.0" cy="58" r="2.3" fill="#3D5170"/><circle cx="35.0" cy="58" r="2.3" fill="#3D5170"/>
-<line x1="18.0" y1="66" x2="102.0" y2="66" stroke="#F5A524" stroke-width="1" opacity=".5"/>
-<rect x="28.0" y="75" width="60" height="3.5" rx="1.75" fill="#3D5170"/>
-<rect x="28.0" y="84" width="46" height="3.5" rx="1.75" fill="#3D5170"/>
-<rect x="28.0" y="93" width="54" height="3.5" rx="1.75" fill="#3D5170"/>
-<rect x="12.0" y="13" width="96" height="22" rx="11" fill="#0A1220" stroke="#F5A524" stroke-width="1.3"/>
-<text x="60" y="27.6" fill="#F5A524" font-family="JetBrains Mono" font-size="9" text-anchor="middle">inthelab.ie</text>
-<rect x="136" y="58" width="72" height="44" rx="7" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.7"/>
-<text x="172" y="85" fill="#8B7BF0" font-family="JetBrains Mono" font-size="13" text-anchor="middle">DNS</text>
-<rect x="246" y="50" width="76" height="60" rx="7" fill="none" stroke="#F5A524" stroke-width="1.3" stroke-dasharray="4 4"/>
-<circle cx="262" cy="68" r="4" fill="#F5A524" opacity=".75"/>
-<circle cx="284" cy="68" r="4" fill="#F5A524" opacity=".75"/>
-<circle cx="306" cy="68" r="4" fill="#F5A524" opacity=".75"/>
-<circle cx="262" cy="92" r="4" fill="#F5A524" opacity=".75"/>
-<circle cx="284" cy="92" r="4" fill="#F5A524" opacity=".75"/>
-<circle cx="306" cy="92" r="5" fill="#F5A524" filter="url(#g1)"/>
-<line x1="376.0" y1="69.0" x2="366.0" y2="45.0" stroke="#8B7BF0" stroke-width="1.6"/>
-<circle cx="366.0" cy="45.0" r="2.6" fill="#8B7BF0"/>
-<line x1="416.0" y1="69.0" x2="426.0" y2="45.0" stroke="#8B7BF0" stroke-width="1.6"/>
-<circle cx="426.0" cy="45.0" r="2.6" fill="#8B7BF0"/>
-<g filter="url(#g1)"><rect x="356.0" y="69.0" width="80" height="34" rx="7" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.9"/></g>
-<circle cx="369.0" cy="79.0" r="3" fill="#34D399"/>
-<text x="396" y="90.5" fill="#8B7BF0" font-family="JetBrains Mono" font-size="11" text-anchor="middle">router</text>
-<rect x="501" y="48" width="14" height="68" rx="3" fill="#141E2C" stroke="#34D399" stroke-width="1.6"/>
-<line x1="501" y1="60" x2="515" y2="60" stroke="#34D399" stroke-width="1" opacity=".45"/>
-<line x1="501" y1="76" x2="515" y2="76" stroke="#34D399" stroke-width="1" opacity=".45"/>
-<line x1="501" y1="92" x2="515" y2="92" stroke="#34D399" stroke-width="1" opacity=".45"/>
-<line x1="501" y1="108" x2="515" y2="108" stroke="#34D399" stroke-width="1" opacity=".45"/>
-<circle cx="530" cy="82" r="8" fill="#0C1220" stroke="#34D399" stroke-width="1.7"/>
-<path d="M525.8 82.3 L528.8 85.4 L534.4 78.6" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="598" y="32" width="44" height="15" rx="3" fill="#0A1220" stroke="#22C7B8" stroke-width="1.2"/>
-<text x="620" y="43" fill="#22C7B8" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">443</text>
-<rect x="592" y="52" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="598" y="58" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="605" cy="66" r="2.2" fill="#34D399"/>
-<circle cx="612" cy="66" r="2.2" fill="#3D5170"/>
-<line x1="624.0" y1="62" x2="624.0" y2="70" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="628.5" y1="62" x2="628.5" y2="70" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="633.0" y1="62" x2="633.0" y2="70" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="637.5" y1="62" x2="637.5" y2="70" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="598" y="77" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="605" cy="85" r="2.2" fill="#22C7B8"/>
-<circle cx="612" cy="85" r="2.2" fill="#3D5170"/>
-<line x1="624.0" y1="81" x2="624.0" y2="89" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="628.5" y1="81" x2="628.5" y2="89" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="633.0" y1="81" x2="633.0" y2="89" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="637.5" y1="81" x2="637.5" y2="89" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="598" y="96" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="605" cy="104" r="2.2" fill="#22C7B8"/>
-<circle cx="612" cy="104" r="2.2" fill="#3D5170"/>
-<line x1="624.0" y1="100" x2="624.0" y2="108" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="628.5" y1="100" x2="628.5" y2="108" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="633.0" y1="100" x2="633.0" y2="108" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="637.5" y1="100" x2="637.5" y2="108" stroke="#3D5170" stroke-width="1.2"/>
-<circle cx="60" cy="142" r="13" fill="#0C1220" stroke="#F5A524" stroke-width="1.6"/>
-<text x="60" y="146" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">1</text>
-<text x="60" y="178" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">you</text>
-<text x="60" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">type a name</text>
-<text x="60" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">in a browser</text>
-<circle cx="172" cy="142" r="13" fill="#0C1220" stroke="#8B7BF0" stroke-width="1.6"/>
-<text x="172" y="146" fill="#8B7BF0" font-family="JetBrains Mono" font-size="11" text-anchor="middle">2</text>
-<text x="172" y="178" fill="#8B7BF0" font-family="JetBrains Mono" font-size="11" text-anchor="middle">DNS</text>
-<text x="172" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">find the address</text>
-<text x="172" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">203.0.113.10</text>
-<circle cx="284" cy="142" r="13" fill="#0C1220" stroke="#F5A524" stroke-width="1.6"/>
-<text x="284" y="146" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">3</text>
-<text x="284" y="178" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">CIDR</text>
-<text x="284" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">which network?</text>
-<text x="284" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">203.0.113.0/24</text>
-<circle cx="396" cy="142" r="13" fill="#0C1220" stroke="#8B7BF0" stroke-width="1.6"/>
-<text x="396" y="146" fill="#8B7BF0" font-family="JetBrains Mono" font-size="11" text-anchor="middle">4</text>
-<text x="396" y="178" fill="#8B7BF0" font-family="JetBrains Mono" font-size="11" text-anchor="middle">route</text>
-<text x="396" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">choose next hop</text>
-<text x="396" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">via routers</text>
-<circle cx="508" cy="142" r="13" fill="#0C1220" stroke="#34D399" stroke-width="1.6"/>
-<text x="508" y="146" fill="#34D399" font-family="JetBrains Mono" font-size="11" text-anchor="middle">5</text>
-<text x="508" y="178" fill="#34D399" font-family="JetBrains Mono" font-size="11" text-anchor="middle">firewall</text>
-<text x="508" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">allow or block</text>
-<text x="508" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">443 allowed</text>
-<circle cx="620" cy="142" r="13" fill="#0C1220" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="620" y="146" fill="#22C7B8" font-family="JetBrains Mono" font-size="11" text-anchor="middle">6</text>
-<text x="620" y="178" fill="#22C7B8" font-family="JetBrains Mono" font-size="11" text-anchor="middle">port</text>
-<text x="620" y="194" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">pick the service</text>
-<text x="620" y="208" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">:443 HTTPS</text>
-<text x="340" y="238" fill="#5B7290" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">if any stop fails, the page never loads</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 240"><title>Six steps of a request: name, DNS, CIDR, route, firewall, port</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<rect x="14.0" y="5" width="96" height="22" rx="11" class="s-you f-panel" stroke-width="1.4"/>
+<text x="62" y="19.6" class="f-you mono" font-size="10" font-weight="500" text-anchor="middle">inthelab.ie</text>
+<rect x="22" y="36" width="68" height="48" rx="4" class="s-ink f-panel" stroke-width="1.8"/>
+<path d="M22 48 L90 48" class="s-ink" fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="29" cy="42" r="1.6" class="f-ink"/>
+<circle cx="35" cy="42" r="1.6" class="f-ink"/>
+<circle cx="41" cy="42" r="1.6" class="f-ink"/>
+<rect x="31" y="56" width="35" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<rect x="31" y="65" width="25" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<rect x="31" y="74" width="30" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<rect x="128" y="40" width="76" height="42" rx="6" class="s-net f-nettint" stroke-width="1.5"/>
+<text x="166.0" y="65.0" class="f-net" font-size="13" font-weight="600" text-anchor="middle">DNS</text>
+<rect x="244" y="38" width="64" height="46" rx="6" class="s-net" fill="none" stroke-width="1.4" stroke-dasharray="4 3"/>
+<circle cx="260" cy="52" r="3.2" class="f-net"/>
+<circle cx="276" cy="52" r="3.2" class="f-net"/>
+<circle cx="292" cy="52" r="3.2" class="f-net"/>
+<circle cx="260" cy="70" r="3.2" class="f-net"/>
+<circle cx="276" cy="70" r="3.2" class="f-net"/>
+<circle cx="292" cy="70" r="3.2" class="f-you"/>
+<rect x="346" y="36" width="80" height="52" rx="8" class="s-net f-nettint" stroke-width="1.6"/>
+<rect x="366" y="60" width="40" height="16" rx="3" class="s-ink" fill="none" stroke-width="2"/>
+<path d="M376 60 L372 46 M396 60 L400 46" class="s-ink" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="375" cy="68" r="1.6" class="f-ink"/>
+<circle cx="381" cy="68" r="1.6" class="f-ink"/>
+<circle cx="387" cy="68" r="1.6" class="f-ink"/>
+<path d="M392 68 L400 68" class="s-ink" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(472.00 36.00) scale(1.0000)"><path class="f-ink" fill-rule="evenodd" d="M34.912 36.012h9.074v-3.73h-9.074zm-1.275 2.001h-6.793v3.075h8.968v-3.075h-2.175m-10.529-2h9.804v-3.73h-9.804zm10.803-5.73h5.971v-3.954h-8.969v3.953h2.998m12.075 1v5.73a1 1 0 0 1-1 1h-7.174v4.075a1 1 0 0 1-1 1H25.844a1 1 0 0 1-1-1v-4.075h-2.736a1 1 0 0 1-1-1v-5.73a1 1 0 0 1 1-1h6.805v-4.954a1 1 0 0 1 1-1h10.969a1 1 0 0 1 1 1v4.953h3.104a1 1 0 0 1 1 1m-22.399-6.579a1.002 1.002 0 0 0 1.61.942c.097-.077 2.084-1.704 2.961-5.687.396.511.82 1.22 1.15 2.175l1.89-.653c-1.102-3.19-3.167-4.342-3.253-4.39a1 1 0 0 0-1.472.774 13.7 13.7 0 0 1-.642 3.006c-.412-10.429-9.461-13.988-9.563-14.027a1 1 0 0 0-.956 1.734c2.784 2.1 4.054 5.654 3.492 9.713l-.237 1.294a16.4 16.4 0 0 1-1.716 4.388l-.695 1.377c-3.393 7.547-.522 15.114-.398 15.432a1 1 0 0 0 1.009.635c.051-.004 1.261-.1 2.969-.504l-.461-1.946a22 22 0 0 1-1.891.362c-.586-1.978-1.878-7.656.577-13.117l.654-1.297a18.4 18.4 0 0 0 1.91-4.926l.253-1.379c.334-2.412.118-4.674-.603-6.652 2.313 2.452 4.426 6.487 3.412 12.746M12.408 7.511A5 5 0 0 0 10.497 7c1.602 2.052 3.887 6.385 1.593 12.686a1 1 0 0 1-.86.655.99.99 0 0 1-.953-.51c-.62-1.11-2.363-3.63-4.288-4.617.669 2.436 1.423 6.858-.673 10.041a10 10 0 0 0-.295.474c-1.834 3.124-1.205 6.952 1.602 9.75.007.006.699.68 2.494 1.714 2.211 1.277 3.078 1.652 3.087 1.655l-.778 1.842c-.038-.016-.957-.407-3.309-1.764-2.031-1.172-2.827-1.952-2.911-2.036-3.415-3.404-4.184-8.298-1.91-12.173q.165-.283.35-.563c2.404-3.649-.068-9.91-.093-9.973a.998.998 0 0 1 .928-1.373c2.667 0 4.972 2.41 6.311 4.19 1.351-6.318-2.627-9.642-2.813-9.793a1.004 1.004 0 0 1 .099-1.629c1.547-.959 3.807-.59 5.252.16z"/></g>
+<rect x="581.0" y="19" width="50" height="22" rx="11" class="s-ink f-panel" stroke-width="1.4"/>
+<text x="606" y="33.6" class="f-ink mono" font-size="10" font-weight="500" text-anchor="middle">443</text>
+<g transform="translate(586.00 44.00) scale(0.8333)"><path class="f-ink" fill-rule="evenodd" d="M15.437 21.52h16.627v-2H15.437zm0-4.324h16.627v-2H15.437zm0-4.434h16.627v-2H15.437zm0-4.268h16.627v-2H15.437zM13 44.013h21.499V4H13zM35.032 2H12.468A1.47 1.47 0 0 0 11 3.469v41.076c0 .81.659 1.468 1.468 1.468h22.564c.809 0 1.467-.658 1.467-1.468V3.469A1.47 1.47 0 0 0 35.032 2"/></g>
+<path d="M56 120 L606 120" class="s-faint" fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="56" cy="120" r="11" class="f-ink"/>
+<text x="56" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">1</text>
+<text x="56" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">you</text>
+<text x="56" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">type a name</text>
+<text x="56" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">in a browser</text>
+<path d="M72 120 L144.0 120.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="150.0,120.0 140.0,115.0 140.0,125.0" class="f-faint"/>
+<circle cx="166" cy="120" r="11" class="f-ink"/>
+<text x="166" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">2</text>
+<text x="166" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">DNS</text>
+<text x="166" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">find the address</text>
+<text x="166" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">203.0.113.10</text>
+<path d="M182 120 L254.0 120.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="260.0,120.0 250.0,115.0 250.0,125.0" class="f-faint"/>
+<circle cx="276" cy="120" r="11" class="f-ink"/>
+<text x="276" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">3</text>
+<text x="276" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">CIDR</text>
+<text x="276" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">which network?</text>
+<text x="276" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">203.0.113.0/24</text>
+<path d="M292 120 L364.0 120.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="370.0,120.0 360.0,115.0 360.0,125.0" class="f-faint"/>
+<circle cx="386" cy="120" r="11" class="f-ink"/>
+<text x="386" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">4</text>
+<text x="386" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">route</text>
+<text x="386" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">choose next hop</text>
+<text x="386" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">via routers</text>
+<path d="M402 120 L474.0 120.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="480.0,120.0 470.0,115.0 470.0,125.0" class="f-faint"/>
+<circle cx="496" cy="120" r="11" class="f-ink"/>
+<text x="496" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">5</text>
+<text x="496" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">firewall</text>
+<text x="496" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">allow or block</text>
+<text x="496" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">443 allowed</text>
+<path d="M512 120 L584.0 120.0" class="s-faint" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="590.0,120.0 580.0,115.0 580.0,125.0" class="f-faint"/>
+<circle cx="606" cy="120" r="11" class="f-ink"/>
+<text x="606" y="124.5" class="f-panel" font-size="12" font-weight="700" text-anchor="middle">6</text>
+<text x="606" y="154" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">port</text>
+<text x="606" y="170" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">pick the service</text>
+<text x="606" y="185" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">:443 HTTPS</text>
+<text x="330" y="222" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">if any stop fails, the page never loads</text>
 </svg>

@@ -23,7 +23,7 @@ export const phases = [
   {
     number: 4,
     title: 'Build Private Infrastructure',
-    sub: 'Move workloads away from direct internet access.',
+    sub: 'Take servers off the internet, get in safely, and find out what being private breaks.',
   },
   {
     number: 5,

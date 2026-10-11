@@ -147,7 +147,7 @@ A **budget** emails you when your spending goes over an amount you set. Set one 
 <div class="diagram">
   <img
     src="/images/labs/01-01/budget-alert.svg"
-    alt="A spending line rising over a month and crossing a dashed $1 budget line, which triggers an email alert."
+    alt="A spending line rising over a month and crossing a dashed $10 budget line, which triggers an email alert."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
   <div class="dcap">you get an email when spending goes over the budget</div>

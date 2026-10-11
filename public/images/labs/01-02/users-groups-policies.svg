@@ -1,68 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 318">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<defs><filter id="g1" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<text x="90" y="24" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">users</text>
-<text x="310" y="24" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">groups</text>
-<text x="520" y="24" fill="#5B7290" font-family="JetBrains Mono" font-size="10" text-anchor="middle">policies</text>
-<circle cx="90" cy="52.1" r="8.1" fill="#141E2C" stroke="#F5A524" stroke-width="1.6"/>
-<path d="M74.7 85.4 Q 74.7 63.8 90 63.8 Q 105.3 63.8 105.3 85.4 Z" fill="#141E2C" stroke="#F5A524" stroke-width="1.6" stroke-linejoin="round"/>
-<text x="90" y="106" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">senior-dev</text>
-<circle cx="90" cy="134.1" r="8.1" fill="#141E2C" stroke="#8FA0BD" stroke-width="1.6"/>
-<path d="M74.7 167.4 Q 74.7 145.8 90 145.8 Q 105.3 145.8 105.3 167.4 Z" fill="#141E2C" stroke="#8FA0BD" stroke-width="1.6" stroke-linejoin="round"/>
-<text x="90" y="188" fill="#8FA0BD" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">junior-dev</text>
-<rect x="250" y="52" width="120" height="40" rx="8" fill="#141E2C" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="310" y="76" fill="#22C7B8" font-family="JetBrains Mono" font-size="11" text-anchor="middle">admins</text>
-<rect x="250" y="134" width="120" height="40" rx="8" fill="#141E2C" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="310" y="158" fill="#22C7B8" font-family="JetBrains Mono" font-size="11" text-anchor="middle">read-only</text>
-<path d="M445.0 58 Q445.0 52 451.0 52 L581.0 52 L595.0 66 L595.0 86 Q595.0 92 589.0 92 L451.0 92 Q445.0 92 445.0 86 Z" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.5"/>
-<path d="M581.0 52 L581.0 66 L595.0 66" fill="none" stroke="#8B7BF0" stroke-width="1.2" opacity=".6"/>
-<text x="514" y="76" fill="#8B7BF0" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">AdministratorAccess</text>
-<path d="M445.0 140 Q445.0 134 451.0 134 L581.0 134 L595.0 148 L595.0 168 Q595.0 174 589.0 174 L451.0 174 Q445.0 174 445.0 168 Z" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.5"/>
-<path d="M581.0 134 L581.0 148 L595.0 148" fill="none" stroke="#8B7BF0" stroke-width="1.2" opacity=".6"/>
-<text x="514" y="158" fill="#8B7BF0" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">ReadOnlyAccess</text>
-<line x1="118" y1="72" x2="237.0" y2="72.0" stroke="#F5A524" stroke-width="1.5"/>
-<polygon points="246.0,72.0 237.0,76.5 237.0,67.5" fill="#F5A524"/>
-<line x1="118" y1="154" x2="237.0" y2="154.0" stroke="#8FA0BD" stroke-width="1.5"/>
-<polygon points="246.0,154.0 237.0,158.5 237.0,149.5" fill="#8FA0BD"/>
-<line x1="370" y1="72" x2="432.0" y2="72.0" stroke="#22C7B8" stroke-width="1.5"/>
-<polygon points="441.0,72.0 432.0,76.5 432.0,67.5" fill="#22C7B8"/>
-<line x1="370" y1="154" x2="432.0" y2="154.0" stroke="#22C7B8" stroke-width="1.5"/>
-<polygon points="441.0,154.0 432.0,158.5 432.0,149.5" fill="#22C7B8"/>
-<text x="182" y="64" fill="#5B7290" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">member of</text>
-<text x="406" y="64" fill="#5B7290" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">has</text>
-<line x1="30" y1="206" x2="590" y2="206" stroke="#223047" stroke-width="1.2"/>
-<rect x="62" y="222" width="56" height="66" rx="4" fill="#141E2C" stroke="#5B7290" stroke-width="1.7"/>
-<rect x="68" y="228" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="75" cy="236" r="2.2" fill="#34D399"/>
-<circle cx="82" cy="236" r="2.2" fill="#3D5170"/>
-<line x1="94.0" y1="232" x2="94.0" y2="240" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="98.5" y1="232" x2="98.5" y2="240" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="103.0" y1="232" x2="103.0" y2="240" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="107.5" y1="232" x2="107.5" y2="240" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="68" y="247" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="75" cy="255" r="2.2" fill="#5B7290"/>
-<circle cx="82" cy="255" r="2.2" fill="#3D5170"/>
-<line x1="94.0" y1="251" x2="94.0" y2="259" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="98.5" y1="251" x2="98.5" y2="259" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="103.0" y1="251" x2="103.0" y2="259" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="107.5" y1="251" x2="107.5" y2="259" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="68" y="266" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="75" cy="274" r="2.2" fill="#5B7290"/>
-<circle cx="82" cy="274" r="2.2" fill="#3D5170"/>
-<line x1="94.0" y1="270" x2="94.0" y2="278" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="98.5" y1="270" x2="98.5" y2="278" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="103.0" y1="270" x2="103.0" y2="278" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="107.5" y1="270" x2="107.5" y2="278" stroke="#3D5170" stroke-width="1.2"/>
-<text x="90" y="306" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">an EC2 server</text>
-<rect x="250" y="236" width="120" height="40" rx="8" fill="#141E2C" stroke="#F5A524" stroke-width="1.4" stroke-dasharray="5 4"/>
-<text x="310" y="260" fill="#F5A524" font-family="JetBrains Mono" font-size="11" text-anchor="middle">role</text>
-<path d="M445.0 242 Q445.0 236 451.0 236 L581.0 236 L595.0 250 L595.0 270 Q595.0 276 589.0 276 L451.0 276 Q445.0 276 445.0 270 Z" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.5"/>
-<path d="M581.0 236 L581.0 250 L595.0 250" fill="none" stroke="#8B7BF0" stroke-width="1.2" opacity=".6"/>
-<text x="514" y="260" fill="#8B7BF0" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">read one S3 bucket</text>
-<line x1="120" y1="256" x2="237.0" y2="256.0" stroke="#5B7290" stroke-width="1.4" stroke-dasharray="4 4"/>
-<polygon points="246.0,256.0 237.0,260.5 237.0,251.5" fill="#5B7290"/>
-<line x1="370" y1="256" x2="432.0" y2="256.0" stroke="#22C7B8" stroke-width="1.5"/>
-<polygon points="441.0,256.0 432.0,260.5 432.0,251.5" fill="#22C7B8"/>
-<text x="182" y="248" fill="#5B7290" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">borrows</text>
-<text x="310" y="296" fill="#F5A524" font-family="JetBrains Mono" font-size="9" text-anchor="middle">temporary, no password</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 330"><title>Users get permissions through groups; services borrow a role</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<text x="80" y="20" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">users</text>
+<text x="300" y="20" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">groups</text>
+<text x="530" y="20" class="f-sub" font-size="10.5" font-weight="400" text-anchor="middle">policies</text>
+<g transform="translate(60.00 46.00) scale(0.8333)"><path class="f-ink" fill-rule="evenodd" d="M6.025 44c.499-9.915 8.37-17.822 17.975-17.822 3.248 0 6.43.914 9.205 2.644 5.149 3.211 8.448 8.961 8.769 15.178zm8.167-30.122c0-5.446 4.4-9.878 9.809-9.878 5.407 0 9.806 4.432 9.806 9.878 0 5.447-4.399 9.879-9.806 9.879-5.409 0-9.809-4.432-9.809-9.879m20.071 13.247a19.4 19.4 0 0 0-5.565-2.354 11.89 11.89 0 0 0 7.109-10.893C35.807 7.329 30.51 2 24.001 2c-6.512 0-11.809 5.329-11.809 11.878 0 4.877 2.938 9.072 7.125 10.9C10.545 26.981 4 35.2 4 45a1 1 0 0 0 1 1h38a1 1 0 0 0 1-1c0-7.281-3.731-14.13-9.737-17.875"/></g>
+<text x="80" y="102" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">senior-dev</text>
+<path d="M110 66 L220.0 66.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="226.0,66.0 216.0,61.0 216.0,71.0" class="f-line"/>
+<text x="168" y="58" class="f-sub" font-size="9.5" font-weight="400" text-anchor="middle">member of</text>
+<rect x="230" y="46" width="140" height="40" rx="6" class="s-ink f-surface" stroke-width="1.5"/>
+<text x="300.0" y="70.0" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">admins</text>
+<path d="M370 66 L440.0 66.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="446.0,66.0 436.0,61.0 436.0,71.0" class="f-line"/>
+<text x="408" y="58" class="f-sub" font-size="9.5" font-weight="400" text-anchor="middle">has</text>
+<rect x="450" y="46" width="180" height="40" rx="6" class="s-sec f-panel" stroke-width="1.4"/>
+<g transform="translate(458.00 52.00) scale(0.5833)"><path class="f-sec" fill-rule="evenodd" d="m20.29 18.04 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm0-11.373 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm-.335 25.909-3.23 3.23 3.23 3.229-1.414 1.414-3.23-3.229-3.23 3.229-1.414-1.414 3.23-3.229-3.23-3.23 1.414-1.414 3.23 3.23 3.23-3.23zm19.288 10.61a.806.806 0 0 1-.805.805H8.806A.806.806 0 0 1 8 43.186V4.806C8 4.361 8.36 4 8.806 4h29.632c.444 0 .805.361.805.806zM38.438 2H8.806A2.81 2.81 0 0 0 6 4.806v38.38a2.81 2.81 0 0 0 2.806 2.805h29.632a2.81 2.81 0 0 0 2.805-2.805V4.806A2.81 2.81 0 0 0 38.438 2"/></g>
+<text x="494" y="70" class="f-ink mono" font-size="11" font-weight="400" text-anchor="start">AdministratorAccess</text>
+<g transform="translate(60.00 126.00) scale(0.8333)"><path class="f-ink" fill-rule="evenodd" d="M6.025 44c.499-9.915 8.37-17.822 17.975-17.822 3.248 0 6.43.914 9.205 2.644 5.149 3.211 8.448 8.961 8.769 15.178zm8.167-30.122c0-5.446 4.4-9.878 9.809-9.878 5.407 0 9.806 4.432 9.806 9.878 0 5.447-4.399 9.879-9.806 9.879-5.409 0-9.809-4.432-9.809-9.879m20.071 13.247a19.4 19.4 0 0 0-5.565-2.354 11.89 11.89 0 0 0 7.109-10.893C35.807 7.329 30.51 2 24.001 2c-6.512 0-11.809 5.329-11.809 11.878 0 4.877 2.938 9.072 7.125 10.9C10.545 26.981 4 35.2 4 45a1 1 0 0 0 1 1h38a1 1 0 0 0 1-1c0-7.281-3.731-14.13-9.737-17.875"/></g>
+<text x="80" y="182" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">junior-dev</text>
+<path d="M110 146 L220.0 146.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="226.0,146.0 216.0,141.0 216.0,151.0" class="f-line"/>
+<text x="168" y="138" class="f-sub" font-size="9.5" font-weight="400" text-anchor="middle">member of</text>
+<rect x="230" y="126" width="140" height="40" rx="6" class="s-ink f-surface" stroke-width="1.5"/>
+<text x="300.0" y="150.0" class="f-ink" font-size="12" font-weight="600" text-anchor="middle">read-only</text>
+<path d="M370 146 L440.0 146.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="446.0,146.0 436.0,141.0 436.0,151.0" class="f-line"/>
+<text x="408" y="138" class="f-sub" font-size="9.5" font-weight="400" text-anchor="middle">has</text>
+<rect x="450" y="126" width="180" height="40" rx="6" class="s-sec f-panel" stroke-width="1.4"/>
+<g transform="translate(458.00 132.00) scale(0.5833)"><path class="f-sec" fill-rule="evenodd" d="m20.29 18.04 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm0-11.373 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm-.335 25.909-3.23 3.23 3.23 3.229-1.414 1.414-3.23-3.229-3.23 3.229-1.414-1.414 3.23-3.229-3.23-3.23 1.414-1.414 3.23 3.23 3.23-3.23zm19.288 10.61a.806.806 0 0 1-.805.805H8.806A.806.806 0 0 1 8 43.186V4.806C8 4.361 8.36 4 8.806 4h29.632c.444 0 .805.361.805.806zM38.438 2H8.806A2.81 2.81 0 0 0 6 4.806v38.38a2.81 2.81 0 0 0 2.806 2.805h29.632a2.81 2.81 0 0 0 2.805-2.805V4.806A2.81 2.81 0 0 0 38.438 2"/></g>
+<text x="494" y="150" class="f-ink mono" font-size="11" font-weight="400" text-anchor="start">ReadOnlyAccess</text>
+<path d="M30 206 L630 206" class="s-faint" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 4"/>
+<g transform="translate(58.00 222.00) scale(0.9167)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<text x="80" y="282" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">an EC2 server</text>
+<path d="M110 244 L220.0 244.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 4"/>
+<polygon points="226.0,244.0 216.0,239.0 216.0,249.0" class="f-line"/>
+<text x="168" y="236" class="f-sub" font-size="9.5" font-weight="400" text-anchor="middle">borrows</text>
+<rect x="230" y="224" width="140" height="40" rx="6" class="s-sec" fill="none" stroke-width="1.4" stroke-dasharray="5 4"/>
+<g transform="translate(238.00 230.00) scale(0.5833)"><path class="f-sec" fill-rule="evenodd" d="M44.083 32.581a72.853 72.853 0 0 0-2.082.191l-.168.018c-1.765.182-3.763.387-4.714.257-.594-.085-1.688-.56-2.848-1.063-1.966-.852-4.414-1.914-6.627-2.084-3.046-.234-8.31.34-11.703 1.931-1.962-.088-3.782-.616-5.196-1.488a46 46 0 0 1-.012-.649c0-4.136 1.938-8.015 5.32-10.65a15.2 15.2 0 0 1 7.66-2.052c6.12 0 11.553 3.617 13.672 8.942h-.813c-.814 0-1.496.576-1.663 1.34l-.412-.156c-2.03-.783-4.813-1.854-8.031-1.663-4.705.276-7.02.56-8.843 1.08l.549 1.924c1.668-.477 3.868-.74 8.41-1.008 2.785-.158 5.338.818 7.195 1.533.395.153.752.286 1.09.407v.205c0 .939.766 1.704 1.705 1.704h3.647c.937 0 1.7-.762 1.704-1.698l.354-.032a176 176 0 0 0 1.595-.151l.21-.021zM9.799 34.249c-2.65.363-4.742.039-5.608-.496.525-.371 1.71-.89 2.544-1.254a44 44 0 0 0 2.16-1.004c1.154.879 2.583 1.538 4.165 1.931-.915.368-2.048.658-3.261.823M36.868 29.3h3.055v-1.366h-3.055zM26.586 13c8.368 0 15.396 6.295 16.43 14.492q-.43.042-.912.086l-.185.016a1.704 1.704 0 0 0-1.7-1.66h-.711c-2.201-6.477-8.576-10.942-15.795-10.942-2.674 0-5.29.612-7.641 1.775q.024-.022.046-.042A16.6 16.6 0 0 1 26.586 13m18.94 14.794a1.6 1.6 0 0 0-.497-.298C43.983 18.185 36.049 11 26.586 11a18.6 18.6 0 0 0-11.732 4.175 18.5 18.5 0 0 0-6.85 14.406c0 .041.004.082.004.123-.667.335-1.372.655-2.073.962-2.136.934-3.68 1.608-3.91 2.826-.057.309-.067.914.52 1.502 1.038 1.037 3.028 1.409 5.05 1.409.842 0 1.688-.064 2.474-.172 1.339-.182 3.839-.673 5.536-1.915 2.678-1.941 8.733-2.667 11.886-2.422 1.879.145 4.155 1.132 5.985 1.925 1.396.607 2.5 1.085 3.366 1.208 1.19.163 3.136-.037 5.195-.248l.173-.017a63 63 0 0 1 1.592-.151c.215-.021.428-.036.712-.056.88-.062 1.569-.8 1.569-1.68v-3.829c0-.478-.202-.934-.556-1.252"/></g>
+<text x="274" y="249" class="f-ink" font-size="12" font-weight="600" text-anchor="start">role</text>
+<text x="300" y="282" class="f-sub" font-size="10" font-weight="400" text-anchor="middle">temporary, no password</text>
+<path d="M370 244 L440.0 244.0" class="s-line" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="446.0,244.0 436.0,239.0 436.0,249.0" class="f-line"/>
+<rect x="450" y="224" width="180" height="40" rx="6" class="s-sec f-panel" stroke-width="1.4"/>
+<g transform="translate(458.00 230.00) scale(0.5833)"><path class="f-sec" fill-rule="evenodd" d="m20.29 18.04 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm0-11.373 1.414 1.414-6.998 6.998a.997.997 0 0 1-1.414 0l-3.5-3.499 1.414-1.414 2.793 2.792zm-.335 25.909-3.23 3.23 3.23 3.229-1.414 1.414-3.23-3.229-3.23 3.229-1.414-1.414 3.23-3.229-3.23-3.23 1.414-1.414 3.23 3.23 3.23-3.23zm19.288 10.61a.806.806 0 0 1-.805.805H8.806A.806.806 0 0 1 8 43.186V4.806C8 4.361 8.36 4 8.806 4h29.632c.444 0 .805.361.805.806zM38.438 2H8.806A2.81 2.81 0 0 0 6 4.806v38.38a2.81 2.81 0 0 0 2.806 2.805h29.632a2.81 2.81 0 0 0 2.805-2.805V4.806A2.81 2.81 0 0 0 38.438 2"/></g>
+<text x="494" y="248" class="f-ink mono" font-size="11" font-weight="400" text-anchor="start">read one S3 bucket</text>
 </svg>

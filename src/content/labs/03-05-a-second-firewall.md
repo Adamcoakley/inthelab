@@ -51,10 +51,10 @@ questions:
 
 Your VPC has two kinds of firewall:
 
-- A **security group** wraps one server. You've been using it since Lab 3.3.
+- A **security group** wraps one server. It's the one you've been adding rules to.
 - A **network ACL** (access control list) sits at the edge of a subnet, and checks traffic for every server in it.
 
-Your VPC came with a default network ACL in Lab 2.1. It allows everything in and out, which is why you haven't noticed it.
+Your VPC came with a default network ACL when you created it. It allows everything in and out, which is why you haven't noticed it.
 
 The two differ in how they treat replies:
 

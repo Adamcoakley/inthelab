@@ -1,0 +1,166 @@
+---
+import { readFileSync } from 'node:fs';
+import Base from '../layouts/Base.astro';
+
+// Inline an SVG from public/images/style so its colours follow the theme.
+const svg = (name) => readFileSync(`${process.cwd()}/public/images/style/${name}.svg`, 'utf8');
+
+const colours = [
+  { group: 'Categories', note: 'Taken from AWS. A colour always means the same kind of thing.', items: [
+    ['net', 'Networking', 'VPC, gateways, route tables'],
+    ['cmp', 'Compute', 'servers'],
+    ['pub', 'Public subnet', 'also storage, like S3'],
+    ['priv', 'Private subnet', 'also the Region border'],
+    ['sec', 'Security', 'security groups, IAM, firewalls'],
+    ['db', 'Databases', 'RDS and friends'],
+  ]},
+  { group: 'You', note: "The one colour that isn't from AWS: the site's accent blue, for things that are yours, or your job.", items: [
+    ['you', 'Yours', 'your laptop, your app, your responsibilities'],
+  ]},
+  { group: 'Status', note: 'Always shown with a mark, never colour alone.', items: [
+    ['ok', 'Allowed', 'tick mark, working path'],
+    ['bad', 'Blocked', 'crossed circle, dashed path'],
+  ]},
+  { group: 'Neutrals', note: 'Text, lines and backgrounds. These are what change most between themes.', items: [
+    ['ink', 'Ink', 'labels, outlines, general icons'],
+    ['sub', 'Secondary', 'captions, IP addresses'],
+    ['faint', 'Faint', 'inactive, not built yet'],
+    ['surface', 'Surface', 'cards inside a diagram'],
+    ['panel', 'Panel', 'diagram background'],
+  ]},
+];
+const hex = {
+  ink: ['#232F3E', '#E6EBF5'], sub: ['#5F6B7A', '#9AA7BD'], faint: ['#A7B1BE', '#44526B'],
+  surface: ['#F4F6F8', '#172131'], panel: ['#FFFFFF', '#0E1522'], net: ['#8C4FFF', '#A27BFF'],
+  cmp: ['#ED7100', '#FF8A1F'], pub: ['#7AA116', '#9BC53D'], priv: ['#00A4A6', '#2FC1C3'],
+  sec: ['#DD344C', '#F25A6E'], db: ['#C925D1', '#E05BE6'], you: ['#3B62D4', '#6E96F2'], ok: ['#037F0C', '#4ADE80'], bad: ['#D91515', '#FF5C6C'],
+};
+const aws = ['ec2', 'igw', 'nat', 'router', 'nacl', 'alb', 'ami', 'ebs', 's3', 'role'];
+const general = ['client', 'user', 'globe', 'server', 'firewall', 'phone', 'router-home', 'packet'];
+const groups = ['g-cloud', 'g-region', 'g-vpc', 'g-az', 'g-public', 'g-private', 'g-sg', 'g-asg'];
+const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
+---
+<Base title="Style guide · inthelab" path="/style-guide">
+  <main class="sg wrap">
+    <header class="sg-head">
+      <h1>How inthelab draws things</h1>
+      <p class="lede">Every diagram uses the same colours, the same icons and the same rules. Each one is a single file that follows the site's theme. Switch between light and dark at the top right to see both.</p>
+    </header>
+
+    <section>
+      <h2>Colours mean something</h2>
+      {colours.map((g) => (
+        <div class="sg-block">
+          <h3>{g.group}</h3>
+          <p class="note">{g.note}</p>
+          <div class="swatches">
+            {g.items.map(([k, name, use]) => (
+              <div class="swatch">
+                <span class="chip" style={`background:var(--dg-${k})`}></span>
+                <div>
+                  <div class="sw-name">{name}</div>
+                  <div class="sw-use">{use}</div>
+                  <div class="sw-hex mono">{hex[k][0]} <span>/</span> {hex[k][1]}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section>
+      <h2>Assets</h2>
+      <p class="note">Drawn once, reused everywhere. AWS services use the official icons. Everything else uses AWS's general icons, so the two families match.</p>
+
+      <h3>AWS services</h3>
+      <div class="tiles">{aws.map((n) => <div class="tile" set:html={svg(`assets/${n}`)} />)}</div>
+
+      <h3>General</h3>
+      <div class="tiles">{general.map((n) => <div class="tile" set:html={svg(`assets/${n}`)} />)}</div>
+
+      <h3>Groups</h3>
+      <div class="tiles wide">{groups.map((n) => <div class="tile" set:html={svg(`assets/${n}`)} />)}</div>
+
+      <h3>Lines and marks</h3>
+      <div class="tiles">{marks.map((n) => <div class="tile" set:html={svg(`assets/${n}`)} />)}</div>
+
+      <h3>Two versions of a server</h3>
+      <p class="note">The EC2 icon in architecture diagrams. The opened-up version when a lab needs to explain what's inside.</p>
+      <div class="diagram" set:html={svg('assets/servers')} />
+    </section>
+
+    <section>
+      <h2>Rules</h2>
+      <ol class="rules">
+        <li><b>One meaning per colour.</b> Purple is always networking, orange is always compute. Use the neutral ink for anything else.</li>
+        <li><b>Status needs a mark.</b> Allowed gets a tick, blocked gets a crossed circle and a dashed line. Never rely on green and red alone.</li>
+        <li><b>Arrows are neutral.</b> Traffic is drawn in ink. Colour an arrow only when it shows a status.</li>
+        <li><b>Labels in sans, addresses in mono.</b> IPs, CIDRs, ports and commands use JetBrains Mono.</li>
+        <li><b>Numbered steps only for sequences.</b> Use the black step markers when the order matters, and explain each step in the lab text.</li>
+        <li><b>Show only what the lab needs.</b> Leave out anything the learner hasn't met yet, or draw it faint.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Examples</h2>
+
+      <h3>A concept, before AWS</h3>
+      <div class="diagram">
+        <Fragment set:html={svg('example-concept')} />
+        <div class="dcap">one server, three services, three different levels of access</div>
+      </div>
+
+      <h3>An AWS architecture</h3>
+      <div class="diagram">
+        <Fragment set:html={svg('example-architecture')} />
+        <div class="dcap">two hops: your laptop to the bastion, then the bastion to the private server</div>
+      </div>
+
+      <h3>A close-up</h3>
+      <div class="diagram">
+        <Fragment set:html={svg('example-closeup')} />
+        <div class="dcap">from your request to the process that answers it</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <p class="note">Console screenshots stay in light mode, because that's what learners see in AWS. They get a frame, and are dimmed a little in dark mode so they don't glare.</p>
+      <div class="lab-body">
+        <figure class="screenshot">
+          <img src="/images/labs/03-01/instance-details.png" alt="The instance details showing the public and private IPv4 addresses." />
+        </figure>
+      </div>
+      <p class="note">See it all together on a <a href="/labs/99-01-diagram-style-example">sample lab page</a>.</p>
+    </section>
+  </main>
+
+  <style>
+    .sg{max-width:880px;padding-top:40px;padding-bottom:20px}
+    .sg-head h1{font-size:34px;margin-bottom:10px}
+    .lede{color:var(--ink-dim);font-size:16.5px;max-width:62ch}
+    section{margin-top:44px}
+    h2{font-size:23px;margin-bottom:6px}
+    h3{font-size:16px;margin:26px 0 8px}
+    .note{color:var(--ink-dim);font-size:14.5px;margin:4px 0 12px;max-width:68ch}
+    .note a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+    .sg-block{margin-top:18px}
+    .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+    .swatch{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--canvas-2)}
+    .chip{width:34px;height:34px;border-radius:8px;flex:none;border:1px solid var(--line)}
+    .sw-name{font-weight:600;font-size:14px}
+    .sw-use{color:var(--ink-dim);font-size:13px}
+    .sw-hex{color:var(--ink-faint);font-size:11.5px;margin-top:3px}
+    .sw-hex span{opacity:.5}
+    .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+    .tiles.wide{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+    .tile{background:var(--dg-panel);border:1px solid var(--dg-border);border-radius:10px;padding:6px}
+    .tile :global(svg){width:100%;height:auto;display:block}
+    .sg :global(.diagram > svg.dg){margin:0}
+    .rules{padding-left:22px;color:var(--ink-dim);font-size:15px;line-height:1.65}
+    .rules li{margin:6px 0}
+    .rules b{color:var(--ink)}
+    @media (max-width:560px){.sg-head h1{font-size:28px}}
+  </style>
+</Base>

@@ -87,7 +87,8 @@ const { title = 'inthelab, Learn AWS by using it', path = '' } = Astro.props;
     // --- run personalisation on load ---
     personalizePage();
     // if no name set yet, gently prompt once
-    if (!getName()) { setTimeout(() => document.getElementById('nameChip')?.click(), 400); }
+    // ask for a name the first time someone opens a lab, where it's actually used
+    if (!getName() && location.pathname.startsWith('/labs/')) { setTimeout(() => document.getElementById('nameChip')?.click(), 400); }
   </script>
 </body>
 </html>

@@ -28,7 +28,7 @@ questions:
       - "In the root user's password settings"
       - "Nowhere, budget emails are often wrong"
     correct: 1
-    hint: "Lab 1.3: things are regional."
+    hint: "Most things in AWS live in one Region."
     explain: "The Bills page shows which services and Regions are costing money. A forgotten resource may be in a Region you weren't looking at."
 
   - kind: predict
@@ -51,7 +51,7 @@ questions:
 
 Most AWS pricing is based on usage: how long something runs, how much you store, or how much data you send.
 
-That's what makes it flexible, as covered in Lab 0.1. It also means a resource you forget about can keep costing money until you delete it.
+That's what makes it flexible: you only pay for what you use. It also means a resource you forget about can keep costing money until you delete it.
 
 - **Running time:** servers are charged while they're running. Some services like load balancers and NAT gateways are charged for every hour they exist, busy or not.
 - **Storage:** disks, snapshots and files are charged based on how much storage you use. Disks are charged for their allocated size, even if they're mostly empty.

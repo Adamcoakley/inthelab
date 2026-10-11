@@ -39,7 +39,7 @@ questions:
       - "Yes, because it has a public IP"
       - "Only from inside the same Region"
     correct: 1
-    hint: "Lab 0.4: a route tells traffic where to go next."
+    hint: "A route tells traffic where to go next."
     explain: "Traffic only uses the internet gateway if a route sends it there. With only the local route, the server's replies have nowhere to go outside the VPC. You'll prove this with a real server in Lab 3.1."
 ---
 
@@ -99,7 +99,7 @@ Open the **Routes** tab of your new route table. It has the same single `local` 
 
 ## Step 3: Create an internet gateway
 
-An **internet gateway** is the connection between your VPC and the internet. It's the AWS version of your home router's internet link from Lab 1.5's map.
+An **internet gateway** is the connection between your VPC and the internet. It's the AWS version of your home router's link to the internet.
 
 1. Choose **Internet gateways** in the left menu, then **Create internet gateway**.
 2. **Name tag:** `{{ns}}-igw`

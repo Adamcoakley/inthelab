@@ -61,3 +61,22 @@ h1,h2,h3,h4{font-weight:600;line-height:1.18;letter-spacing:-.015em}
 .lab-body figure.screenshot img{display:block;max-width:100%;height:auto;margin:0 auto;border:1px solid var(--line);border-radius:6px;box-shadow:none}
 [data-theme="dark"] .lab-body figure.screenshot img{border-color:transparent}
 .lab-body figure.screenshot figcaption{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:7px}
+/* ============================================================
+   Diagram system v2 (see /style-guide)
+   One SVG per diagram; its colours come from these variables, so the
+   same file follows the light/dark theme once it's inlined on the page.
+   ============================================================ */
+:root,[data-theme="light"]{--dg-ink:#232F3E;--dg-sub:#5F6B7A;--dg-faint:#A7B1BE;--dg-line:#232F3E;--dg-surface:#F4F6F8;--dg-panel:#FFFFFF;--dg-net:#8C4FFF;--dg-cmp:#ED7100;--dg-pub:#7AA116;--dg-priv:#00A4A6;--dg-sec:#DD344C;--dg-db:#C925D1;--dg-you:#3B62D4;--dg-ok:#037F0C;--dg-bad:#D91515;--dg-pubtint:#F2F6E8;--dg-privtint:#E6F6F7;--dg-youtint:#EEF2FC;--dg-nettint:#F3EEFF;--dg-badtint:#FDECEC;--dg-grid:#EEF2F6;--dg-border:#E3E7EC}
+[data-theme="dark"]{--dg-ink:#E6EBF5;--dg-sub:#9AA7BD;--dg-faint:#44526B;--dg-line:#C7D0E8;--dg-surface:#172131;--dg-panel:#0E1522;--dg-net:#A27BFF;--dg-cmp:#FF8A1F;--dg-pub:#9BC53D;--dg-priv:#2FC1C3;--dg-sec:#F25A6E;--dg-db:#E05BE6;--dg-you:#6E96F2;--dg-ok:#4ADE80;--dg-bad:#FF5C6C;--dg-pubtint:rgba(155,197,61,.09);--dg-privtint:rgba(47,193,195,.09);--dg-youtint:rgba(110,150,242,.12);--dg-nettint:rgba(162,123,255,.12);--dg-badtint:rgba(255,92,108,.12);--dg-grid:#17223A;--dg-border:#1F2B42}
+/* diagrams get a theme-aware panel */
+.diagram:has(> svg.dg){background:var(--dg-panel);border-color:var(--dg-border)}
+.diagram:has(> svg.dg)::before{background-image:linear-gradient(var(--dg-grid) 1px,transparent 1px),linear-gradient(90deg,var(--dg-grid) 1px,transparent 1px);opacity:1}
+.diagram:has(> svg.dg) .dcap{color:var(--dg-sub)}
+.diagram > svg.dg{width:100%;height:auto;display:block;position:relative;z-index:1}
+/* hide new diagrams for the moment before they're inlined, to avoid a flash */
+.js .lab-body .diagram > img[src$=".svg"]:not(.dg-done){visibility:hidden}
+
+/* console screenshots: framed, and dimmed a little in dark mode */
+.lab-body figure.screenshot{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
+.lab-body figure.screenshot img{border:1px solid var(--line);border-radius:6px}
+[data-theme="dark"] .lab-body figure.screenshot img{filter:brightness(.86) contrast(1.04);border-color:transparent}

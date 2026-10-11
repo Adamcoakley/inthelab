@@ -28,7 +28,7 @@ questions:
       - "The most specific matching route wins, and /16 is more specific than /0"
       - "Private addresses can't use routes"
     correct: 2
-    hint: "Lab 0.4: both routes match. Which one is picked?"
+    hint: "Both routes match. Which one is picked?"
     explain: "10.0.2.15 matches both routes. The /16 is the smaller, more specific range, so it wins and the traffic stays local. Only traffic that matches nothing else uses 0.0.0.0/0."
 
   - kind: predict

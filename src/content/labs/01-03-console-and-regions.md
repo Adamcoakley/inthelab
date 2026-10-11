@@ -65,7 +65,7 @@ AWS has hundreds of services, but you'll only use a handful, and a few parts of 
 
 ## Regions
 
-As covered in Lab 0.1, AWS is split into **Regions**, each with its own data centres. Each Region has a code:
+AWS is split into **Regions**, each with its own data centres. Each Region has a code:
 
 - `eu-west-1`: Ireland
 - `eu-west-2`: London

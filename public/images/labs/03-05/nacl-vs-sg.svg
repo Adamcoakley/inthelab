@@ -1,55 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 290">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<rect x="20" y="96" width="80" height="52" rx="5" fill="#141E2C" stroke="#F5A524" stroke-width="1.5"/>
-<circle cx="29" cy="104" r="2.3" fill="#3D5170"/><circle cx="37" cy="104" r="2.3" fill="#3D5170"/>
-<line x1="20" y1="112" x2="100" y2="112" stroke="#F5A524" stroke-width="1" opacity=".5"/>
-<rect x="30" y="121" width="42" height="3.5" rx="1.75" fill="#3D5170" stroke="none" stroke-width="0"/>
-<rect x="30" y="130" width="31" height="3.5" rx="1.75" fill="#3D5170" stroke="none" stroke-width="0"/>
-<rect x="30" y="139" width="37" height="3.5" rx="1.75" fill="#3D5170" stroke="none" stroke-width="0"/>
-<text x="60.0" y="164" fill="#8FA0BD" font-family="JetBrains Mono" font-size="10" text-anchor="middle">you</text>
-<rect x="150" y="20" width="450" height="250" rx="10" fill="#22C7B8" fill-opacity="0.05" stroke="#22C7B8" stroke-width="1.5"/>
-<text x="162" y="38" fill="#22C7B8" font-family="JetBrains Mono" font-size="10" text-anchor="start">public-a</text>
-<text x="588" y="38" fill="#22C7B8" font-family="JetBrains Mono" font-size="9.5" text-anchor="end">10.0.1.0/24</text>
-<rect x="143" y="46" width="14" height="200" rx="3" fill="#141E2C" stroke="#8B7BF0" stroke-width="1.6"/>
-<text x="150" y="284" fill="#8B7BF0" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">network ACL: checks both directions</text>
-<rect x="436" y="62" width="100" height="138" rx="10" fill="none" stroke="#34D399" stroke-width="1.4" stroke-dasharray="5 4"/>
-<g>
-<rect x="458" y="84" width="56" height="66" rx="4" fill="#141E2C" stroke="#22C7B8" stroke-width="1.7"/>
-<rect x="464" y="90" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="471" cy="98" r="2.2" fill="#34D399"/><circle cx="478" cy="98" r="2.2" fill="#3D5170"/>
-<line x1="490.0" y1="94" x2="490.0" y2="102" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="494.5" y1="94" x2="494.5" y2="102" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="499.0" y1="94" x2="499.0" y2="102" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="503.5" y1="94" x2="503.5" y2="102" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="464" y="109" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="471" cy="117" r="2.2" fill="#22C7B8"/><circle cx="478" cy="117" r="2.2" fill="#3D5170"/>
-<line x1="490.0" y1="113" x2="490.0" y2="121" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="494.5" y1="113" x2="494.5" y2="121" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="499.0" y1="113" x2="499.0" y2="121" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="503.5" y1="113" x2="503.5" y2="121" stroke="#3D5170" stroke-width="1.2"/>
-<rect x="464" y="128" width="44" height="16" rx="2" fill="#0A1220" stroke="#2D3D52" stroke-width="1"/>
-<circle cx="471" cy="136" r="2.2" fill="#22C7B8"/><circle cx="478" cy="136" r="2.2" fill="#3D5170"/>
-<line x1="490.0" y1="132" x2="490.0" y2="140" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="494.5" y1="132" x2="494.5" y2="140" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="499.0" y1="132" x2="499.0" y2="140" stroke="#3D5170" stroke-width="1.2"/>
-<line x1="503.5" y1="132" x2="503.5" y2="140" stroke="#3D5170" stroke-width="1.2"/>
-</g>
-<text x="486" y="222" fill="#34D399" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">security group</text>
-<text x="486" y="236" fill="#5B7290" font-family="JetBrains Mono" font-size="9" text-anchor="middle">remembers the request</text>
-<line x1="104" y1="108" x2="443.0" y2="108.0" stroke="#34D399" stroke-width="1.6"/>
-<polygon points="452,108 443.0,103.5 443.0,112.5" fill="#34D399"/>
-<rect x="188.0" y="81" width="124" height="22" rx="11" fill="#0A1220" stroke="#34D399" stroke-width="1.3"/>
-<text x="250" y="95.5" fill="#34D399" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">request to :80</text>
-<circle cx="150" cy="108" r="9" fill="#0A1220" stroke="#34D399" stroke-width="1.7"/>
-<path d="M146 108 L149 111.2 L154.4 104.4" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="436" cy="108" r="9" fill="#0A1220" stroke="#34D399" stroke-width="1.7"/>
-<path d="M432 108 L435 111.2 L440.4 104.4" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<line x1="452" y1="150" x2="169.0" y2="150.0" stroke="#F2739D" stroke-width="1.6"/>
-<polygon points="160,150 169.0,154.5 169.0,145.5" fill="#F2739D"/>
-<rect x="253.0" y="157" width="134" height="22" rx="11" fill="#0A1220" stroke="#F2739D" stroke-width="1.3"/>
-<text x="320" y="171.5" fill="#F2739D" font-family="JetBrains Mono" font-size="9.5" text-anchor="middle">reply to :52814</text>
-<circle cx="150" cy="150" r="9" fill="#0A1220" stroke="#F2739D" stroke-width="1.7"/>
-<line x1="144.42" y1="144.42" x2="155.58" y2="155.58" stroke="#F2739D" stroke-width="1.7"/>
-<text x="196" y="196" fill="#F2739D" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">outbound :52814?</text>
-<text x="196" y="210" fill="#F2739D" font-family="JetBrains Mono" font-size="9.5" text-anchor="start">no rule allows it</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 300"><title>The request passes both firewalls; the reply passes the security group but the network ACL blocks it</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<rect x="16" y="92" width="72" height="52" rx="4" class="s-ink f-panel" stroke-width="1.8"/>
+<path d="M16 104 L88 104" class="s-ink" fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="23" cy="98" r="1.6" class="f-ink"/>
+<circle cx="29" cy="98" r="1.6" class="f-ink"/>
+<circle cx="35" cy="98" r="1.6" class="f-ink"/>
+<rect x="25" y="112" width="38" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<rect x="25" y="121" width="27" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<rect x="25" y="130" width="32" height="2.5" rx="1.2" class="f-faint" stroke-width="0"/>
+<text x="52.0" y="161" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">you</text>
+<rect x="150" y="16" width="494" height="260" rx="0" class="s-pub f-pubtint" stroke-width="1.5"/>
+<g transform="translate(150.00 16.00) scale(0.6500)"><g fill="none" fill-rule="evenodd"><path fill="#7aa116" d="M0 0h40v40H0z"/><path fill="#fff" d="M19.536 22.049c1.106 0 2.006.899 2.006 2.005s-.9 2.006-2.006 2.006-2.006-.9-2.006-2.006.9-2.005 2.006-2.005m-.524 4.958v3.494h1v-3.489a3 3 0 0 0 2.53-2.958 3.01 3.01 0 0 0-3.006-3.005 3.01 3.01 0 0 0-3.006 3.005 3.006 3.006 0 0 0 2.482 2.953M10 33.014h19.012V18H10zm4.046-20.53A5.49 5.49 0 0 1 19.529 7a5.49 5.49 0 0 1 5.483 5.484V17H14.046zM29.512 17h-3.5v-4.516A6.49 6.49 0 0 0 19.529 6a6.49 6.49 0 0 0-6.483 6.484V17H9.5a.5.5 0 0 0-.5.5v16.014a.5.5 0 0 0 .5.5h20.012a.5.5 0 0 0 .5-.5V17.5a.5.5 0 0 0-.5-.5"/></g></g>
+<text x="184" y="33" class="f-ink" font-size="12" font-weight="500" text-anchor="start">Public subnet: public-a</text>
+<text x="634" y="33" class="f-sub mono" font-size="10.5" font-weight="400" text-anchor="end">10.0.1.0/24</text>
+<rect x="143" y="46" width="14" height="210" rx="3" class="s-net f-panel" stroke-width="1.6"/>
+<text x="150" y="292" class="f-net" font-size="10.5" font-weight="600" text-anchor="middle">network ACL: checks both directions</text>
+<rect x="476" y="70" width="136" height="133" rx="0" class="s-sec" fill="none" stroke-width="1.5"/>
+<text x="484" y="85" class="f-sec" font-size="10.5" font-weight="600" text-anchor="start">web-sg</text>
+<text x="484" y="99" class="f-sub" font-size="9.5" font-weight="400" text-anchor="start">remembers each request</text>
+<g transform="translate(522.00 113.00) scale(0.9167)"><path class="f-cmp" fill-rule="evenodd" d="M9 39h30V9H9zm37-26v-2h-5V8a1 1 0 0 0-1-1h-3V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5h-4V2h-2v5H8a1 1 0 0 0-1 1v3H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v4H2v2h5v3a1 1 0 0 0 1 1h3v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h4v5h2v-5h3a1 1 0 0 0 1-1v-3h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4h5v-2h-5v-4z"/></g>
+<text x="544.0" y="173" class="f-ink" font-size="11.5" font-weight="500" text-anchor="middle">web-1</text>
+<text x="544.0" y="187" class="f-sub mono" font-size="10" font-weight="400" text-anchor="middle">10.0.1.23</text>
+<path d="M92 112 L484.0 112.0" class="s-ok" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="490.0,112.0 480.0,107.0 480.0,117.0" class="f-ok"/>
+<rect x="238.0" y="85" width="124" height="22" rx="11" class="s-ok f-panel" stroke-width="1.4"/>
+<text x="300" y="99.6" class="f-ok mono" font-size="10" font-weight="500" text-anchor="middle">request to :80</text>
+<circle cx="150" cy="112" r="8" class="f-panel s-ok" stroke-width="1.8"/>
+<path d="M146.64 112 L149.2 114.72 L153.68 108.96" class="s-ok" fill="none" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="476" cy="112" r="8" class="f-panel s-ok" stroke-width="1.8"/>
+<path d="M472.64 112 L475.2 114.72 L479.68 108.96" class="s-ok" fill="none" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M490 160 L170.0 160.0" class="s-ink" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="164.0,160.0 174.0,165.0 174.0,155.0" class="f-ink"/>
+<rect x="264.0" y="167" width="132" height="22" rx="11" class="s-bad f-panel" stroke-width="1.4"/>
+<text x="330" y="181.6" class="f-bad mono" font-size="10" font-weight="500" text-anchor="middle">reply to :52814</text>
+<circle cx="476" cy="160" r="8" class="f-panel s-ok" stroke-width="1.8"/>
+<path d="M472.64 160 L475.2 162.72 L479.68 156.96" class="s-ok" fill="none" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="150" cy="160" r="9" class="f-panel s-bad" stroke-width="1.8"/>
+<path d="M144.78 154.78 L155.22 165.22" class="s-bad" fill="none" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="184" y="214" class="f-bad mono" font-size="10.5" font-weight="600" text-anchor="start">outbound to :52814?</text>
+<text x="184" y="229" class="f-bad" font-size="10.5" font-weight="400" text-anchor="start">no rule allows it</text>
 </svg>

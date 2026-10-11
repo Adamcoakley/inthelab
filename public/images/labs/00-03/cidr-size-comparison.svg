@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 250">
-<style>text{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,'DejaVu Sans Mono',Menlo,Consolas,monospace}</style>
-<rect x="140" y="44" width="340" height="34" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="124" y="67" fill="#22C7B8" font-size="15" text-anchor="end">/24</text>
-<text x="124" y="82" fill="#5B7290" font-size="9" text-anchor="end">8 slots free</text>
-<text x="500" y="66" fill="#8FA0BD" font-size="11">256 addresses</text>
-<rect x="140" y="102" width="340" height="34" rx="5" fill="none" stroke="#2D3D52" stroke-width="1" stroke-dasharray="4 4"/>
-<rect x="140" y="102" width="170" height="34" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="124" y="125" fill="#22C7B8" font-size="15" text-anchor="end">/25</text>
-<text x="124" y="140" fill="#5B7290" font-size="9" text-anchor="end">7 slots free</text>
-<text x="500" y="124" fill="#8FA0BD" font-size="11">128 addresses</text>
-<rect x="140" y="160" width="340" height="34" rx="5" fill="none" stroke="#2D3D52" stroke-width="1" stroke-dasharray="4 4"/>
-<rect x="140" y="160" width="85" height="34" rx="5" fill="#0F2B35" stroke="#22C7B8" stroke-width="1.6"/>
-<text x="124" y="183" fill="#22C7B8" font-size="15" text-anchor="end">/26</text>
-<text x="124" y="198" fill="#5B7290" font-size="9" text-anchor="end">6 slots free</text>
-<text x="500" y="182" fill="#8FA0BD" font-size="11">64 addresses</text>
-<text x="310" y="230" fill="#34D399" font-size="10" text-anchor="middle">the number goes up, the network goes down</text>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 660 230"><title>/24, /25 and /26, each half the size of the one above</title><style>.dg text{font-family:Inter,'Amazon Ember',Arial,Helvetica,sans-serif}.dg .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}.dg .f-ink{fill:var(--dg-ink,#232F3E)}.dg .s-ink{stroke:var(--dg-ink,#232F3E)}.dg .f-sub{fill:var(--dg-sub,#5F6B7A)}.dg .s-sub{stroke:var(--dg-sub,#5F6B7A)}.dg .f-faint{fill:var(--dg-faint,#A7B1BE)}.dg .s-faint{stroke:var(--dg-faint,#A7B1BE)}.dg .f-line{fill:var(--dg-line,#232F3E)}.dg .s-line{stroke:var(--dg-line,#232F3E)}.dg .f-surface{fill:var(--dg-surface,#F4F6F8)}.dg .s-surface{stroke:var(--dg-surface,#F4F6F8)}.dg .f-panel{fill:var(--dg-panel,#FFFFFF)}.dg .s-panel{stroke:var(--dg-panel,#FFFFFF)}.dg .f-net{fill:var(--dg-net,#8C4FFF)}.dg .s-net{stroke:var(--dg-net,#8C4FFF)}.dg .f-cmp{fill:var(--dg-cmp,#ED7100)}.dg .s-cmp{stroke:var(--dg-cmp,#ED7100)}.dg .f-pub{fill:var(--dg-pub,#7AA116)}.dg .s-pub{stroke:var(--dg-pub,#7AA116)}.dg .f-priv{fill:var(--dg-priv,#00A4A6)}.dg .s-priv{stroke:var(--dg-priv,#00A4A6)}.dg .f-sec{fill:var(--dg-sec,#DD344C)}.dg .s-sec{stroke:var(--dg-sec,#DD344C)}.dg .f-db{fill:var(--dg-db,#C925D1)}.dg .s-db{stroke:var(--dg-db,#C925D1)}.dg .f-you{fill:var(--dg-you,#3B62D4)}.dg .s-you{stroke:var(--dg-you,#3B62D4)}.dg .f-ok{fill:var(--dg-ok,#037F0C)}.dg .s-ok{stroke:var(--dg-ok,#037F0C)}.dg .f-bad{fill:var(--dg-bad,#D91515)}.dg .s-bad{stroke:var(--dg-bad,#D91515)}.dg .f-pubtint{fill:var(--dg-pubtint,#F2F6E8)}.dg .s-pubtint{stroke:var(--dg-pubtint,#F2F6E8)}.dg .f-privtint{fill:var(--dg-privtint,#E6F6F7)}.dg .s-privtint{stroke:var(--dg-privtint,#E6F6F7)}.dg .f-youtint{fill:var(--dg-youtint,#EEF2FC)}.dg .s-youtint{stroke:var(--dg-youtint,#EEF2FC)}.dg .f-nettint{fill:var(--dg-nettint,#F3EEFF)}.dg .s-nettint{stroke:var(--dg-nettint,#F3EEFF)}.dg .f-badtint{fill:var(--dg-badtint,#FDECEC)}.dg .s-badtint{stroke:var(--dg-badtint,#FDECEC)}</style>
+<text x="70" y="48" class="f-net mono" font-size="18" font-weight="600" text-anchor="end">/24</text>
+<text x="70" y="64" class="f-sub" font-size="9.5" font-weight="400" text-anchor="end">8 bits left</text>
+<rect x="90" y="24" width="400" height="36" rx="5" class="s-faint" fill="none" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="90" y="24" width="400" height="36" rx="5" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="510" y="47" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">256 addresses</text>
+<text x="70" y="110" class="f-net mono" font-size="18" font-weight="600" text-anchor="end">/25</text>
+<text x="70" y="126" class="f-sub" font-size="9.5" font-weight="400" text-anchor="end">7 bits left</text>
+<rect x="90" y="86" width="400" height="36" rx="5" class="s-faint" fill="none" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="90" y="86" width="200" height="36" rx="5" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="510" y="109" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">128 addresses</text>
+<text x="70" y="172" class="f-net mono" font-size="18" font-weight="600" text-anchor="end">/26</text>
+<text x="70" y="188" class="f-sub" font-size="9.5" font-weight="400" text-anchor="end">6 bits left</text>
+<rect x="90" y="148" width="400" height="36" rx="5" class="s-faint" fill="none" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="90" y="148" width="100" height="36" rx="5" class="s-net f-nettint" stroke-width="1.6"/>
+<text x="510" y="171" class="f-ink" font-size="11.5" font-weight="500" text-anchor="start">64 addresses</text>
+<text x="330" y="218" class="f-net" font-size="11" font-weight="600" text-anchor="middle">the number goes up, the network goes down</text>
 </svg>

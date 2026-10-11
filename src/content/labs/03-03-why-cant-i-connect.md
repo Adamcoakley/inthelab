@@ -17,7 +17,7 @@ questions:
       - "Every address on the internet"
       - "Exactly one address: 86.44.12.7"
     correct: 3
-    hint: "Lab 0.3: how many bits are left for devices in a /32?"
+    hint: "How many bits are left for devices in a /32?"
     explain: "A /32 uses all 32 bits for the network, leaving none for devices. So it matches exactly one address. That's what My IP creates."
 
   - kind: cause

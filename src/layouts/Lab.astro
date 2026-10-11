@@ -69,6 +69,34 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
     })();
   </script>
 
+  <!-- Diagram system v2: swap each new-style diagram <img> for its SVG, so its colours
+       follow the site theme. Re-runs if the lab body is re-rendered (e.g. name change). -->
+  <script is:inline>
+    (function () {
+      document.documentElement.classList.add('js');
+      var cache = {};
+      function inline(img) {
+        var src = img.getAttribute('src');
+        if (!src || src.slice(-4) !== '.svg') return;
+        (cache[src] = cache[src] || fetch(src).then(function (r) { return r.text(); }))
+          .then(function (text) {
+            if (text.indexOf('class="dg"') === -1) { img.classList.add('dg-done'); return; }
+            var box = document.createElement('div');
+            box.innerHTML = text;
+            var svg = box.querySelector('svg');
+            svg.setAttribute('role', 'img');
+            if (img.alt) svg.setAttribute('aria-label', img.alt);
+            if (img.isConnected) img.replaceWith(svg);
+          })
+          .catch(function () { img.classList.add('dg-done'); });
+      }
+      function run() { document.querySelectorAll('.lab-body .diagram > img').forEach(inline); }
+      run();
+      var body = document.querySelector('.lab-body');
+      if (body) new MutationObserver(run).observe(body, { childList: true, subtree: true });
+    })();
+  </script>
+
   <style>
     .lab-wrap{max-width:820px;margin:0 auto;padding:32px 24px 40px}
     .lab-crumb{font-size:12px;color:var(--ink-faint);margin-bottom:14px}

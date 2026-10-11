@@ -29,7 +29,7 @@ questions:
       - "The role's policy only allows read-only EC2 actions"
     correct: 3
     hint: "Which policy did you attach to the role?"
-    explain: "AmazonEC2ReadOnlyAccess only allows looking at EC2. Listing S3 buckets isn't in it, so IAM denies it by default, exactly like Lab 1.2."
+    explain: "AmazonEC2ReadOnlyAccess only allows looking at EC2. Listing S3 buckets isn't in it, so IAM denies it by default: anything no policy allows is refused."
 
   - kind: predict
     q: "You remove the role from the instance, then run <code>aws sts get-caller-identity</code> again. What happens?"
@@ -55,7 +55,7 @@ IAM checks every request, whoever or whatever sends it. So your server needs an 
 
 ## Step 1: Ask AWS who you are, from the server
 
-SSH in to `{{ns}}-web-2` and run the command from Lab 1.4:
+SSH in to `{{ns}}-web-2` and ask AWS who you are:
 
 ```bash
 aws sts get-caller-identity
@@ -73,7 +73,7 @@ The server has no identity, so it can't make any AWS request at all.
 
 ## Roles: permissions without keys
 
-In Lab 1.2, you met **roles**: permissions that something uses temporarily, with no password. When you attach a role to an instance, the instance gets **temporary credentials** from the metadata service. They expire within hours, and AWS replaces them automatically before they do.
+A **role** is a set of permissions that something uses temporarily, with no password. When you attach a role to an instance, the instance gets **temporary credentials** from the metadata service. They expire within hours, and AWS replaces them automatically before they do.
 
 <div class="diagram">
   <img
@@ -145,7 +145,7 @@ The server can see itself in the list.
 aws s3 ls
 ```
 
-`AccessDenied`. Read the error the way you did in Lab 1.2: **who** asked (`{{ns}}-web-role`), **what** it tried (`s3:ListAllMyBuckets`) and **why** it failed (no policy allows it).
+`AccessDenied`. Read the error: it tells you **who** asked (`{{ns}}-web-role`), **what** it tried (`s3:ListAllMyBuckets`) and **why** it failed (no policy allows it).
 
 The role only allows what the server needs. That's least privilege.
 
