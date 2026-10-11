@@ -20,7 +20,7 @@ A **bastion host** is a small server in a public subnet whose only job is to be 
 
 <div class="diagram">
   <img
-    src="/images/style/example-architecture.svg"
+    src="/images/labs/04-04/arch-bastion.svg"
     alt="Your laptop connects to the bastion in public-a, through the internet gateway. From the bastion, the connection continues to app-1 in private-a, whose security group allows SSH from bastion-sg."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />
@@ -50,7 +50,7 @@ Remember what a firewall does: it decides which traffic gets in, port by port.
 
 <div class="diagram">
   <img
-    src="/images/style/example-concept.svg"
+    src="/images/labs/00-05/least-privilege.svg"
     alt="The internet reaches port 443 through the firewall, but is blocked from port 22. Your laptop reaches port 22. Nothing outside can reach port 3306."
     style="width:100%;height:auto;display:block;margin:0;border:0;border-radius:0;box-shadow:none;position:relative;z-index:1;"
   />

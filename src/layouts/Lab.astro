@@ -80,7 +80,7 @@ const typeColor = { lab: 'var(--accent)', concept: 'var(--ok)', challenge: 'var(
         if (!src || src.slice(-4) !== '.svg') return;
         (cache[src] = cache[src] || fetch(src).then(function (r) { return r.text(); }))
           .then(function (text) {
-            if (text.indexOf('class="dg"') === -1) { img.classList.add('dg-done'); return; }
+            if (!/<svg[^>]*class="dg[\s"]/.test(text)) { img.classList.add('dg-done'); return; }
             var box = document.createElement('div');
             box.innerHTML = text;
             var svg = box.querySelector('svg');

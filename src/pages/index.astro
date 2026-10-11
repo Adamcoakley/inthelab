@@ -4,8 +4,8 @@ import Base from '../layouts/Base.astro';
 import { getOrderedLabs } from '../lib/labs.js';
 import { phases } from '../data/phases.js';
 
-// Inline the home diagrams so they follow the light/dark theme.
-const svg = (name) => readFileSync(`${process.cwd()}/public/images/home/${name}.svg`, 'utf8');
+// Inline the hero diagram so it follows the light/dark theme.
+const hero = readFileSync(`${process.cwd()}/public/images/home/hero.svg`, 'utf8');
 
 // Real numbers from the content, so this page never goes out of date.
 const labs = (await getOrderedLabs()).filter((l) => phases.some((p) => p.number === l.data.phase));
@@ -16,9 +16,9 @@ const firstLab = labs[0];
 const startHref = firstLab ? `/labs/${firstLab.id}` : '/roadmap';
 
 const steps = [
-  { file: 'step-build', title: 'You build something', text: 'Launch a real server, in a network you built yourself. Nothing is simulated.' },
-  { file: 'step-break', title: "It doesn't work", text: "You try to connect and it times out. It's the same wall most people hit, and it's there on purpose." },
-  { file: 'step-fix', title: 'You find out why', text: "One route was missing. Add it, and you'll never forget what a route table does." },
+  { title: 'You build something', text: 'Launch a real server, in a network you built yourself. Nothing is simulated.' },
+  { title: "It doesn't work", text: "You try to connect and it times out. It's the same wall most people hit, and it's there on purpose." },
+  { title: 'You find out why', text: "One route was missing. Add it, and you'll never forget what a route table does." },
 ];
 
 const path = [
@@ -48,24 +48,22 @@ const costs = [
       <p class="meta">{labs.length} labs ready so far, across Phases 0 to {lastReady}. No sign-up needed.</p>
     </div>
     <figure class="diagram hero-diagram">
-      <Fragment set:html={svg('hero')} />
+      <Fragment set:html={hero} />
       <figcaption class="dcap" id="hero-cap" aria-live="polite">You've launched a server. Can you reach it?</figcaption>
     </figure>
   </section>
 
-  <!-- ============================================================ method -->
-  <section class="block wrap">
-    <div class="head">
-      <h2>Build it, break it, understand it</h2>
-      <p>Most tutorials hand you a finished setup and explain the parts. Here, things fail first, so the fix actually means something.</p>
-    </div>
+  <!-- ============================================================ method: narrates the hero animation -->
+  <section class="wrap method">
+    <h2 class="method-title">How every lab works</h2>
     <ol class="steps">
       {steps.map((s, i) => (
-        <li class="step">
-          <div class="step-art diagram" set:html={svg(s.file)} />
-          <div class="step-num" aria-hidden="true">{i + 1}</div>
-          <h3>{s.title}</h3>
-          <p>{s.text}</p>
+        <li class="step" data-step={i + 1}>
+          <span class="step-num" aria-hidden="true">{i + 1}</span>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
         </li>
       ))}
     </ol>
@@ -91,24 +89,8 @@ const costs = [
     </ol>
   </section>
 
-  <!-- ============================================================ destination -->
-  <section class="block wrap">
-    <div class="head">
-      <h2>Where you'll end up</h2>
-      <p>By the last phase, you'll build this from scratch, and you'll know why every piece is there.</p>
-    </div>
-    <figure class="diagram final">
-      <Fragment set:html={svg('final-architecture')} />
-      <figcaption class="dcap">DNS, HTTPS and a firewall in front of a load balancer, with servers in private subnets across two Availability Zones</figcaption>
-    </figure>
-    <div class="teaser">
-      <p><b>{phases.length} phases</b> get you there, from your first network to a production-ready setup. Each one builds on the last.</p>
-      <a class="btn-ghost" href="/roadmap">See the full roadmap</a>
-    </div>
-  </section>
-
   <!-- ============================================================ cost -->
-  <section class="block wrap">
+  <section class="block wrap last">
     <div class="head">
       <h2>Worried about the bill?</h2>
       <p>Fair enough: surprise AWS bills are real. The course is built so you stay in control.</p>
@@ -124,32 +106,30 @@ const costs = [
     </div>
   </section>
 
-  <!-- ============================================================ closing -->
-  <section class="closing wrap">
-    <h2>Start with how networks actually work</h2>
-    <p>Phase 0 doesn't need an AWS account. You'll learn what a server, an IP address, a route and a firewall really are, then use all of it in AWS.</p>
-    <a class="btn-primary" href={startHref}>Start Phase 0</a>
-  </section>
-
   <style>
-    .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:40px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:20px}
     .hero h1{font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
     .lede{font-size:18px;color:var(--ink-dim);max-width:44ch;line-height:1.6;margin-bottom:26px}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .meta{margin-top:18px;font-size:14px;color:var(--ink-faint)}
     .hero-diagram{margin:0}
-    .hero-diagram .dcap{min-height:1.5em;transition:color .3s}
+    .hero-diagram .dcap{min-height:1.5em;font-size:13px;transition:color .3s}
 
-    .block{padding-top:56px;padding-bottom:16px}
+    .method{padding-top:44px;padding-bottom:8px}
+    .method-title{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--ink-faint);margin-bottom:18px}
+    .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .step{display:flex;gap:14px;align-items:flex-start;opacity:.5;transition:opacity .4s}
+    .step.on,.no-anim .step{opacity:1}
+    .step-num{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ink-faint);color:var(--ink-dim);font-weight:700;font-size:13px;display:grid;place-items:center;transition:background .4s,border-color .4s,color .4s}
+    .step.on .step-num{background:var(--accent);border-color:var(--accent);color:#fff}
+    .step h3{font-size:17px;margin-bottom:4px}
+    .step p{color:var(--ink-dim);font-size:14.5px;line-height:1.6}
+
+    .block{padding-top:64px;padding-bottom:16px}
+    .block.last{padding-bottom:56px}
     .head{max-width:620px;margin-bottom:28px}
     .head h2{font-size:clamp(26px,3.2vw,34px);margin-bottom:10px}
     .head p{color:var(--ink-dim);font-size:16.5px;line-height:1.6}
-
-    .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .step-art{margin:0 0 14px;padding:12px}
-    .step-num{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--canvas);font-weight:700;font-size:13px;display:grid;place-items:center;margin-bottom:10px}
-    .step h3{font-size:18px;margin-bottom:6px}
-    .step p{color:var(--ink-dim);font-size:15px;line-height:1.6}
 
     .path{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .path-card{border:1px solid var(--line);border-radius:var(--rad);padding:20px;background:var(--canvas-2)}
@@ -165,46 +145,37 @@ const costs = [
     .path-card h3 a:hover{color:var(--accent)}
     .path-card p{color:var(--ink-dim);font-size:15px;line-height:1.6}
 
-    .final{margin:0 0 20px}
-    .final :global(svg){max-width:760px;margin:0 auto}
-    .teaser{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 22px;border:1px solid var(--line);border-radius:var(--rad);background:var(--canvas-2)}
-    .teaser p{margin:0;color:var(--ink-dim);font-size:15px;max-width:56ch}
-    .teaser b{color:var(--ink)}
-
     .costs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     .cost{border:1px solid var(--line);border-radius:var(--rad);padding:20px;background:var(--canvas-2)}
     .cost h3{font-size:17px;margin-bottom:6px}
     .cost p{color:var(--ink-dim);font-size:15px;line-height:1.6}
     .cost-pill{display:inline-block;margin-top:10px;font-size:12.5px;padding:5px 11px;border-radius:8px;background:var(--panel);border:1px solid var(--line);color:var(--cost)}
 
-    .closing{text-align:center;padding-top:72px;padding-bottom:40px;max-width:680px}
-    .closing h2{font-size:clamp(26px,3.2vw,34px);margin-bottom:12px}
-    .closing p{color:var(--ink-dim);font-size:16.5px;line-height:1.6;margin:0 auto 24px;max-width:56ch}
-
     @media (max-width:900px){
       .hero{grid-template-columns:1fr;gap:28px;padding-top:36px}
-      .steps,.path{grid-template-columns:1fr}
-      .costs{grid-template-columns:1fr}
-    }
-    @media (max-width:560px){
-      .teaser{padding:16px}
+      .steps,.path,.costs{grid-template-columns:1fr}
+      .steps{gap:16px}
     }
   </style>
 
-  <!-- The hero's one animated moment: the server can't be reached, then one route fixes it. -->
+  <!-- The hero's one animated moment. The three steps underneath light up as it plays. -->
   <script is:inline>
     (function () {
       var fig = document.querySelector('.hero-diagram');
       var svg = fig && fig.querySelector('svg');
       var cap = document.getElementById('hero-cap');
+      var steps = document.querySelectorAll('.step');
       if (!svg || !cap) return;
       var el = function (id) { return svg.querySelector('#' + id); };
       var packet = el('packet'), fail = el('fail'), pass = el('pass'), missing = el('route-missing'), added = el('route-added');
+      var lane = Number(packet.getAttribute('cx'));
       [fail, pass, missing, added].forEach(function (g) { g.style.transition = 'opacity .45s'; });
       var show = function (g, on) { g.style.opacity = on ? '1' : '0'; };
-      var say = function (text, tone) { cap.textContent = text; cap.style.color = tone ? 'var(--dg-' + tone + ')' : ''; };
+      var say = function (text, tone) { cap.textContent = text; cap.style.color = tone ? 'var(--dg-' + tone + '-text, var(--dg-' + tone + '))' : ''; };
+      var step = function (n) { steps.forEach(function (s) { s.classList.toggle('on', Number(s.dataset.step) === n); }); };
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('no-anim');
         show(missing, false); show(added, true); show(pass, true);
         say('One missing route was the problem. Add it, and it connects.', 'ok');
         return;
@@ -226,19 +197,21 @@ const costs = [
       async function loop() {
         while (true) {
           show(missing, true); show(added, false); show(fail, false); show(pass, false);
-          say("You've launched a server. Can you reach it?");
-          await wait(1200);
-          await move(66, 154, 1100);
+          step(1); say("You've launched a server. Can you reach it?");
+          await wait(1600);
+          step(2);
+          await move(lane, 138, 1100);
           show(fail, true);
           say('It times out, and nothing tells you why.', 'bad');
-          await wait(2200);
+          await wait(2400);
+          step(3);
           show(fail, false); show(missing, false); show(added, true);
           say('The subnet has no route out. Add one.');
           await wait(1800);
-          await move(66, 386, 1700);
+          await move(lane, 326, 1700);
           show(pass, true);
           say("Now it connects, and you'll never forget why.", 'ok');
-          await wait(3200);
+          await wait(3400);
         }
       }
       loop();

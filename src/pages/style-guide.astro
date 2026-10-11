@@ -2,17 +2,18 @@
 import { readFileSync } from 'node:fs';
 import Base from '../layouts/Base.astro';
 
-// Inline an SVG from public/images/style so its colours follow the theme.
+// Inline an SVG so its colours follow the theme.
 const svg = (name) => readFileSync(`${process.cwd()}/public/images/style/${name}.svg`, 'utf8');
+const lab = (name) => readFileSync(`${process.cwd()}/public/images/labs/${name}.svg`, 'utf8');
 
 const colours = [
-  { group: 'Categories', note: 'Taken from AWS. A colour always means the same kind of thing.', items: [
-    ['net', 'Networking', 'VPC, gateways, route tables'],
-    ['cmp', 'Compute', 'servers'],
-    ['pub', 'Public subnet', 'also storage, like S3'],
-    ['priv', 'Private subnet', 'also the Region border'],
-    ['sec', 'Security', 'security groups, IAM, firewalls'],
-    ['db', 'Databases', 'RDS and friends'],
+  { group: 'Accents', note: "Close to AWS's own category colours. In concept diagrams, each idea gets one of these so you can tell them apart at a glance.", items: [
+    ['net', 'Violet', 'networking: VPC, gateways, route tables'],
+    ['cmp', 'Orange', 'compute: servers, AMIs'],
+    ['priv', 'Teal', 'private subnets, the Region border'],
+    ['pub', 'Green', 'public subnets, storage like S3'],
+    ['sec', 'Red', 'IAM and security services only'],
+    ['db', 'Magenta', 'databases'],
   ]},
   { group: 'You', note: "The one colour that isn't from AWS: the site's accent blue, for things that are yours, or your job.", items: [
     ['you', 'Yours', 'your laptop, your app, your responsibilities'],
@@ -29,12 +30,14 @@ const colours = [
     ['panel', 'Panel', 'diagram background'],
   ]},
 ];
+// light / dark, read straight from the diagram library's palette
 const hex = {
-  ink: ['#232F3E', '#E6EBF5'], sub: ['#5F6B7A', '#9AA7BD'], faint: ['#A7B1BE', '#44526B'],
-  surface: ['#F4F6F8', '#172131'], panel: ['#FFFFFF', '#0E1522'], net: ['#8C4FFF', '#A27BFF'],
-  cmp: ['#ED7100', '#FF8A1F'], pub: ['#7AA116', '#9BC53D'], priv: ['#00A4A6', '#2FC1C3'],
-  sec: ['#DD344C', '#F25A6E'], db: ['#C925D1', '#E05BE6'], you: ['#3B62D4', '#6E96F2'], ok: ['#037F0C', '#4ADE80'], bad: ['#D91515', '#FF5C6C'],
+  ink: ['#1F2A37', '#E6EBF5'], sub: ['#5F6B7A', '#9AA7BD'], faint: ['#A7B1BE', '#44526B'],
+  surface: ['#F5F7FA', '#141E2C'], panel: ['#FFFFFF', '#0C1220'], net: ['#735ED1', '#8B7BF0'],
+  cmp: ['#D16100', '#F5A524'], pub: ['#51850E', '#A3CF4A'], priv: ['#0A847F', '#22C7B8'],
+  sec: ['#C43E45', '#F25A6E'], db: ['#A14DA7', '#E05BE6'], you: ['#396ED6', '#7AA2F7'], ok: ['#178950', '#34D399'], bad: ['#C03D69', '#F2739D'],
 };
+const tint = { net: 'nettint', cmp: 'cmptint', priv: 'privtint', pub: 'pubtint', sec: 'sectint', db: 'dbtint', you: 'youtint', ok: 'oktint', bad: 'badtint' };
 const aws = ['ec2', 'igw', 'nat', 'router', 'nacl', 'alb', 'ami', 'ebs', 's3', 'role'];
 const general = ['client', 'user', 'globe', 'server', 'firewall', 'phone', 'router-home', 'packet'];
 const groups = ['g-cloud', 'g-region', 'g-vpc', 'g-az', 'g-public', 'g-private', 'g-sg', 'g-asg'];
@@ -44,7 +47,7 @@ const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
   <main class="sg wrap">
     <header class="sg-head">
       <h1>How inthelab draws things</h1>
-      <p class="lede">Every diagram uses the same colours, the same icons and the same rules. Each one is a single file that follows the site's theme. Switch between light and dark at the top right to see both.</p>
+      <p class="lede">Every diagram uses the same colours, icons and rules. Each one is a single file with two palettes: the original neon look in dark mode, and a version tuned for white in light mode. Switch themes at the top right to compare.</p>
     </header>
 
     <section>
@@ -56,7 +59,7 @@ const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
           <div class="swatches">
             {g.items.map(([k, name, use]) => (
               <div class="swatch">
-                <span class="chip" style={`background:var(--dg-${k})`}></span>
+                <span class="chip" style={tint[k] ? `background:var(--dg-${tint[k]});border:2px solid var(--dg-${k})` : `background:var(--dg-${k})`}>{tint[k] && <b style={`color:var(--dg-${k}-text)`}>Aa</b>}</span>
                 <div>
                   <div class="sw-name">{name}</div>
                   <div class="sw-use">{use}</div>
@@ -93,11 +96,14 @@ const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
     <section>
       <h2>Rules</h2>
       <ol class="rules">
-        <li><b>One meaning per colour.</b> Purple is always networking, orange is always compute. Use the neutral ink for anything else.</li>
+        <li><b>A colour per idea.</b> Each separate thing in a diagram gets its own accent: a coloured border, a tinted fill and a title in the same colour. Architecture diagrams keep AWS's own colours for groups and icons.</li>
+        <li><b>Red means a problem.</b> Blocked traffic, errors and bad practice. Security groups are drawn in neutral grey, because they're doing their job, not failing.</li>
         <li><b>Status needs a mark.</b> Allowed gets a tick, blocked gets a crossed circle and a dashed line. Never rely on green and red alone.</li>
-        <li><b>Arrows are neutral.</b> Traffic is drawn in ink. Colour an arrow only when it shows a status.</li>
-        <li><b>Labels in sans, addresses in mono.</b> IPs, CIDRs, ports and commands use JetBrains Mono.</li>
-        <li><b>Numbered steps only for sequences.</b> Use the black step markers when the order matters, and explain each step in the lab text.</li>
+        <li><b>Every label is monospace.</b> JetBrains Mono throughout, so the diagrams read like the terminal you're typing into.</li>
+        <li><b>Two palettes, not one.</b> Dark mode uses the original neon colours. Light mode re-derives them for white at an even lightness, so no colour shouts or fades. Orange leans towards red there, because a darkened orange turns brown, and text uses a deeper shade than lines so it stays readable. The glow is dark-mode only.</li>
+        <li><b>Light mode looks like the real thing.</b> In light mode, hardware is drawn as hardware: servers and devices in solid dark grey, buildings in concrete, the internet in blue. Accent colours are kept for meaning. Dark mode keeps the glowing schematic look.</li>
+        <li><b>Current AWS icons.</b> Services such as EC2 and S3 use AWS's square service icons.</li>
+        <li><b>Numbered steps only for sequences.</b> Use the step markers when the order matters, and explain each step in the lab text.</li>
         <li><b>Show only what the lab needs.</b> Leave out anything the learner hasn't met yet, or draw it faint.</li>
       </ol>
     </section>
@@ -105,22 +111,22 @@ const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
     <section>
       <h2>Examples</h2>
 
-      <h3>A concept, before AWS</h3>
+      <h3>A concept, before AWS (Lab 0.1)</h3>
       <div class="diagram">
-        <Fragment set:html={svg('example-concept')} />
-        <div class="dcap">one server, three services, three different levels of access</div>
+        <Fragment set:html={lab('00-01/server-anatomy')} />
+        <div class="dcap">a colour per idea, tinted cards</div>
       </div>
 
-      <h3>An AWS architecture</h3>
+      <h3>A concept, with AWS icons (Lab 3.1)</h3>
       <div class="diagram">
-        <Fragment set:html={svg('example-architecture')} />
-        <div class="dcap">two hops: your laptop to the bastion, then the bastion to the private server</div>
+        <Fragment set:html={lab('03-01/what-you-choose')} />
+        <div class="dcap">the same card style, with AWS icons inside</div>
       </div>
 
-      <h3>A close-up</h3>
+      <h3>An AWS architecture (Lab 4.4)</h3>
       <div class="diagram">
-        <Fragment set:html={svg('example-closeup')} />
-        <div class="dcap">from your request to the process that answers it</div>
+        <Fragment set:html={lab('04-04/arch-bastion')} />
+        <div class="dcap">AWS groups and colours; security groups in neutral grey</div>
       </div>
     </section>
 
@@ -148,7 +154,7 @@ const marks = ['m-flow', 'm-ok', 'm-blocked', 'm-step'];
     .sg-block{margin-top:18px}
     .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
     .swatch{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--canvas-2)}
-    .chip{width:34px;height:34px;border-radius:8px;flex:none;border:1px solid var(--line)}
+    .chip{width:34px;height:34px;border-radius:8px;flex:none;border:1px solid var(--line);display:grid;place-items:center;font:600 12px 'JetBrains Mono',monospace}
     .sw-name{font-weight:600;font-size:14px}
     .sw-use{color:var(--ink-dim);font-size:13px}
     .sw-hex{color:var(--ink-faint);font-size:11.5px;margin-top:3px}

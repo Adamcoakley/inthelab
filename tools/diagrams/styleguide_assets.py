@@ -51,7 +51,7 @@ def bastion():
 
     def inst(x0, y0, name, ip, sg, rule):
         d.group(x0, y0, 130, 120, "sg", sg)
-        d.text(x0 + 8, y0 + 29, rule, "sec", 9.5)
+        d.text(x0 + 8, y0 + 29, rule, "sub", 9.5)
         d.icon("resource/AmazonEC2Instance", x0 + 43, y0 + 38, 44)
         d.text(x0 + 65, y0 + 98, name, "ink", 11.5, "middle", 500)
         d.text(x0 + 65, y0 + 111, ip, "sub", 10, "middle", mono=True)
@@ -136,7 +136,7 @@ def assets():
 
 
 if __name__ == "__main__":
-    least_privilege(); bastion(); inside_server(); assets()
+    assets()   # the examples on the page are real lab diagrams now
     if "--css" in sys.argv:  # print the theme tokens that live in global.css
         print(site_css())
     print("style guide assets done")

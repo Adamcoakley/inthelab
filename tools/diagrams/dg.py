@@ -14,26 +14,89 @@ ICONS = os.environ.get("AWS_ICONS", os.path.join(os.path.dirname(__file__), "aws
 # ---------------------------------------------------------------- tokens
 # name: (meaning, light, dark)
 TOKENS = {
-    "ink":       ("text, outlines, general icons", "#232F3E", "#E6EBF5"),
-    "sub":       ("secondary text, captions",      "#5F6B7A", "#9AA7BD"),
-    "faint":     ("inactive, not built yet",       "#A7B1BE", "#44526B"),
-    "line":      ("arrows and connectors",         "#232F3E", "#C7D0E8"),
-    "surface":   ("cards inside a diagram",        "#F4F6F8", "#172131"),
-    "panel":     ("diagram background",            "#FFFFFF", "#0E1522"),
-    "net":       ("networking: VPC, gateways, routes", "#8C4FFF", "#A27BFF"),
-    "cmp":       ("compute: servers",              "#ED7100", "#FF8A1F"),
-    "pub":       ("public subnet, storage",        "#7AA116", "#9BC53D"),
-    "priv":      ("private subnet, Region",        "#00A4A6", "#2FC1C3"),
-    "sec":       ("security: groups, IAM, firewalls", "#DD344C", "#F25A6E"),
-    "db":        ("databases",                     "#C925D1", "#E05BE6"),
-    "you":       ("yours: your things, your job",  "#3B62D4", "#6E96F2"),
-    "ok":        ("allowed, working",              "#037F0C", "#4ADE80"),
-    "bad":       ("blocked, failing",              "#D91515", "#FF5C6C"),
-    "pubtint":   ("public subnet fill",            "#F2F6E8", "rgba(155,197,61,.09)"),
-    "privtint":  ("private subnet fill",           "#E6F6F7", "rgba(47,193,195,.09)"),
-    "youtint":   ("fill for your things",          "#EEF2FC", "rgba(110,150,242,.12)"),
-    "nettint":   ("fill for networking things",    "#F3EEFF", "rgba(162,123,255,.12)"),
-    "badtint":   ("fill for waste or failure",     "#FDECEC", "rgba(255,92,108,.12)"),
+    # neutrals
+    "ink":       ("strong text, outlines",          "#1F2A37", "#E6EBF5"),
+    "ink2":      ("labels",                         "#3E4C5E", "#8FA0BD"),
+    "sub":       ("secondary text, captions",       "#5F6B7A", "#9AA7BD"),
+    "mute":      ("quiet captions",                 "#6B7A8F", "#5B7290"),
+    "faint":     ("inactive, not built yet",        "#A7B1BE", "#44526B"),
+    "line":      ("arrows and connectors",          "#475569", "#8FA0BD"),
+    "edge":      ("structure: casings, frames",     "#A3B1C2", "#3D5170"),
+    "edge2":     ("fine detail inside casings",     "#D3DBE5", "#2D3D52"),
+    "surface":   ("neutral cards",                  "#F5F7FA", "#141E2C"),
+    "panel":     ("diagram background",             "#FFFFFF", "#0C1220"),
+    "well":      ("screens and slots, sunk in",     "#FFFFFF", "#0C1220"),
+    "body":      ("front of a 3D object",           "#F5F8FB", "#141E2C"),
+    "bodytop":   ("top of a 3D object",             "#E9EEF4", "#1B2738"),
+    "bodyside":  ("side of a 3D object",            "#DCE3EB", "#161F2D"),
+    # accents. Dark: the original neon palette. Light: re-derived in OKLCH at an
+    # even lightness, so no hue shouts or fades; orange is pushed towards red,
+    # because a darkened yellow-orange turns brown.
+    "net":       ("networking; violet",             "#735ED1", "#8B7BF0"),
+    "cmp":       ("compute; orange",                "#D16100", "#F5A524"),
+    "priv":      ("private, Region; teal",          "#0A847F", "#22C7B8"),
+    "pub":       ("public subnet; green",           "#51850E", "#A3CF4A"),
+    "sec":       ("IAM, security services; red",    "#C43E45", "#F25A6E"),
+    "db":        ("databases; magenta",             "#A14DA7", "#E05BE6"),
+    "you":       ("yours; blue",                    "#396ED6", "#7AA2F7"),
+    "ok":        ("allowed, working; green",        "#178950", "#34D399"),
+    "bad":       ("blocked, failing; rose",         "#C03D69", "#F2739D"),
+    # tints: card fills. In light mode the colour lives in the fill (thin lines
+    # on white barely register), so these are clearly tinted, not near-white.
+    "nettint":   ("violet fill",                    "#E4E3FF", "#1A1D3A"),
+    "cmptint":   ("orange fill",                    "#FFDFC9", "#27211D"),
+    "privtint":  ("teal fill",                      "#C4F0EB", "#0F2B35"),
+    "pubtint":   ("green fill",                     "#D9EFC5", "#1A2A1E"),
+    "sectint":   ("red fill",                       "#FFDDDB", "#2E1A24"),
+    "dbtint":    ("magenta fill",                   "#FCD9FD", "#2A1730"),
+    "youtint":   ("blue fill",                      "#DAE7FE", "#172446"),
+    "oktint":    ("green fill",                     "#CDF0D7", "#122D31"),
+    "pubarea":   ("public subnet area",             "#EAF8E0", "#1A2A1E"),
+    "privarea":  ("private subnet area",            "#DBF7F4", "#0F2B35"),
+    "badtint":   ("rose fill",                      "#FFDCE3", "#2E1A26"),
+}
+
+# Phase 0 originals fill their cards with the dark background. In light mode
+# that would be plain white, so a card takes its accent's tint instead.
+for _acc in ("net", "cmp", "priv", "pub", "sec", "db", "you", "ok", "bad"):
+    TOKENS[_acc + "card"] = ("card fill (well)", TOKENS[_acc + "tint"][1], "#0C1220")
+    TOKENS[_acc + "cardb"] = ("card fill (body)", TOKENS[_acc + "tint"][1], "#141E2C")
+
+# Light mode only: what a thing *is* decides its colour, so hardware looks like
+# hardware. Dark mode keeps the neon schematic look and ignores these roles.
+# Each role re-points the --dg-* variables for the shapes that carry it.
+_HW = {"body": "#4B5563", "bodytop": "#6B7280", "bodyside": "#374151", "well": "#2F3742",
+       "edge": "#1F2937", "edge2": "#59616C", "ink2": "#E5E7EB", "mute": "#D1D5DB"}
+ROLES = {
+    # servers and racks: solid dark grey, coloured lights and highlights kept
+    "srv": {**_HW, "priv": "#1F2937", "priv-text": "#E5E7EB", "privcard": "#2F3742", "privcardb": "#4B5563",
+            "privtint": "#2F3742", "cmpcard": "#2F3742", "cmpcardb": "#4B5563", "badcard": "#2F3742",
+            "badcardb": "#4B5563", "okcard": "#2F3742"},
+    # laptops, phones, printers, TVs: dark grey with a lit screen
+    "dev": {**_HW, "bodytop": "#9CA3AF", "well": "#D9E4F2", "edge2": "#6B7280", "cmp": "#1F2937", "bad": "#1F2937",
+            "priv": "#1F2937", "cmpcardb": "#4B5563", "badcardb": "#4B5563", "privcardb": "#4B5563",
+            "cmpcard": "#D9E4F2", "badcard": "#D9E4F2"},
+    # browser windows: a white window in a grey frame
+    "win": {"cmp": "#6B7280", "bad": "#6B7280", "priv": "#6B7280", "you": "#6B7280", "cmptint": "#FFFFFF",
+            "privtint": "#FFFFFF", "youtint": "#FFFFFF", "cmpcardb": "#FFFFFF", "badcardb": "#FFFFFF", "cmpcard": "#F3F4F6",
+            "cmp-text": "#4B5563", "bodytop": "#E5E7EB", "edge": "#9CA3AF", "well": "#F3F4F6"},
+    # buildings: concrete, with dark racks inside
+    "bld": {"body": "#E7E3DD", "bodytop": "#D3CEC6", "edge": "#8B8378", "priv": "#8B8378", "privcardb": "#E7E3DD",
+            "privcard": "#4B5563", "well": "#4B5563", "edge2": "#374151"},
+    # a terminal: dark screen, light text
+    "term": {"priv": "#1F2937", "privtint": "#1F2937", "priv-text": "#E5E7EB", "faint": "#6B7280"},
+    # the internet: blue
+    "globe": {"priv": "#2F6FD1", "privcard": "#E3EEFD", "well": "#E3EEFD", "priv-text": "#1E4FA3"},
+    # markers that belong to hardware: neutral, not green
+    "ntr": {"priv": "#4B5563", "privcard": "#F3F4F6", "priv-text": "#374151", "ok": "#4B5563", "okcard": "#F3F4F6", "ok-text": "#374151"},
+}
+
+# In light mode an accent needs a deeper shade for text than for lines,
+# or it fails contrast on white. In dark mode one shade does both.
+TEXT = {
+    "net": ("#5C4AAC", "#8B7BF0"), "cmp": ("#A34202", "#F5A524"), "priv": ("#02736E", "#22C7B8"),
+    "pub": ("#456B02", "#A3CF4A"), "sec": ("#A12F35", "#F25A6E"), "db": ("#86398B", "#E05BE6"),
+    "you": ("#2B58B1", "#7AA2F7"), "ok": ("#02703F", "#34D399"), "bad": ("#9E2D54", "#F2739D"),
 }
 
 FONT = "Inter,'Amazon Ember',Arial,Helvetica,sans-serif"
@@ -45,15 +108,20 @@ def _style():
     for name, (_, light, _dark) in TOKENS.items():
         rules.append(f".dg .f-{name}{{fill:var(--dg-{name},{light})}}")
         rules.append(f".dg .s-{name}{{stroke:var(--dg-{name},{light})}}")
+    for name, (light, _dark) in TEXT.items():
+        rules.append(f".dg text.f-{name}{{fill:var(--dg-{name}-text,{light})}}")
     return "<style>" + "".join(rules) + "</style>"
 
 
 def site_css():
     """CSS variables for the site: light under :root, dark under [data-theme=dark]."""
-    light = ";".join(f"--dg-{k}:{v[1]}" for k, v in TOKENS.items())
-    dark = ";".join(f"--dg-{k}:{v[2]}" for k, v in TOKENS.items())
+    light = ";".join([f"--dg-{k}:{v[1]}" for k, v in TOKENS.items()] + [f"--dg-{k}-text:{v[0]}" for k, v in TEXT.items()])
+    dark = ";".join([f"--dg-{k}:{v[2]}" for k, v in TOKENS.items()] + [f"--dg-{k}-text:{v[1]}" for k, v in TEXT.items()])
+    roles = "".join(f':root:not([data-theme="dark"]) .dg .r-{r}{{' + ";".join(f"--dg-{k}:{v}" for k, v in m.items()) + "}"
+                    for r, m in ROLES.items())
     return (f":root,[data-theme=\"light\"]{{{light};--dg-grid:#EEF2F6;--dg-border:#E3E7EC}}\n"
-            f"[data-theme=\"dark\"]{{{dark};--dg-grid:#17223A;--dg-border:#1F2B42}}\n")
+            f"[data-theme=\"dark\"]{{{dark};--dg-grid:#17233A;--dg-border:#1B2740}}\n"
+            f"{roles}\n")
 
 
 # AWS icon colours -> our classes, so icons follow the theme too
@@ -61,6 +129,17 @@ RECOLOR = {
     "#ed7100": "cmp", "#8c4fff": "net", "#7aa116": "pub", "#dd344c": "sec",
     "#c925d1": "db", "#01a88d": "priv", "#00a4a6": "priv",
     "#232f3e": "ink", "#242f3e": "ink", "#232f3d": "ink",
+}
+
+
+TINT = {"net": "nettint", "cmp": "cmptint", "priv": "privtint", "pub": "pubtint", "sec": "sectint",
+        "db": "dbtint", "you": "youtint", "ok": "oktint", "bad": "badtint"}
+
+# resource outline icons that read as dated; drawn as the service tile instead
+TILES = {
+    "resource/AmazonEC2Instance": ("architecture-service/AmazonEC2", 0.8),
+    "resource/AmazonEC2Instances": ("architecture-service/AmazonEC2", 0.8),
+    "resource/AmazonSimpleStorageServiceBucketWithObjects": ("architecture-service/AmazonSimpleStorageService", 0.8),
 }
 
 
@@ -76,18 +155,28 @@ class D:
     def raw(self, s):
         self.p.append(s)
 
-    def text(self, x, y, s, c="ink", size=12, anchor="start", weight=400, mono=False):
-        cls = f"f-{c}" + (" mono" if mono else "")
+    def text(self, x, y, s, c="ink", size=12, anchor="start", weight=400, mono=False, halo=False):
+        # every label is monospace now (the Phase 0 look); former sans labels
+        # are drawn a touch smaller because mono runs wider
+        if weight >= 600 and size < 12:
+            weight = 500   # small labels: medium, not bold; bold is for headings
+        if not mono:
+            size = round(size * 0.9, 1)
+            weight = min(weight, 600)
+        cls = f"f-{c} mono"
+        h = (' style="paint-order:stroke;stroke:var(--dg-panel,#FFFFFF);stroke-width:4px;stroke-linejoin:round"'
+             if halo else "")
         self.raw(f'<text x="{x}" y="{y}" class="{cls}" font-size="{size}" font-weight="{weight}" '
-                 f'text-anchor="{anchor}">{esc(s)}</text>')
+                 f'text-anchor="{anchor}"{h}>{esc(s)}</text>')
 
-    def rect(self, x, y, w, h, stroke="line", fill=None, rx=0, sw=1.5, dash=None):
+    def rect(self, x, y, w, h, stroke="line", fill=None, rx=0, sw=1.5, dash=None, glow=False):
         f = f'class="s-{stroke}' + (f' f-{fill}"' if fill else '"')
         d = f' stroke-dasharray="{dash}"' if dash else ""
         nofill = "" if fill else ' fill="none"'
         if stroke is None:
             f = f'class="f-{fill}"'
-        self.raw(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" {f}{nofill} stroke-width="{sw}"{d}/>')
+        g = ' filter="url(#__GLOW__)"' if glow else ""
+        self.raw(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" {f}{nofill} stroke-width="{sw}"{d}{g}/>')
 
     def path(self, d, stroke="line", sw=1.6, dash=None, fill=None):
         dd = f' stroke-dasharray="{dash}"' if dash else ""
@@ -126,6 +215,11 @@ class D:
 
     # ------------------------------------------------------------ icons
     def icon(self, name, x, y, size, keep_colour=False, tint=None):
+        if name in TILES:          # use AWS's current service tile instead
+            name, k = TILES[name]
+            x, y, size = x + size * (1 - k) / 2, y + size * (1 - k) / 2, size * k
+        if name.startswith("architecture-service/"):
+            keep_colour = True     # service tiles keep AWS's colours in both themes
         src = open(f"{ICONS}/{name}.svg").read()
         vb = re.search(r'viewBox="([^"]+)"', src).group(1)
         inner = re.sub(r"^.*?<svg[^>]*>", "", src, flags=re.S)
@@ -136,6 +230,8 @@ class D:
                 cls = RECOLOR.get(m.group(1).lower())
                 return f'class="f-{cls}"' if cls else m.group(0)
             inner = re.sub(r'fill="(#[0-9a-fA-F]{6})"', swap, inner)
+            if name.startswith("architecture-service/"):   # tile glyph: cut out of the tile
+                inner = inner.replace('fill="#fff"', 'class="f-panel"')
         if tint:
             inner = inner.replace('class="f-ink"', f'class="f-{tint}"')
         mx, my, vw, vh = (float(v) for v in vb.split())
@@ -156,9 +252,9 @@ class D:
             "region":  ("priv", None,       "architecture-group/Region", "6 4"),
             "vpc":     ("net",  None,       "architecture-group/VirtualprivatecloudVPC", None),
             "az":      ("priv", None,       None, "6 4"),
-            "public":  ("pub",  "pubtint",  "architecture-group/Publicsubnet", None),
-            "private": ("priv", "privtint", "architecture-group/Privatesubnet", None),
-            "sg":      ("sec",  None,       None, None),
+            "public":  ("pub",  "pubarea",  "architecture-group/Publicsubnet", None),
+            "private": ("priv", "privarea", "architecture-group/Privatesubnet", None),
+            "sg":      ("sub",  None,       None, None),   # neutral: red would read as "blocked"
             "asg":     ("cmp",  None,       "architecture-group/AutoScalinggroup", "6 4"),
         }[kind]
         stroke, fill, ic, dash = spec
@@ -169,10 +265,9 @@ class D:
                 self.rect(x, y, 26, 26, "ink", None, 0, 1)
             self.text(x + 34, y + 17, label, "ink", 12, weight=500)
         else:
-            colour = "sec" if kind == "sg" else "ink"
-            self.text(x + 8, y + 15, label, colour, 10.5 if kind == "sg" else 12, weight=600 if kind == "sg" else 500)
+            self.text(x + 8, y + 15, label, "ink", 10.5 if kind == "sg" else 12, weight=600 if kind == "sg" else 500, mono=kind == "sg")
         if right:
-            self.text(x + w - 10, y + 17, right, "sub", 10.5, "end", mono=True)
+            self.text(x + w - 10, y + 17, right, "sub", 10.5, "end", mono=True, halo=True)
 
     # ------------------------------------------------------------ custom assets (AWS line style)
     def home_router(self, cx, y, label=None, sub=None):
@@ -202,9 +297,9 @@ class D:
 
     def server_closeup(self, x, y, w, h, title, sub, rows, ip=None, disk=None, header_icon="resource/AmazonEC2Instance", os_label="Amazon Linux 2023", frame="cmp", os_right="operating system"):
         """The 'opened up' server: header, OS band, processes with ports, network and disk."""
-        self.rect(x, y, w, h, frame, "surface", 6, 1.6)
+        self.rect(x, y, w, h, frame, TINT.get(frame, "surface"), 8, 1.6, glow=True)
         self.icon(header_icon, x + 10, y + 8, 26)
-        self.text(x + 44, y + 21, title, "ink", 12, weight=600)
+        self.text(x + 44, y + 21, title, frame, 12, weight=600)
         self.text(x + w - 12, y + 21, sub, "sub", 10.5, "end", mono=True)
         self.rect(x + 10, y + 42, w - 20, 22, "faint", "panel", 3, 1)
         self.text(x + 20, y + 57, os_label, "sub", 10.5)
@@ -230,7 +325,8 @@ class D:
 
     # ------------------------------------------------------------ more custom assets (line style)
     def browser(self, x, y, w=72, h=52, c="ink", label=None, sub=None, url=None):
-        self.rect(x, y, w, h, c, "panel", 4, 1.8)
+        self.raw('<g class="r-win">')    # light mode: a plain white window
+        self.rect(x, y, w, h, c, TINT.get(c, "panel"), 4, 1.8)
         self.path(f"M{x} {y + 12} L{x + w} {y + 12}", c, 1.4)
         for i in range(3):
             self.raw(f'<circle cx="{x + 7 + i * 6}" cy="{y + 6}" r="1.6" class="f-{c}"/>')
@@ -239,6 +335,7 @@ class D:
             self.text(x + 26 + (w - 32) / 2, y + 9, url, c, 5.5, "middle", mono=True)
         for i, ww in enumerate((0.7, 0.5, 0.6)):
             self.rect(x + 9, y + 20 + i * 9, round((w - 18) * ww), 2.5, None, "faint", 1.2, 0)
+        self.raw('</g>')
         cx = x + w / 2
         if label:
             self.text(cx, y + h + 17, label, "ink", 11.5, "middle", 500)
@@ -287,6 +384,27 @@ class D:
         else:
             self.text(tx, y + h / 2 + 4, title, title_c or "ink", size, align, 600)
 
+    def tcard(self, x, y, w, h, title, sub=None, c="you", icon=None, val=None, icon_size=28, rx=8,
+              dash=None, glow=False, keep_colour=False, size=12):
+        """The Phase 0 card: accent border, tinted fill, title in the accent colour."""
+        fill = TINT.get(c, "surface")
+        self.rect(x, y, w, h, c, fill, rx, 1.5, dash, glow)
+        tx = x + 12
+        if icon == "sg-box":       # the security group mark: a plain neutral box
+            b = icon_size * 0.85
+            self.rect(x + 10 + (icon_size - b) / 2, y + (h - b) / 2, b, b, "sub", None, 3, 1.6)
+            tx = x + 18 + icon_size
+        elif icon:
+            self.icon(icon, x + 10, y + (h - icon_size) / 2, icon_size, keep_colour=keep_colour)
+            tx = x + 18 + icon_size
+        lines = [l for l in (title, sub, val) if l]
+        top = y + h / 2 - (len(lines) - 1) * 7.5 + 4
+        self.text(tx, top, title, c if c in TINT else "ink", size, weight=600)
+        if sub:
+            self.text(tx, top + 15, sub, "sub", 10)
+        if val:
+            self.text(tx, top + (30 if sub else 15), val, "ink", 10.5, mono=True)
+
     def numbox(self, x, y, w, h, value, c="ink", fill="panel", size=18):
         self.rect(x, y, w, h, c, fill, 6, 1.6)
         self.text(x + w / 2, y + h / 2 + size * 0.36, value, c, size, "middle", 500, mono=True)
@@ -323,11 +441,20 @@ class D:
         self.path(f"M{cx} {y} L{cx} {y + row_h * n}", "faint", 1)
 
     # ------------------------------------------------------------ output
-    def svg(self, title=""):
+    def svg(self, title="", uid="dg"):
         t = f"<title>{esc(title)}</title>" if title else ""
+        body = "\n".join(self.p)
+        defs = ""
+        if "__GLOW__" in body:   # soft glow; the site turns it off in light mode
+            gid = f"{uid}-glow"
+            body = body.replace("__GLOW__", gid)
+            defs = (f'<defs><filter id="{gid}" x="-20%" y="-40%" width="140%" height="180%">'
+                    '<feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/>'
+                    '<feMergeNode in="SourceGraphic"/></feMerge></filter></defs>')
         return (f'<svg xmlns="http://www.w3.org/2000/svg" class="dg" viewBox="0 0 {self.w} {self.h}">'
-                f"{t}{_style()}\n" + "\n".join(self.p) + "\n</svg>")
+                f"{t}{_style()}{defs}\n" + body + "\n</svg>")
 
     def save(self, path, title=""):
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        open(path, "w").write(self.svg(title))
+        uid = re.sub(r"[^a-z0-9]+", "-", os.path.splitext(os.path.basename(path))[0].lower())
+        open(path, "w").write(self.svg(title, uid))

@@ -22,14 +22,32 @@ You can also point `AWS_ICONS` at a full copy of `package/icons`.
 
 ## Regenerate
 
-    python3 tools/diagrams/p0.py      # Phase 0
+    python3 tools/diagrams/p0.py      # Phase 0 (ports the originals in legacy/)
     python3 tools/diagrams/p1.py      # Phase 1
     python3 tools/diagrams/p234.py    # Phases 2 to 4
-    python3 tools/diagrams/home.py    # home page
+    python3 tools/diagrams/home.py    # home page hero
     python3 tools/diagrams/styleguide_assets.py   # add --css to print the theme tokens
 
-Each script writes straight into `public/images/labs/` using the same file
-names the labs already reference, so no Markdown changes are needed.
+Each script writes straight into `public/images/` using the same file
+names the pages already reference, so no Markdown changes are needed.
+
+If you change a colour in `dg.py`, run `styleguide_assets.py --css` and paste
+the three lines it prints over the `--dg-` lines in `src/styles/global.css`
+(light, dark, and the light-mode hardware roles).
+
+## Phase 0
+
+The Phase 0 diagrams are the original hand-drawn set. Their dark-only sources
+live in `legacy/`; `p0.py` swaps every colour for a theme token
+(`port_legacy.py`) and applies a few layout fixes listed at the top of `p0.py`.
+Edit the legacy file, or add a fix there, rather than editing the output.
+
+## Style
+
+- Two palettes: dark is the original neon set, light is re-derived for white.
+- A colour per idea: accent border, tinted fill (`tcard`), title in the accent.
+- Red only for problems. Security groups are neutral grey.
+- Every label is monospace.
 
 ## Adding a diagram
 
