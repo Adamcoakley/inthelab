@@ -85,9 +85,7 @@ The router is where traffic goes by default whenever it's leaving your network, 
 
 ## A route is a rule
 
-Your laptop doesn’t work out where to send traffic from scratch every time. It keeps a short list of rules called a **routing table**.
-
-Each rule is called a **route**. 
+Your laptop doesn’t work out where to send traffic from scratch every time. It keeps a short list of rules called a **routing table**. Each rule is called a **route**. 
 
 Your laptop might have just two routes:
 
